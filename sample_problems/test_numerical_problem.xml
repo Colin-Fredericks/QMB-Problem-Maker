@@ -1,0 +1,14 @@
+<problem display_name="Sample Numerical Problem">
+    <p>The answer is 50</p>
+    <numericalresponse answer="50">
+        <label>test label</label>
+        <formulaequationinput/>
+        <responseparam default="5%" type="tolerance"/>
+        <solution>
+            <div class="detailed-solution">
+                <p>Explanation</p>
+                <p>blank solution</p>
+            </div>
+        </solution>
+    </numericalresponse>
+</problem>

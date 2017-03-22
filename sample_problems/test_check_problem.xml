@@ -1,0 +1,17 @@
+<problem display_name="Sample Checkbox Problem">
+    <p>test text</p>
+    <choiceresponse>
+        <label>test label</label>
+        <description>Check all that apply.</description>
+        <checkboxgroup>
+            <choice correct="false">wrong one</choice>
+            <choice correct="true">right one</choice>
+        </checkboxgroup>
+        <solution>
+            <div class="detailed-solution">
+                <p>Explanation</p>
+                <p>blank solution</p>
+            </div>
+        </solution>
+    </choiceresponse>
+</problem>

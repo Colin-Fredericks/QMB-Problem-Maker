@@ -1,0 +1,13 @@
+<problem display_name="Sample Text Problem">
+    <p>The answer is "kaboom"</p>
+    <stringresponse answer="kaboom" type="ci">
+        <label>test label</label>
+        <textline size="30"/>
+        <solution>
+            <div class="detailed-solution">
+                <p>Explanation</p>
+                <p>blank solution</p>
+            </div>
+        </solution>
+    </stringresponse>
+</problem>

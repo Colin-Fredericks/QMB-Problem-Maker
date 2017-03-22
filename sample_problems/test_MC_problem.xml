@@ -1,0 +1,16 @@
+<problem display_name="Sample MC Problem">
+    <p>test text</p>
+    <multiplechoiceresponse type="MultipleChoice">
+        <label>test label</label>
+        <choicegroup>
+            <choice correct="false">wrong one</choice>
+            <choice correct="true">right one</choice>
+        </choicegroup>
+        <solution>
+            <div class="detailed-solution">
+                <p>Explanation</p>
+                <p>blank solution</p>
+            </div>
+        </solution>
+    </multiplechoiceresponse>
+</problem>
