@@ -277,7 +277,7 @@ the_xml = make_problem_XML(
     answers = answers,
     solution_text = solution,
     options = options)
-write_problem_file(the_xml, 'test__numerical_problem.xml')
+write_problem_file(the_xml, 'test_numerical_problem.xml')
 
 # Make a text problem
 title = 'Sample Text Problem'
@@ -294,5 +294,5 @@ the_xml = make_problem_XML(
     answers = answers,
     solution_text = solution,
     options = options)
-write_problem_file(the_xml, 'test__text_problem.xml')
+write_problem_file(the_xml, 'test_text_problem.xml')
 
