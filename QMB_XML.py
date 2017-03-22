@@ -62,6 +62,12 @@ def make_problem_XML(
     # Add the problem text
     if problem_text is not False:
         problem_tag.text = problem_text
+    
+    ############
+    # This space reserved for adding other problem settings,
+    # such as showanswer, weight, rerandomize, max_attempts.
+    # These will be drawn from the "options" dict
+    ############
 
     
     if options['problem_type'] == 'Numerical' or options['problem_type'] == 'Text':
