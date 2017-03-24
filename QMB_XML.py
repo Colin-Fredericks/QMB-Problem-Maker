@@ -41,11 +41,14 @@ def make_problem_XML(
       
     - solution_text: The extended text for the problem, including paragraph tags and other HTML.
     
-    - options: A set of options. Currently just "problem_type", which can be...
-      "MC": Multiple-choice problems
-      "Checkbox": Select-all-that-apply
-      "Numerical": Numerical problems, with a 5% tolerance
-      "Text": Text-entry problem
+    - options: A dictionary of options.
+      Currently accepts "problem_type", which can be...
+        "MC": Multiple-choice problems
+        "Checkbox": Select-all-that-apply
+        "Numerical": Numerical problems, with a 5% tolerance
+        "Text": Text-entry problem
+      And accepts "showanswer", "weight", "rerandomize", and "max_attempts",
+        which take the typical values for those arguments in edX.
       Later this may include other problem types, partial credit info, etc.
     
     The default values for these arguments are used for troubleshooting.
@@ -59,17 +62,22 @@ def make_problem_XML(
     problem_tag.set('display_name', problem_title)
     problem_tree = ET.ElementTree(problem_tag)
     
+    # Set other problem options. For partial documentation see:
+    # https://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/components/problem-components.html
+    if 'showanswer' in options:
+        problem_tag.set('showanswer', options['showanswer'])
+    if 'weight' in options:
+        problem_tag.set('weight', options['weight'])
+    if 'rerandomize' in options:
+        problem_tag.set('rerandomize', options['rerandomize'])
+    if 'max_attempts' in options:
+        problem_tag.set('max_attempts', options['max_attempts'])
+
     # Add the problem text
     if problem_text is not False:
         problem_tag.text = problem_text
     
-    ############
-    # This space reserved for adding other problem settings,
-    # such as showanswer, weight, rerandomize, max_attempts.
-    # These will be drawn from the "options" dict
-    ############
-
-    
+    # Pass the tree to functions that build the rest of the problem XML.
     if options['problem_type'] == 'Numerical' or options['problem_type'] == 'Text':
         return  make_line_problem_XML(
             problem_tree, problem_tag, problem_text, label_text, description_text, 
@@ -98,15 +106,16 @@ def make_choice_problem_XML(
     solution_text = '<p>Missing solution</p>',
     options = {'problem_type': 'MC'}):
 
-    # Create the structure for the problem.
-    # Currently branches for MC or Checkbox problems in a few places.
-    # Their structure is pretty similar.
-    
+    # Create the structure for the problem.    
     if options['problem_type'] == 'MC':
         type_tag = ET.SubElement(problem_tag, 'multiplechoiceresponse')
         type_tag.set('type','MultipleChoice')
     elif options['problem_type'] == 'Checkbox':
         type_tag = ET.SubElement(problem_tag, 'choiceresponse')
+
+    # Needs some expansion for various extra credit options.
+    if 'extra_credit' in options:
+        type_tag.set('extra_credit', options['extra_credit'])
 
     label_tag = ET.SubElement(type_tag, 'label')
     label_tag.text = label_text
@@ -152,14 +161,16 @@ def make_line_problem_XML(
     options = {'problem_type': 'Text'}):
     
     # Create the structure for the problem.
-    
     if options['problem_type'] == 'Numerical':
         type_tag = ET.SubElement(problem_tag, 'numericalresponse')
     else:
         type_tag = ET.SubElement(problem_tag, 'stringresponse')
         type_tag.set('type', 'ci')   # case-insensitive by default.
-        
     
+    # Needs some expansion for various extra credit options.
+#     if 'extra_credit' in options:
+#         type_tag.set('extra_credit', options['extra_credit'])
+
     type_tag.set('answer', answers[0]['answer'])
 
     label_tag = ET.SubElement(type_tag, 'label')
