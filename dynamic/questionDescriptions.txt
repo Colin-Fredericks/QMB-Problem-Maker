@@ -1,0 +1,236 @@
+#QuestionTitle	setting	value1	value2	value3
+col1	questionText	A:B:C produces a sequence of numbers. Which value is the first value?		
+	variable	A	int(1:10)	
+	variable	B	int(1:5)	
+	variable	C	A+int(1:5)*B	
+#comment lines starting with '#' are ignored				
+#answers are designated like this:		#answer value	#knowlege Components	#whether the answer is the correct one
+	answer	A	1.6.1	TRUE
+	answer	B	1.6.1; 1.6.3	FALSE
+	answer	C	1.6.1;1.6.2	FALSE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	0		
+				
+col2	questionText	A:B:C produces a sequence of numbers. Which value is the last value?		
+	variable	A	int(1:10)	
+	variable	B	int(1:5)	
+	variable	C	A+int(1:5)*B	
+	answer	C	1.6.3	TRUE
+	answer	B	1.6.1; 1.6.3	FALSE
+	incorrectAnswer	A	1.6.3;1.6.2	FALSE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	0		
+				
+col3	questionText	A:BB:C produces a sequence of numbers. By how much do consequetive number change?		
+	variable	A	int(1:10)	
+	variable	BB	int(1:5)	
+	variable	C	A+int(1:5)*BB	
+	answer	BB	1.6.2	TRUE
+	answer	A	1.6.2;1.6.1	FALSE
+	answer	C	1.6.1;1.6.2	FALSE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	0		
+				
+col4	questionText	A:C produces a sequence of numbers. Which value is the first value?		
+	variable	A	int(1:10)	
+	variable	C	A+int(1:10)	
+	answer	A	1.6.1	TRUE
+	answer	C	1.6.1;1.6.2	FALSE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	0		
+				
+col5	questionText	A:C produces a sequence of numbers. Which value is the last value?		
+	variable	A	int(1:10)	
+	variable	C	A+int(1:10)	
+	answer	C	1.6.2;1.6.4	TRUE
+	answer	A	1.6.1;1.6.4	FALSE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	0		
+				
+col6	questionText	A:C produces a sequence of numbers. By how much do consequetive number change?		
+	variable	A	int(1:10)	
+	variable	C	A+int(1:10)	
+	answer	1	1.6.4	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	1		
+				
+col7	questionText	A:BB:C produces a sequence of numbers. By how much do consequetive number change?		
+	variable	C	int(1:10)	
+	variable	BB	int(-5:-1)	
+	variable	A	C+int(1:5)*BB	
+	answer	BB	1.6.5	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	1		
+				
+col8	questionText	A:B:C produces a sequence of numbers. Which value is the last value?		
+	variable	A	int(1:10)	
+	variable	B	int(2:5)	
+	variable	S	int(1:5)	
+	variable	E	B-1	
+	variable	C	A+S*B+int(1:E)	
+	variable	ANS	A+S*B	
+	answer	ANS	1.6.2; 1.6.3	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	2		
+				
+col9	questionText	A:B:C produces a sequence of numbers. Which value is the first value?		
+	variable	A	double(1:10)	
+	variable	B	double(1:5)	
+	variable	C	A+int(1:5)*B	
+	answer	A	1.6.1	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	1		
+				
+col9	questionText	[A:BB:C] produces a sequence of numbers. By how much do consequetive number change?		
+	variable	A	double(1:10)	
+	variable	BB	double(1:5)	
+	variable	C	A+int(1:5)*BB	
+	answer	BB	1.6.3	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	1		
+				
+col10	questionText	[A:B:C] produces a sequence of numbers. Which value is the last value?		
+	variable	A	double(1:10)	
+	variable	B	double(1:5)	
+	variable	E	B-1	
+	variable	S	int(1:5)	
+	variable	C	A+S*B+double(0:E)	
+	answer	A+S*B	1.6.2; 1.6.3	TRUE
+	answer	C	1.6.2;1.6.3	FALSE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	1		
+				
+col11	questionText	What is the array that would result from typing A:B:C. Drectly type in the resulting array {Use ans=['your text here']}		
+	variable	A	int(1:5)	
+	variable	B	int(1:5)	
+	variable	SS	int(1:5)	
+	variable	C	A+SS*B	
+	answer	SS	1.6.1;1.6.2;1.6.3	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	2		
+				
+#In Context				
+#Function on Colon				
+col12	questionText	What will max(A:B:C) return		
+	variable	A	int(1:10)	
+	variable	B	int(2:5)	
+	variable	S	int(1:5)	
+	variable	E	B-1	
+	variable	C	A+S*B+int(1:E)	
+	answer	A+S*B	2.5.13;1.6.1;1.6.2;1.6.3	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	3		
+				
+col12	questionText	What will min(A:B:C) return		
+	variable	A	int(1:10)	
+	variable	B	int(2:5)	
+	variable	S	int(1:5)	
+	variable	E	B-1	
+	variable	C	A+S*B+int(1:E)	
+	answer	A	2.5.13;1.6.1	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	3		
+				
+				
+				
+#arrays				
+arr1	questionText	What value will D(AA,BB) return?		
+	variable	D	{myArray1,myArray2}	
+	variable	AA	int(1:dim(D,1))	
+	variable	BB	int(1:dim(D,2))	
+	variable	ANS	D(AA,BB)	
+	answer	ANS	2.3.9	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	1		
+				
+arr2	questionText	Which line of code would retrieve the value from S in matrix R		
+	variable	R	{myArray1,myArray2}	
+	variable	X	int(1:dim(R,1))	
+	variable	Y	int(1:dim(R,2))	
+	variable	S	{row X column Y,column Y row X}	
+	answer	R(X,Y)	2.3.9	TRUE
+	answer	R(Y,X)	2.3.9	FALSE
+	problemType	MC		
+	dynamic	TRUE		
+	difficulty	1		
+				
+arr3	questionText	What value will R(end,C) return		
+	variable	R	{myArray1,myArray2}	
+	variable	C	int(1:dim(R,2))	
+	variable	S	R(dim(R,1),C)	
+	answer	S	2.3.13	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	2		
+				
+arr4	questionText	What will RR(AA:BB,CC:DD) return? Assign it to A, and input your answer from the matlab checking function below.		
+	variable	RR	{myArray1,myArray2}	
+	variable	AL1	dim(RR,1)-1	
+	variable	AA	int(1:AL1)	
+	variable	BL1	dim(RR,2)-AA	
+	variable	BB	AA + int(1:BL1)	
+	variable	CL1	dim(RR,2)-1	
+	variable	CC	int(1:CL1)	
+	variable	DL1	dim(RR,2)-CC	
+	variable	DD	CC + int(1:DL1)	
+	variable	RES	RR(AA:BB,CC:DD)	
+	variable	ANS	answerFun(RES)	
+	answer	ANS	2.3.9	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	3		
+				
+arr5	questionText	what is the MM of RR(AA:SS:BB,NN)		
+	variable	MM	{min,max,mean}	
+	variable	RR	{myArray1,myArray2}	
+	variable	AL1	dim(RR,1)-1	
+	variable	AA	int(1:AL1)	
+	variable	BL1	dim(RR,2)-AA	
+	variable	BB	AA + int(1:BL1)	
+	variable	SS	int(1:3)	
+	variable	NN	int(1:dim(RR,2))	
+	variable	RES	RR(AA:SS:BB,NN)	
+	variable	ANS	MM(RES)	
+	answer	ANS	2.3.9	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	3		
+				
+arr6	questionText	What is the maximum value in the even numbered rows of column CC of array RR?		
+	variable	RR	{myArray1,myArray2}	
+	variable	CC	int(1:dim(RR,2))	
+	variable	ROWS	dim(RR,1)	
+	variable	SEL	RR(1:2:ROWS,CC)	
+	variable	ANS	max(SEL)	
+	answer	ANS	2.3.9	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	3		
+				
+arr7	questionText	What is the maximum value in every OO row (starting with row 1) of column CC in array RR?		
+	variable	NN	int(1:10)	
+	variable	OO	ordinal(NN)	
+	variable	RR	{myArray1,myArray2}	
+	variable	CC	int(1:dim(RR,2))	
+	variable	ROWS	dim(RR,1)	
+	variable	SEL	RR(1:2:ROWS,CC)	
+	variable	ANS	max(SEL)	
+	answer	ANS	2.3.9	TRUE
+	problemType	Numerical		
+	dynamic	TRUE		
+	difficulty	3		
