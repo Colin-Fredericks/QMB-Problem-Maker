@@ -36,7 +36,9 @@ $(document).ready(function(){
         // Checking for text-entry or numerical problems
         if(answerText.length > 0){
           answerOptions = 'blank';
-          studentResponses = answerText.val();
+          $.each(answerText, function(i, value){
+            studentResponses.push(value.value);
+          });
         }
 
         // Checking for MC or checkbox problems
@@ -46,7 +48,7 @@ $(document).ready(function(){
             answerOptions.push($.trim($(value).parent().contents().filter(function(){
               return this.nodeType == 3;
             }).text()));
-            studentResponses.push(value.checked ? true : false);
+            studentResponses.push(value.checked);
           });
         }
 
