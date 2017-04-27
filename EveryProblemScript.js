@@ -17,16 +17,12 @@ $(document).ready(function(){
             onCheckButton(problemID);
         });
 
-        // Let the system know the grade.
-        // We're reading it straight off the page.
+        // Let our server know the grade and other info.
+        // We're reading all of this straight off the page.
         // Sure wish we had a better way to do this.
         var xBlock = $('div.xblock[data-usage-id="' + problemID + '"]');
         var gradeNumber = 0;
         var maxGradeNumber = 0;
-
-        var gradeFullText = $(xBlock).find('.problem-progress').text();
-        var gradeText = gradeFullText.split(' ')[0];
-
 
         // Check for radio buttons, checkboxes, and text boxes.
         // Whichever type of problem this is, return the
@@ -55,6 +51,9 @@ $(document).ready(function(){
         }
 
         // Get the grade
+        var gradeFullText = $(xBlock).find('.problem-progress').text();
+        var gradeText = gradeFullText.split(' ')[0];
+
         if(gradeText.length > 1){
             gradeNumber = gradeText.split('/')[0];
             maxGradeNumber = gradeText.split('/')[1];
