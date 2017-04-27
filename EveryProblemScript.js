@@ -55,6 +55,7 @@ $(document).ready(function(){
         // Get the grade
         var gradeFullText = $(xBlock).find('.problem-progress').text();
         var gradeText = gradeFullText.split(' ')[0];
+        var problemType;
 
         if(gradeText.length > 1){
             gradeNumber = gradeText.split('/')[0];
@@ -71,11 +72,23 @@ $(document).ready(function(){
             var username = 'No_username_found';
         }
 
+        // Set the problem type
+        if(radioButtons.length > 0){
+          problemType = 'MC';
+        }else if (checkBoxes.length > 0) {
+          problemType = 'Checkbox';
+        }else if (isNaN(studentResponses[0])) {
+          problemType = 'Text';
+        }else{
+          problemType = 'Numerical';
+        }
+
         //Log info: edX username, problem ID, current and maximum grade.
         console.log('User: ' + username);
         console.log('Problem ID: ' + problemID);
         console.log('Current grade: ' + gradeNumber);
         console.log('Max grade: ' + maxGradeNumber);
+        console.log('Problem type: ' + problemType)
         console.log('Response Options: ' + answerOptions);
         console.log('Student Responses: ' + studentResponses);
 
@@ -86,6 +99,7 @@ $(document).ready(function(){
                 problem: problemID,
                 points: gradeNumber,
                 max_points: maxGradeNumber,
+                problem_type: problemType,
                 answer_options: answerOptions,
                 student_response: studentResponses
             }
