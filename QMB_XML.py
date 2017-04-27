@@ -12,35 +12,35 @@ def make_problem_XML(
     answers=[{'correctness': 'true', 'text': 'Answers are missing'}],
     solution_text = '<p>Missing solution</p>',
     options = {'problem_type': 'MC'}):
-    
+
     """
     make_problem_XML: a function to create an XML object for an edX problem.
         The actual work is done by other functions below,
         make_choice_problem_XML() and make_line_problem_XML(),
         which use the arguments as listed below.
-    
+
     Arguments:
-    
+
     - problem_title: The title of the problem. Required.
-    
+
     - problem_text: The extended text for the problem, including paragraph tags and other HTML.
       This argument is genuinely optional.
-    
+
     - label_text: The action statement for the problem. Should be a single line of text.
       This is the instruction for the student and is required.
-      
+
     - description_text: Additional info, like "check all that apply" for those kinds of problems.
       This argument is genuinely optional.
-      
+
     - answers: A list of dictionaries as follows:
       For Numerical and Text problems:
       [{'answer': a correct answer}, {'answer': another correct answer}, {etc}]
       For MC and Checkbox problems, each item in the list will become an answer choice:
-      [{'correctness': 'true' or 'false', 'text': 'the text for this option'}, {etc}, {etc}]
+      [{'correctness': 'true' or 'false', 'answer': 'the text for this option'}, {etc}, {etc}]
       The text for MC and Checkbox can include LaTeX and images. No hints currently included.
-      
+
     - solution_text: The extended text for the problem, including paragraph tags and other HTML.
-    
+
     - options: A dictionary of options.
       Currently accepts "problem_type", which can be...
         "MC": Multiple-choice problems
@@ -50,18 +50,18 @@ def make_problem_XML(
       And accepts "showanswer", "weight", "rerandomize", and "max_attempts",
         which take the typical values for those arguments in edX.
       Later this may include other problem types, partial credit info, etc.
-    
+
     The default values for these arguments are used for troubleshooting.
-    
+
     Return: an XML element tree.
-    
+
     """
-    
+
     # Create the tree object with its root element
     problem_tag = ET.Element('problem')
     problem_tag.set('display_name', problem_title)
     problem_tree = ET.ElementTree(problem_tag)
-    
+
     # Set other problem options. For partial documentation see:
     # https://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/components/problem-components.html
     if 'showanswer' in options:
@@ -76,16 +76,16 @@ def make_problem_XML(
     # Add the problem text
     if problem_text is not False:
         problem_tag.text = problem_text
-    
+
     # Pass the tree to functions that build the rest of the problem XML.
     if options['problem_type'] == 'Numerical' or options['problem_type'] == 'Text':
         return  make_line_problem_XML(
-            problem_tree, problem_tag, problem_text, label_text, description_text, 
+            problem_tree, problem_tag, problem_text, label_text, description_text,
             answers, solution_text, options
         )
     elif options['problem_type'] == 'MC' or options['problem_type'] == 'Checkbox':
         return  make_choice_problem_XML(
-            problem_tree, problem_tag, problem_text, label_text, description_text, 
+            problem_tree, problem_tag, problem_text, label_text, description_text,
             answers, solution_text, options
         )
     else:
@@ -102,11 +102,11 @@ def make_choice_problem_XML(
     problem_text=False,
     label_text='Enter your answer below.',
     description_text=False,
-    answers=[{'correctness': 'true', 'text': 'Answers are missing'}],
+    answers=[{'correctness': 'true', 'answer': 'Answers are missing'}],
     solution_text = '<p>Missing solution</p>',
     options = {'problem_type': 'MC'}):
 
-    # Create the structure for the problem.    
+    # Create the structure for the problem.
     if options['problem_type'] == 'MC':
         type_tag = ET.SubElement(problem_tag, 'multiplechoiceresponse')
         type_tag.set('type','MultipleChoice')
@@ -125,18 +125,18 @@ def make_choice_problem_XML(
     if description_text is not False:
         description_tag = ET.SubElement(type_tag, 'description')
         description_tag.text = description_text
-    
+
     if options['problem_type'] == 'MC':
         choicegroup_tag = ET.SubElement(type_tag, 'choicegroup')
     elif options['problem_type'] == 'Checkbox':
         choicegroup_tag = ET.SubElement(type_tag, 'checkboxgroup')
-    
+
     # Iterate over the choices and add them one by one.
     for item in answers:
         item_tag = ET.SubElement(choicegroup_tag, 'choice')
         item_tag.set('correct', item['correctness'])
-        item_tag.text = item['text']
-    
+        item_tag.text = item['answer']
+
     # Create the structure for the solution
     solution_tag = ET.SubElement(type_tag, 'solution')
     solution_div_tag = ET.SubElement(solution_tag, 'div')
@@ -144,7 +144,7 @@ def make_choice_problem_XML(
     explanation_p_tag = ET.SubElement(solution_div_tag, 'p')
     explanation_p_tag.text = 'Explanation'
     explanation_p_tag.tail = solution_text
-    
+
     return problem_tree
 
 
@@ -159,14 +159,14 @@ def make_line_problem_XML(
     answers=[{'answer': '-1'}],
     solution_text = '<p>Missing solution</p>',
     options = {'problem_type': 'Text'}):
-    
+
     # Create the structure for the problem.
     if options['problem_type'] == 'Numerical':
         type_tag = ET.SubElement(problem_tag, 'numericalresponse')
     else:
         type_tag = ET.SubElement(problem_tag, 'stringresponse')
         type_tag.set('type', 'ci')   # case-insensitive by default.
-    
+
     # Needs some expansion for various extra credit options.
 #     if 'extra_credit' in options:
 #         type_tag.set('extra_credit', options['extra_credit'])
@@ -179,14 +179,14 @@ def make_line_problem_XML(
     if description_text is not False:
         description_tag = ET.SubElement(type_tag, 'description')
         description_tag.text = description_text
-    
+
     # Add additional answers if they exist.
     if len(answers) > 1:
         for item in answers:
             additional_answer_tag = ET.SubElement(type_tag, 'additional_answer')
             additional_answer_tag.set('answer', item['answer'])
 
-    
+
     if options['problem_type'] == 'Numerical':
         input_tag = ET.SubElement(type_tag, 'formulaequationinput')
         tolerance_tag = ET.SubElement(type_tag, 'responseparam')
@@ -197,7 +197,7 @@ def make_line_problem_XML(
         input_tag.set('size', '30')
 
 
-    
+
     # Create the structure for the solution
     solution_tag = ET.SubElement(type_tag, 'solution')
     solution_div_tag = ET.SubElement(solution_tag, 'div')
@@ -205,7 +205,7 @@ def make_line_problem_XML(
     explanation_p_tag = ET.SubElement(solution_div_tag, 'p')
     explanation_p_tag.text = 'Explanation'
     explanation_p_tag.tail = solution_text
-    
+
     return problem_tree
 
 
@@ -213,18 +213,18 @@ def make_line_problem_XML(
 def write_problem_file(problem_XML, problem_filename):
     """
     write_problem_file: write a complete edX problem XML structure to disk.
-    
+
     Arguments:
-    
+
     - problem_XML: The ElementTree object for the problem.
     - problem_filename: The filename.
-    
+
     Return: True if successful, False if not.
-    
+
     Outputs: A pretty-printed XML file at 4 spaces per indent
-    
+
     """
-    
+
     # HTML entities in the problem text get encoded during the XML-writing step, so we need to decode them here.
     parser = HTMLParser.HTMLParser()
     xml_string = minidom.parseString(ET.tostring(problem_XML.getroot())).toprettyxml(indent="    ")
@@ -233,17 +233,18 @@ def write_problem_file(problem_XML, problem_filename):
         # We start from character 23 because the XML declaration is an unwanted 22 characters (counting \r).
         # I should do this better, but this works for now.
         f.writelines(xml_string[23:])
-    
+
 
 #################
 # Testing code
 #################
 
+"""
 # Make an MC problem
 title = 'Sample MC Problem'
 text = '<p>test text</p>'
 label = 'test label'
-answers = [{'text': 'wrong one', 'correctness': 'false'}, {'text': 'right one', 'correctness': 'true'}]
+answers = [{'answer': 'wrong one', 'correctness': 'false'}, {'answer': 'right one', 'correctness': 'true'}]
 solution = '<p>blank solution</p>'
 options = {'problem_type': 'MC'}
 
@@ -260,7 +261,7 @@ write_problem_file(the_xml, 'test_MC_problem.xml')
 title = 'Sample Checkbox Problem'
 text = '<p>test text</p>'
 label = 'test label'
-answers = [{'text': 'wrong one', 'correctness': 'false'}, {'text': 'right one', 'correctness': 'true'}]
+answers = [{'answer': 'wrong one', 'correctness': 'false'}, {'answer': 'right one', 'correctness': 'true'}]
 solution = '<p>blank solution</p>'
 options = {'problem_type': 'Checkbox'}
 
@@ -306,4 +307,4 @@ the_xml = make_problem_XML(
     solution_text = solution,
     options = options)
 write_problem_file(the_xml, 'test_text_problem.xml')
-
+"""
