@@ -2,6 +2,7 @@ import os, sys, inspect, logging
 import copy
 import re
 import random
+import string
 import numpy as np
 from random import randint
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -13,9 +14,10 @@ from QMB_utils import *
 from parseNum import *
 from simplifyNumber import *
 
-#logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
-logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
+#logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
+webLocRoot = "https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@"
 problemFolder = "problems"
 myArray1Dat = load_matlab_matrix("myArray1")
 myArray2Dat = load_matlab_matrix("myArray2")
@@ -32,6 +34,9 @@ ordinalLookup = {'1':"first",
                  '9':"ninth",
                  '10':"tenth"}
 
+#hash function that turns an array into a number that can be graded in the EdX LTI
+#input: array
+#output: integer
 def matlabAnswerFun(matlabStr_in):
     matlabStr = str(matlabStr_in)
     matlabStr = matlabStr.replace("["," ")
@@ -47,6 +52,7 @@ def matlabAnswerFun(matlabStr_in):
     ans = ans % 500
     return ans
 
+#gets max of a string representation of an array e.g. [[1,2,3],[4,5,6]]
 def getMax(matlabStr_in):
     matlabStr = str(matlabStr_in)
     matlabStr = matlabStr.replace("["," ")
@@ -56,6 +62,7 @@ def getMax(matlabStr_in):
     strEls = map(float, strEls)
     return max(strEls)
 
+#gets min of a string representation of an array e.g. [[1,2,3],[4,5,6]]
 def getMin(matlabStr_in):
     matlabStr = str(matlabStr_in)
     matlabStr = matlabStr.replace("["," ")
@@ -65,6 +72,7 @@ def getMin(matlabStr_in):
     strEls = map(float, strEls)
     return min(strEls)
 
+#gets mean of a string representation of an array e.g. [[1,2,3],[4,5,6]]
 def getMean(matlabStr_in):
     matlabStr = str(matlabStr_in)
     matlabStr = matlabStr.replace("["," ")
@@ -78,9 +86,9 @@ def getMean(matlabStr_in):
     
 
 
-#make and print one question to filename
+#assign values to variables and perform calculations 
+#returns EdX xml and the list of answers (to test for uniqueness of answers)
 def makeQuestion(
-    fileName,
     questionTitle=False,  
     rawQuestionText=False, #dynamic (has unsubstituted variables)
     labelText='Enter your answer below.',
@@ -234,7 +242,7 @@ def makeQuestion(
                 vval = vval.replace(vval[m.start():m.end()], selVal)   
                 madeChange = 1
         
-        if ('+' in vval or '-' in vval or '*' in vval or '%' in vval):
+        if (('+' in vval or '-' in vval or '*' in vval or '/' in vval) and (vval not in ('+','-','*','/'))):
 #        then solve math
             try:
                 vval = nsp.eval(vval)
@@ -257,8 +265,8 @@ def makeQuestion(
     options = {'problem_type': problemType}
     
     #set 'text' to 'answer' -- needed for multiple choice
-    for answer in qRawAnswers:
-        answer['text'] = answer['answer']
+#    for answer in qRawAnswers:
+#        answer['text'] = answer['answer']
     
     logging.info("problem_title=" + questionTitle + "\n" +
         "problem_text=" + qRawQuestionText + "\n" +
@@ -274,13 +282,63 @@ def makeQuestion(
 	    answers=qRawAnswers,
 	    solution_text=solutionText,
 	    options=options)
-    write_problem_file(the_xml, fileName)
-    print "writing " + fileName
-    return 1
-	
+    return the_xml, qRawAnswers
+
+#calls 'makeQuestion' to create a number of dynamic questions and writes them to files.
+#uses variables parsed from the questionDescriptions
+def makeQuestions():
+    for questionCount in range(numDynamicQuestions):
+        fileName = problemFolder + "/" + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount) + '.xml'
+        answersAreUnique = False
+        xml = ""
+        qanswers = ""
+        makeQuestionAttemptCount = 0
+        while not answersAreUnique:
+            xml,qanswers = makeQuestion(
+                     questionTitle=questionTitle,
+                     rawQuestionText=questionText,
+                     labelText=labelText,
+                     descriptionText=descriptionText,
+                     solutionText=solutionText,
+                     rawVariables=rawVariables,
+                     rawAnswers=answers,
+                     problemType=problemType
+                     )
+            seenAnswers = {}
+            theseAnswersUnique = True
+            for answer in qanswers:
+                if answer["answer"] in seenAnswers:
+                    theseAnswersUnique = False
+                    break
+                seenAnswers[answer["answer"]] = 1
+            if theseAnswersUnique:
+                answersAreUnique = True
+            makeQuestionAttemptCount += 1
+            if makeQuestionAttemptCount > 100:
+                sys.exit("Cannot create unique answers for question. Line " + str(lineCount) + ": " + line)
+        write_problem_file(xml, fileName)
+        
+        KCs = {}
+        for answer in qanswers:
+            answerKCs = answer["knowledgeComponent"].split(";")
+            for answerKC in answerKCs:
+                answerKC = answerKC.strip()
+                KCs[answerKC] = 1
+        problemKCString = ','.join(KCs.keys())
+        
+        #write question info to log for tutorgen
+        s=string.lowercase+string.digits+string.uppercase
+        problemIDString = 'QMB'+''.join(random.sample(s,10))
+        while (problemIDString in problemIDs):
+            problemIDString = 'QMB'+''.join(random.sample(s,10))
+        problemWebLoc = webLocRoot + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount)
+        #problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
+        dd.write(problemIDString+"\t"+problemDifficulty+"\t"+problemContentGrouping+"\t"+
+                 problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+problemOptions+"\t"+problemWebLoc+"\n")
+        
+##MAIN
+    
 nsp = NumericStringParser()
-
-
 
 infile = open("questionDescriptions.txt", "r")
 lines = infile.readlines()
@@ -297,10 +355,19 @@ rawVariables = []
 answers = []
 dynamic = 0
 numDynamicQuestions = 3
-difficulty = 0
+problemDifficulty = 0
+problemContentGrouping = ""
+problemMaxGrade = ""
+problemOptions = ""
 
 readQuestionCount = 0
 
+problemNames = {} #all question names must be unique
+problemIDs = {} #generate random problem ids -- must be unique as well
+
+
+detailFile = os.path.basename(__file__)+'.details.txt'
+dd = open(detailFile,'w')
 
 while (lineCount < len(lines)):
     line = lines[lineCount].rstrip()
@@ -315,22 +382,14 @@ while (lineCount < len(lines)):
         logging.info("questionText is " + questionText + "and dynamic is " + str(dynamic))
         if (questionText != "" and dynamic):
             readQuestionCount += 1
-            for questionCount in range(numDynamicQuestions):
-                fileName = problemFolder + "/" + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount) + '.xml'
-                makeQuestion(fileName=fileName,
-                             questionTitle=questionTitle,
-                             rawQuestionText=questionText,
-                             labelText=labelText,
-                             descriptionText=descriptionText,
-                             solutionText=solutionText,
-                             rawVariables=rawVariables,
-                             rawAnswers=answers,
-                             problemType=problemType
-                             )
+            makeQuestions()
 
 							    
 #            sys.exit("printed first")
         # reset variables
+        if (lineEls[0] in problemNames):
+            sys.exit('Problem with name "'+lineEls[0]+'" already exists (line '+str(lineCount)+'). Problem names must be unique.')
+        problemNames[lineEls[0]] = 1
         problemName = lineEls[0]
         questionTitle = ""
         questionText = ""
@@ -340,7 +399,11 @@ while (lineCount < len(lines)):
         problemType = "Numerical"
         rawVariables = []
         dynamic = 0
-        difficulty = 0
+        difficulty = 1
+        problemDifficulty = 0
+        problemContentGrouping = ""
+        problemMaxGrade = ""
+        problemOptions = ""
         answers = []
         
     if (lineEls[1] == "questionText"):
@@ -360,27 +423,22 @@ while (lineCount < len(lines)):
     elif (lineEls[1] == "dynamic"):
         dynamic = lineEls[2]
     elif (lineEls[1] == "difficulty"):
-        difficulty = lineEls[2]
+        problemDifficulty = lineEls[2]
+    elif (lineEls[1] == "contentGrouping"):
+        problemContentGrouping = lineEls[2]
+    elif (lineEls[1] == "maxGrade"):
+        problemMaxGrade = lineEls[2]
+    elif (lineEls[1] == "options"):
+        problemMaxGrade = lineEls[2]
     elif (lineEls[1] == ""):
         pass
     else:
-        print('Unset option: lineEls[1] is "'+lineEls[1] + '"')
+        print('Unset option in description of problem '+problemName+': lineEls[1] is "'+lineEls[1] + '"')
     lineCount += 1
 
 #finish last question if there is one	
 if (questionText != "" and dynamic):
     readQuestionCount += 1
-    for questionCount in range(numDynamicQuestions):
-        fileName = problemFolder + "/" + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount) + '.xml'
-        makeQuestion(fileName=fileName,
-                     questionTitle=questionTitle,
-                     rawQuestionText=questionText,
-                     labelText=labelText,
-                     descriptionText=descriptionText,
-                     solutionText=solutionText,
-                     rawVariables=rawVariables,
-                     rawAnswers=answers,
-                     problemType=problemType
-                     )
+    makeQuestions()
 print "Read " + str(lineCount) + " lines and " + str(readQuestionCount) + " questions"
 	
