@@ -235,8 +235,6 @@ def make_anytext_problem_XML(
     solution_text = '<p>Missing solution</p>',
     options = {'problem_type': 'AnyText', 'feedback':'Thank you for your response.'}):
     
-    print options['feedback']
-    
     # Insert the python grading script
     pythonscript = """
 <![CDATA[
