@@ -91,7 +91,7 @@ def getMean(matlabStr_in):
 def makeQuestion(
     questionTitle=False,  
     rawQuestionText=False, #dynamic (has unsubstituted variables)
-    labelText='Enter your answer below.',
+    labelText='',
     descriptionText="",
     solutionText="",
     rawVariables=[],  # dynamic, list of variables (key:value) without substitutions
@@ -415,9 +415,17 @@ while (lineCount < len(lines)):
         varValue = lineEls[3]
         rawVariables.append([varName,varValue])
     elif (lineEls[1] == "answer"):
-        answers.append({'answer':lineEls[2], 
+        answerText = lineEls[2]
+        if (len(lineEls) > 5 and lineEls[5] != ""):
+                answerText = answerText+"<choicehint>"+lineEls[5]+"</choicehint>"
+        answers.append({'answer':answerText,
                         'knowledgeComponent':lineEls[3], 
                         'correctness':lineEls[4]})
+#    elif (lineEls[1] == "answer"):
+#        if (lineEls[5] != "")
+#        answers.append({'answer':lineEls[2], 
+#                        'knowledgeComponent':lineEls[3], 
+#                        'correctness':lineEls[4]})
     elif (lineEls[1] == "problemType"):
         problemType = lineEls[2]
     elif (lineEls[1] == "dynamic"):
@@ -426,6 +434,8 @@ while (lineCount < len(lines)):
         problemDifficulty = lineEls[2]
     elif (lineEls[1] == "contentGrouping"):
         problemContentGrouping = lineEls[2]
+    elif (lineEls[1] == "solutionText"):
+        solutionText = lineEls[2]
     elif (lineEls[1] == "maxGrade"):
         problemMaxGrade = lineEls[2]
     elif (lineEls[1] == "options"):
