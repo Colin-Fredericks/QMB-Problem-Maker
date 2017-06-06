@@ -47,6 +47,7 @@ def make_problem_XML(
         "Checkbox": Select-all-that-apply
         "Numerical": Numerical problems, with a 5% tolerance
         "Text": Text-entry problem
+        "AnyText": A custom-grader problem that marks any text entered as correct
       And accepts "showanswer", "weight", "rerandomize", and "max_attempts",
         which take the typical values for those arguments in edX.
       Later this may include other problem types, partial credit info, etc.
@@ -90,6 +91,11 @@ def make_problem_XML(
         )
     elif options['problem_type'] == 'MC' or options['problem_type'] == 'Checkbox':
         return  make_choice_problem_XML(
+            problem_tree, problem_tag, problem_text, label_text, description_text,
+            answers, solution_text, options
+        )
+    elif options['problem_type'] == 'AnyText':
+        return  make_anytext_problem_XML(
             problem_tree, problem_tag, problem_text, label_text, description_text,
             answers, solution_text, options
         )
@@ -214,6 +220,59 @@ def make_line_problem_XML(
     return problem_tree
 
 
+# Function to create the XML structure for "anything is correct" problems.
+# Parameters are described under make_problem_XML() above.
+def make_anytext_problem_XML(
+    problem_tree,
+    problem_tag,
+    problem_text=False,
+    label_text='Enter your answer below.',
+    description_text=False,
+    answers=[{'correctness': 'true', 'answer': 'Answers are missing'}],
+    solution_text = '<p>Missing solution</p>',
+    options = {'problem_type': 'AnyText', 'hint':'Thank you for your response.'}):
+    
+    print options['hint']
+    
+    # Insert the python grading script
+    pythonscript = """
+<![CDATA[
+def test_text(expect, ans):
+  if ans:
+    return True
+
+def hint_fn(answer_ids, student_answers, new_cmap, old_cmap):
+  aid = answer_ids[0]
+  hint = ''
+  hint = '"""  + options['hint'] + """'.format(hint)
+  new_cmap.set_hint_and_mode(aid,hint,'always')
+]]>
+"""
+    script_tag = ET.SubElement(problem_tag, 'script')
+    script_tag.set('type','loncapa/python')
+    script_tag.text = pythonscript
+    
+    # Make the customresponse tag and its sub-tags
+    type_tag = ET.SubElement(problem_tag, 'customresponse')
+    type_tag.set('cfn', 'test_text')
+    type_tag.set('expect', 'anything')
+    textline_tag = ET.SubElement(type_tag, 'textline')
+    textline_tag.set('size', '40')
+    textline_tag.set('correct_answer', 'anything')
+    textline_tag.set('label', 'Your response')
+    hintgroup_tag = ET.SubElement(type_tag, 'hintgroup')
+    hintgroup_tag.set('hintfn', 'hint_fn')
+    
+    # Create the structure for the solution
+    solution_tag = ET.SubElement(type_tag, 'solution')
+    solution_div_tag = ET.SubElement(solution_tag, 'div')
+    solution_div_tag.set('class', 'detailed-solution')
+    explanation_p_tag = ET.SubElement(solution_div_tag, 'p')
+    explanation_p_tag.text = 'Explanation'
+    explanation_p_tag.tail = solution_text
+
+    return problem_tree
+
 
 def write_problem_file(problem_XML, problem_filename):
     """
@@ -312,4 +371,21 @@ the_xml = make_problem_XML(
     solution_text = solution,
     options = options)
 write_problem_file(the_xml, 'test_text_problem.xml')
+
+# Make an AnyText problem
+title = 'Sample AnyText Problem'
+text = '<p>Any answer should work</p>'
+label = 'test label'
+answers = [{'answer': 'this should never appear'}]
+solution = '<p>blank solution</p>'
+options = {'problem_type': 'AnyText', 'hint':'Thank you for your response.'}
+
+the_xml = make_problem_XML(
+    problem_title = title,
+    problem_text = text,
+    label_text = label,
+    answers = answers,
+    solution_text = solution,
+    options = options)
+write_problem_file(the_xml, 'test_anytext_problem.xml')
 """
