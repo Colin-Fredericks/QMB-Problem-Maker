@@ -95,7 +95,7 @@ def makeQuestion(
     descriptionText="",
     solutionText="",
     rawVariables=[],  # dynamic, list of variables (key:value) without substitutions
-    rawAnswers=[],  # dynamic ['answer','correctness','knowledgeComponent']
+    rawAnswers=[],  # dynamic ['answer','correctness','knowledgeComponent','hint']
     problemType='Numerical'
     ):
     
@@ -221,6 +221,9 @@ def makeQuestion(
             for m in p.finditer(vval):
                 rFrom = m.group(1)
                 rTo = m.group(2)
+                if (int(rTo) < int(rFrom)):
+                    logging.ERROR('Asking for randint from ' + rFrom + ' to ' + rTo)
+                    rFrom = rTo
                 rand1 = randint(int(rFrom), int(rTo))
                 vval = vval.replace(vval[m.start():m.end()], str(rand1))
                 madeChange = 1
@@ -346,7 +349,7 @@ lineCount = 0 #line count
 problemName = ""
 questionTitle = ""
 questionText = ""
-labelText = "Enter your answer below."
+labelText = ""#"Enter your answer below."
 descriptionText = ""
 solutionText = ""
 problemType = "Numerical"
@@ -354,7 +357,7 @@ answerText = ""
 rawVariables = []
 answers = []
 dynamic = 0
-numDynamicQuestions = 3
+defaultNumDynamicQuestions = 3
 problemDifficulty = 0
 problemContentGrouping = ""
 problemMaxGrade = ""
@@ -370,8 +373,8 @@ detailFile = os.path.basename(__file__)+'.details.txt'
 dd = open(detailFile,'w')
 
 while (lineCount < len(lines)):
-    line = lines[lineCount].rstrip()
-    if (line == ""):
+    line = lines[lineCount]
+    if (line.rstrip() == ""):
         lineCount += 1
         continue
     if (line.startswith("#")):
@@ -405,6 +408,7 @@ while (lineCount < len(lines)):
         problemMaxGrade = ""
         problemOptions = ""
         answers = []
+        numDynamicQuestions = defaultNumDynamicQuestions
         
     if (lineEls[1] == "questionText"):
         questionText = lineEls[2]
@@ -415,21 +419,16 @@ while (lineCount < len(lines)):
         varValue = lineEls[3]
         rawVariables.append([varName,varValue])
     elif (lineEls[1] == "answer"):
-        answerText = lineEls[2]
-        if (len(lineEls) > 5 and lineEls[5] != ""):
-                answerText = answerText+"<choicehint>"+lineEls[5]+"</choicehint>"
-        answers.append({'answer':answerText,
+        answers.append({'answer':lineEls[2],
                         'knowledgeComponent':lineEls[3], 
-                        'correctness':lineEls[4]})
-#    elif (lineEls[1] == "answer"):
-#        if (lineEls[5] != "")
-#        answers.append({'answer':lineEls[2], 
-#                        'knowledgeComponent':lineEls[3], 
-#                        'correctness':lineEls[4]})
+                        'correctness':lineEls[4],
+                        'hint':lineEls[5]})
     elif (lineEls[1] == "problemType"):
         problemType = lineEls[2]
     elif (lineEls[1] == "dynamic"):
         dynamic = lineEls[2]
+        if (len(lineEls) > 3 and lineEls[3] != ""):
+            numDynamicQuestions = int(lineEls[3])
     elif (lineEls[1] == "difficulty"):
         problemDifficulty = lineEls[2]
     elif (lineEls[1] == "contentGrouping"):
