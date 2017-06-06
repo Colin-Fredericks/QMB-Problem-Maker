@@ -147,6 +147,9 @@ def make_choice_problem_XML(
         item_tag = ET.SubElement(choicegroup_tag, 'choice')
         item_tag.set('correct', item['correctness'])
         item_tag.text = item['answer']
+        if 'hint' in item:
+            hint_tag = ET.SubElement(item_tag, 'choicehint')
+            hint_tag.text = item['hint']
 
     # Create the structure for the solution
     solution_tag = ET.SubElement(type_tag, 'solution')
@@ -308,7 +311,7 @@ def write_problem_file(problem_XML, problem_filename):
 title = 'Sample MC Problem'
 text = '<p>test text</p>'
 label = 'test label'
-answers = [{'answer': 'wrong one', 'correctness': 'false'}, {'answer': 'right one', 'correctness': 'true'}]
+answers = [{'answer': 'wrong one', 'correctness': 'false', 'hint':'Don\'t choose the wrong one.'}, {'answer': 'right one', 'correctness': 'true', 'hint':'The right one was right!'}]
 solution = '<p>blank solution</p>'
 options = {'problem_type': 'MC'}
 
