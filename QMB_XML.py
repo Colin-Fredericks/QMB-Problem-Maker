@@ -230,9 +230,9 @@ def make_anytext_problem_XML(
     description_text=False,
     answers=[{'correctness': 'true', 'answer': 'Answers are missing'}],
     solution_text = '<p>Missing solution</p>',
-    options = {'problem_type': 'AnyText', 'hint':'Thank you for your response.'}):
+    options = {'problem_type': 'AnyText', 'feedback':'Thank you for your response.'}):
     
-    print options['hint']
+    print options['feedback']
     
     # Insert the python grading script
     pythonscript = """
@@ -244,7 +244,7 @@ def test_text(expect, ans):
 def hint_fn(answer_ids, student_answers, new_cmap, old_cmap):
   aid = answer_ids[0]
   hint = ''
-  hint = '"""  + options['hint'] + """'.format(hint)
+  hint = '"""  + options['feedback'] + """'.format(hint)
   new_cmap.set_hint_and_mode(aid,hint,'always')
 ]]>
 """
@@ -378,7 +378,7 @@ text = '<p>Any answer should work</p>'
 label = 'test label'
 answers = [{'answer': 'this should never appear'}]
 solution = '<p>blank solution</p>'
-options = {'problem_type': 'AnyText', 'hint':'Thank you for your response.'}
+options = {'problem_type': 'AnyText', 'feedback':'Thank you for your response.'}
 
 the_xml = make_problem_XML(
     problem_title = title,
