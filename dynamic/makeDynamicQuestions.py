@@ -266,6 +266,9 @@ def makeQuestion(
 			answer['answer'] = answer['answer'].replace(otherVar[0], otherVar[1])
 
     options = {'problem_type': problemType}
+    if (problemFeedback != ""):
+        options = {'problem_type': problemType, 'feedback': problemFeedback}
+        
     
     #set 'text' to 'answer' -- needed for multiple choice
 #    for answer in qRawAnswers:
@@ -362,6 +365,7 @@ problemDifficulty = 0
 problemContentGrouping = ""
 problemMaxGrade = ""
 problemOptions = ""
+problemFeedback = ""
 
 readQuestionCount = 0
 
@@ -406,6 +410,7 @@ while (lineCount < len(lines)):
         problemDifficulty = 0
         problemContentGrouping = ""
         problemMaxGrade = ""
+        problemFeedback = ""
         problemOptions = ""
         answers = []
         numDynamicQuestions = defaultNumDynamicQuestions
@@ -437,8 +442,10 @@ while (lineCount < len(lines)):
         solutionText = lineEls[2]
     elif (lineEls[1] == "maxGrade"):
         problemMaxGrade = lineEls[2]
+    elif (lineEls[1] == "feedback"):
+        problemFeedback = lineEls[2]
     elif (lineEls[1] == "options"):
-        problemMaxGrade = lineEls[2]
+        problemOptions = lineEls[2]
     elif (lineEls[1] == ""):
         pass
     else:
@@ -450,4 +457,3 @@ if (questionText != "" and dynamic):
     readQuestionCount += 1
     makeQuestions()
 print "Read " + str(lineCount) + " lines and " + str(readQuestionCount) + " questions"
-	
