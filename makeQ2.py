@@ -29,10 +29,10 @@ for questionCount in range(10):
     rand2 = randint(1,matrixCols)
     
 
-    label = 'What would MyArray('+str(rand1)+','+str(rand2)+') return'
+    label = 'What would MyArray('+str(rand1)+','+str(rand2)+') return?'
     answer = matrix[rand1-1][rand2-1]
     answers = [{'answer': str(answer)}]
-    solution = '<p>In Matlab, the first paramter to the index represents the row, and the second represents the column ...</p>'
+    solution = '<p>In Matlab, the first parameter to the index represents the row, and the second represents the column ...</p>'
     options = {'problem_type': 'Text'}
 
     

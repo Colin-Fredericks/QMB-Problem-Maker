@@ -34,7 +34,7 @@ while questionCount < 10:
 #generate label dynamically
     rand1 = randint(1,len(flatMatrix)-1)
 
-    label = 'What would MyArray('+str(rand1)+') return'
+    label = 'What would MyArray('+str(rand1)+') return?'
     answer = flatMatrix[rand1]
     answers = [{'answer': str(answer)}]
     solution = '<p>In Matlab, linear indexing orders ...</p>'
