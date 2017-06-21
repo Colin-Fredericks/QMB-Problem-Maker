@@ -44,7 +44,7 @@ def make_problem_XML(
     - options: A dictionary of options.
       Currently accepts "problem_type", which can be...
         "MC": Multiple-choice problems
-        "Checkbox": Select-all-that-apply
+        "Checkbox": Select-all-that-apply. Does partial credit by default.
         "Numerical": Numerical problems, with a 5% tolerance
         "Text": Text-entry problem
         "AnyText": A custom-grader problem that marks any text entered as correct
@@ -123,6 +123,7 @@ def make_choice_problem_XML(
         type_tag.set('type','MultipleChoice')
     elif options['problem_type'] == 'Checkbox':
         type_tag = ET.SubElement(problem_tag, 'choiceresponse')
+        type_tag.set('partial_credit', 'EDC')
 
     # Needs some expansion for various extra credit options.
     if 'extra_credit' in options:
