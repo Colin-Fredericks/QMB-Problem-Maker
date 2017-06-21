@@ -14,8 +14,8 @@ from QMB_utils import *
 from parseNum import *
 from simplifyNumber import *
 
-logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
-#logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+#logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
+logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
 webLocRoot = "https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@"
 problemFolder = "problems"
@@ -81,6 +81,16 @@ def getMean(matlabStr_in):
     strEls = matlabStr.split()
     strEls = map(float, strEls)
     return sum(strEls)/len(strEls)
+
+#gets sum of a string representation of an array e.g. [[1,2,3],[4,5,6]]
+def getSum(matlabStr_in):
+    matlabStr = str(matlabStr_in)
+    matlabStr = matlabStr.replace("["," ")
+    matlabStr = matlabStr.replace("]"," ")
+    matlabStr = matlabStr.replace(","," ")
+    strEls = matlabStr.split()
+    strEls = map(float, strEls)
+    return sum(strEls)
         
     
     
@@ -96,7 +106,8 @@ def makeQuestion(
     solutionText="",
     rawVariables=[],  # dynamic, list of variables (key:value) without substitutions
     rawAnswers=[],  # dynamic ['answer','correctness','knowledgeComponent','hint']
-    problemType='Numerical'
+    problemType='Numerical',
+    options=[]
     ):
     
     
@@ -107,6 +118,7 @@ def makeQuestion(
     
     variables = []
     for var in qRawVariables:
+        logging.debug("working on var " + var[0])
         vname = var[0]
         vval = var[1]
         for otherVar in variables:
@@ -176,6 +188,31 @@ def makeQuestion(
                     logging.debug("dim postsub: " + vval)
                     madeChange = 1
                     
+            #sub values from vectors
+            #vectors behave like matlab -- they're 1-based
+            p = re.compile("#([\d\.,]+)#\((\d+)\)") 
+            for m in p.finditer(vval):
+                arr = m.group(1).split(",")
+                ans = arr[int(m.group(2))-1]
+                logging.debug("vectorEval presub: " + vval)
+                vval = vval.replace(vval[m.start():m.end()], str(ans))
+                logging.debug("vectorEval postsub: " + vval)
+                madeChange = 1
+                break
+                
+            #sub values from arrays
+            #arrays behave like matlab -- they're 1-based
+            p = re.compile("#([\d\.;,]+)#\((\d+),(\d+)\)") 
+            for m in p.finditer(vval):
+                print("GOT THIS HERE:"+m.group(1) + "group2: " + m.group(2) + "group3: " + m.group(3))
+                arr = [[int(n) for n in row.split(",")] for row in m.group(1).split(";")]
+                ans = arr[int(m.group(2))-1][int(m.group(3))-1]
+                logging.debug("arrayEval presub: " + vval + " replacing "+ str(m.start())+ "to" + str(m.end()) + " with " + str(ans))
+                vval = vval.replace(vval[m.start():m.end()], str(ans))
+                logging.debug("arrayEval postsub: " + vval)
+                madeChange = 1
+                break
+                    
             p = re.compile("answerFun\(([\d\[\]\.\,\s]+)\)") #get matlab function answer
             for m in p.finditer(vval):
                 ans = matlabAnswerFun(m.group(1))
@@ -183,6 +220,7 @@ def makeQuestion(
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
                 logging.debug("matlabFun postsub: " + vval)
                 madeChange = 1
+                break
                 
             p = re.compile("ordinal\((\d)\)") # go from 1 to 'first', etc.
             for m in p.finditer(vval):
@@ -191,6 +229,7 @@ def makeQuestion(
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
                 logging.debug("ordinal postsub: " + vval)
                 madeChange = 1
+                break
                 
             p = re.compile("max\(([\d\[\]\.\,\s]+)\)") # find max
             for m in p.finditer(vval):
@@ -199,6 +238,7 @@ def makeQuestion(
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
                 logging.debug("max postsub: " + vval)
                 madeChange = 1
+                break
                 
             p = re.compile("min\(([\d\[\]\.\,\s]+)\)") # find max
             for m in p.finditer(vval):
@@ -207,6 +247,7 @@ def makeQuestion(
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
                 logging.debug("min postsub: " + vval)
                 madeChange = 1
+                break
             
             p = re.compile("mean\(([\d\[\]\.\,\s]+)\)") # find max
             for m in p.finditer(vval):
@@ -215,6 +256,16 @@ def makeQuestion(
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
                 logging.debug("mean postsub: " + vval)
                 madeChange = 1
+                break
+            
+            p = re.compile("sum\(([\d\[\]\.\,\s]+)\)") # find sum
+            for m in p.finditer(vval):
+                ans = getSum(m.group(1))
+                logging.debug("sum presub: " + vval)
+                vval = vval.replace(vval[m.start():m.end()], str(ans))
+                logging.debug("sum postsub: " + vval)
+                madeChange = 1
+                break
             
     #       sub rands
             p = re.compile("int\((-?\d+):(-?\d+)\)") #random int
@@ -227,6 +278,7 @@ def makeQuestion(
                 rand1 = randint(int(rFrom), int(rTo))
                 vval = vval.replace(vval[m.start():m.end()], str(rand1))
                 madeChange = 1
+                break
              
             p = re.compile("double\((-?[\d\.]+):(-?[\d\.]+)\)") #random double
             for m in p.finditer(vval):
@@ -235,6 +287,7 @@ def makeQuestion(
                 rand1 = float("{0:.2f}".format(random.uniform(rFrom,rTo)))
                 vval = vval.replace(vval[m.start():m.end()], str(rand1))   
                 madeChange = 1  
+                break
                 
             p = re.compile(r"{([^}]+)}") #choose random string
             for m in p.finditer(vval):
@@ -244,8 +297,10 @@ def makeQuestion(
                 selVal = contentEls[rand]
                 vval = vval.replace(vval[m.start():m.end()], selVal)   
                 madeChange = 1
+                break
         
-        if (('+' in vval or '-' in vval or '*' in vval or '/' in vval) and (vval not in ('+','-','*','/'))):
+        if (('+' in vval or '-' in vval or '*' in vval or '/' in vval or '^' in vval) 
+                and (vval not in ('+','-','*','/','^'))):
 #        then solve math
             try:
                 vval = nsp.eval(vval)
@@ -265,9 +320,7 @@ def makeQuestion(
         for answer in qRawAnswers:
 			answer['answer'] = answer['answer'].replace(otherVar[0], otherVar[1])
 
-    options = {'problem_type': problemType}
-    if (problemFeedback != ""):
-        options = {'problem_type': problemType, 'feedback': problemFeedback}
+    
         
     
     #set 'text' to 'answer' -- needed for multiple choice
@@ -295,34 +348,49 @@ def makeQuestion(
 def makeQuestions():
     for questionCount in range(numDynamicQuestions):
         fileName = problemFolder + "/" + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount) + '.xml'
+        options = {'problem_type': problemType}
+        if (problemFeedback != ""):
+            options = {'problem_type': problemType, 'feedback': problemFeedback}
         answersAreUnique = False
         xml = ""
         qanswers = ""
-        makeQuestionAttemptCount = 0
-        while not answersAreUnique:
-            xml,qanswers = makeQuestion(
-                     questionTitle=questionTitle,
-                     rawQuestionText=questionText,
-                     labelText=labelText,
-                     descriptionText=descriptionText,
-                     solutionText=solutionText,
-                     rawVariables=rawVariables,
-                     rawAnswers=answers,
-                     problemType=problemType
-                     )
-            seenAnswers = {}
-            theseAnswersUnique = True
-            for answer in qanswers:
-                if answer["answer"] in seenAnswers:
-                    theseAnswersUnique = False
-                    break
-                seenAnswers[answer["answer"]] = 1
-            if theseAnswersUnique:
-                answersAreUnique = True
-            makeQuestionAttemptCount += 1
-            if makeQuestionAttemptCount > 100:
-                sys.exit("Cannot create unique answers for question. Line " + str(lineCount) + ": " + line)
-        write_problem_file(xml, fileName)
+        
+        if(dynamic == 'FALSE'):
+            xml = make_problem_XML(
+                problem_title=questionTitle,
+                problem_text=questionText,
+                label_text=labelText,
+                answers=answers,
+                solution_text=solutionText,
+                options=options)
+            write_problem_file(xml,fileName)
+        else:
+            makeQuestionAttemptCount = 0
+            while not answersAreUnique:
+                xml,qanswers = makeQuestion(
+                         questionTitle=questionTitle,
+                         rawQuestionText=questionText,
+                         labelText=labelText,
+                         descriptionText=descriptionText,
+                         solutionText=solutionText,
+                         rawVariables=rawVariables,
+                         rawAnswers=answers,
+                         problemType=problemType,
+                         options=options
+                         )
+                seenAnswers = {}
+                theseAnswersUnique = True
+                for answer in qanswers:
+                    if answer["answer"] in seenAnswers:
+                        theseAnswersUnique = False
+                        break
+                    seenAnswers[answer["answer"]] = 1
+                if theseAnswersUnique:
+                    answersAreUnique = True
+                makeQuestionAttemptCount += 1
+                if makeQuestionAttemptCount > 100:
+                    sys.exit("Cannot create unique answers for question. Line " + str(lineCount) + ": " + line)
+            write_problem_file(xml, fileName)
         
         KCs = {}
         for answer in qanswers:
@@ -359,7 +427,7 @@ problemType = "Numerical"
 answerText = ""
 rawVariables = []
 answers = []
-dynamic = 0
+dynamic = 'FALSE'
 defaultNumDynamicQuestions = 3
 problemDifficulty = 0
 problemContentGrouping = ""
@@ -386,8 +454,8 @@ while (lineCount < len(lines)):
         continue
     lineEls = line.split("\t")
     if (lineEls[0] != ""):
-        logging.info("questionText is " + questionText + "and dynamic is " + str(dynamic))
-        if (questionText != "" and dynamic):
+        logging.info("questionText is " + questionText + "and dynamic is " + dynamic)
+        if (questionText != ""):
             readQuestionCount += 1
             makeQuestions()
 
@@ -405,7 +473,7 @@ while (lineCount < len(lines)):
         solutionText = ""
         problemType = "Numerical"
         rawVariables = []
-        dynamic = 0
+        dynamic = 'FALSE'
         difficulty = 1
         problemDifficulty = 0
         problemContentGrouping = ""
@@ -432,8 +500,11 @@ while (lineCount < len(lines)):
         problemType = lineEls[2]
     elif (lineEls[1] == "dynamic"):
         dynamic = lineEls[2]
-        if (len(lineEls) > 3 and lineEls[3] != ""):
-            numDynamicQuestions = int(lineEls[3])
+        if dynamic == 'TRUE':
+            if (len(lineEls) > 3 and lineEls[3] != ""):
+                numDynamicQuestions = int(lineEls[3])
+        else:
+            numDynamicQuestions = 1
     elif (lineEls[1] == "difficulty"):
         problemDifficulty = lineEls[2]
     elif (lineEls[1] == "contentGrouping"):
@@ -453,7 +524,7 @@ while (lineCount < len(lines)):
     lineCount += 1
 
 #finish last question if there is one	
-if (questionText != "" and dynamic):
+if (questionText != ""):
     readQuestionCount += 1
     makeQuestions()
 print "Read " + str(lineCount) + " lines and " + str(readQuestionCount) + " questions"
