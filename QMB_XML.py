@@ -50,6 +50,8 @@ def make_problem_XML(
         "AnyText": A custom-grader problem that marks any text entered as correct
       And accepts "showanswer", "weight", "rerandomize", and "max_attempts",
         which take the typical values for those arguments in edX.
+      Also accepts "tolerance" for numerical problems.
+        Please send a decimal and we'll interpret it as a percentage.
       Later this may include other problem types, partial credit info, etc.
 
     The default values for these arguments are used for troubleshooting.
@@ -178,6 +180,8 @@ def make_line_problem_XML(
     # Create the structure for the problem.
     if options['problem_type'] == 'Numerical':
         type_tag = ET.SubElement(problem_tag, 'numericalresponse')
+        if 'tolerance' not in options:
+            options['tolerance'] = 0.05   # 5% tolerance on numerical problems by default.
     else:
         type_tag = ET.SubElement(problem_tag, 'stringresponse')
         type_tag.set('type', 'ci')   # case-insensitive by default.
@@ -206,7 +210,7 @@ def make_line_problem_XML(
         input_tag = ET.SubElement(type_tag, 'formulaequationinput')
         tolerance_tag = ET.SubElement(type_tag, 'responseparam')
         tolerance_tag.set('type', 'tolerance')
-        tolerance_tag.set('default', '5%')  # 5% tolerance on all problems right now.
+        tolerance_tag.set('default', str(int(float(options['tolerance']) * 100)) + '%')
     else:
         input_tag = ET.SubElement(type_tag, 'textline')
         input_tag.set('size', '30')
@@ -373,6 +377,7 @@ the_xml = make_problem_XML(
     solution_text = solution,
     options = options)
 write_problem_file(the_xml, 'test_text_problem.xml')
+
 
 # Make an AnyText problem
 title = 'Sample AnyText Problem'

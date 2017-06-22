@@ -1,5 +1,6 @@
 <problem display_name="Sample Numerical Problem">
     <p>The answer is 50</p>
+    <script src="/static/EveryProblemScript.js" type="text/javascript"/>
     <numericalresponse answer="50">
         <label>test label</label>
         <formulaequationinput/>
