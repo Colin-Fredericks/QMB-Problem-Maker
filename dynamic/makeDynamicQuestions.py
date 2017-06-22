@@ -14,8 +14,13 @@ from QMB_utils import *
 from parseNum import *
 from simplifyNumber import *
 
+defaultNumDynamicQuestions = 5#20
+questionDescriptionFileName = "questionDescriptions.txt"
+shuffleAnswers = True #shuffles answer order (Checkbox problems can't do this automatically)
+
 #logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
-logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+#logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 
 webLocRoot = "https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@"
 problemFolder = "problems"
@@ -99,7 +104,7 @@ def getSum(matlabStr_in):
 #assign values to variables and perform calculations 
 #returns EdX xml and the list of answers (to test for uniqueness of answers)
 def makeQuestion(
-    questionTitle=False,  
+    questionTitle="",  
     rawQuestionText=False, #dynamic (has unsubstituted variables)
     labelText='',
     descriptionText="",
@@ -204,7 +209,6 @@ def makeQuestion(
             #arrays behave like matlab -- they're 1-based
             p = re.compile("#([\d\.;,]+)#\((\d+),(\d+)\)") 
             for m in p.finditer(vval):
-                print("GOT THIS HERE:"+m.group(1) + "group2: " + m.group(2) + "group3: " + m.group(3))
                 arr = [[int(n) for n in row.split(",")] for row in m.group(1).split(";")]
                 ans = arr[int(m.group(2))-1][int(m.group(3))-1]
                 logging.debug("arrayEval presub: " + vval + " replacing "+ str(m.start())+ "to" + str(m.end()) + " with " + str(ans))
@@ -222,7 +226,7 @@ def makeQuestion(
                 madeChange = 1
                 break
                 
-            p = re.compile("ordinal\((\d)\)") # go from 1 to 'first', etc.
+            p = re.compile("ordinal\((\d+)\)") # go from 1 to 'first', etc.
             for m in p.finditer(vval):
                 ans = ordinalLookup[m.group(1)]
                 logging.debug("ordinal presub: " + vval)
@@ -231,7 +235,7 @@ def makeQuestion(
                 madeChange = 1
                 break
                 
-            p = re.compile("max\(([\d\[\]\.\,\s]+)\)") # find max
+            p = re.compile("max\(([-\d\[\]\.\,\s]+)\)") # find max
             for m in p.finditer(vval):
                 ans = getMax(m.group(1))
                 logging.debug("max presub: " + vval)
@@ -240,7 +244,7 @@ def makeQuestion(
                 madeChange = 1
                 break
                 
-            p = re.compile("min\(([\d\[\]\.\,\s]+)\)") # find max
+            p = re.compile("min\(([-\d\[\]\.\,\s]+)\)") # find max
             for m in p.finditer(vval):
                 ans = getMin(m.group(1))
                 logging.debug("min presub: " + vval)
@@ -249,7 +253,7 @@ def makeQuestion(
                 madeChange = 1
                 break
             
-            p = re.compile("mean\(([\d\[\]\.\,\s]+)\)") # find max
+            p = re.compile("mean\(([-\d\[\]\.\,\s]+)\)") # find max
             for m in p.finditer(vval):
                 ans = getMean(m.group(1))
                 logging.debug("mean presub: " + vval)
@@ -258,7 +262,7 @@ def makeQuestion(
                 madeChange = 1
                 break
             
-            p = re.compile("sum\(([\d\[\]\.\,\s]+)\)") # find sum
+            p = re.compile("sum\(([-\d\[\]\.\,\s]+)\)") # find sum
             for m in p.finditer(vval):
                 ans = getSum(m.group(1))
                 logging.debug("sum presub: " + vval)
@@ -345,15 +349,53 @@ def makeQuestion(
 
 #calls 'makeQuestion' to create a number of dynamic questions and writes them to files.
 #uses variables parsed from the questionDescriptions
-def makeQuestions():
+def makeQuestions(
+                problemName = "",
+                questionTitle = "",
+                questionText = "",
+                labelText = "",
+                descriptionText = "",
+                solutionText = "",
+                problemType = "Numerical",
+                answerText = "",
+                rawVariables = [],
+                answers = [],
+                dynamic = 'FALSE',
+                problemDifficulty = 0,
+                problemContentGrouping = "",
+                problemMaxGrade = "",
+                problemOptions = "",
+                problemFeedback = ""
+                  
+                  ):
     for questionCount in range(numDynamicQuestions):
         fileName = problemFolder + "/" + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount) + '.xml'
         options = {'problem_type': problemType}
         if (problemFeedback != ""):
             options = {'problem_type': problemType, 'feedback': problemFeedback}
+        #print "question text is '" + questionText + "'"
+        if (questionTitle == ""):
+            sNums=string.digits
+            sLetters = string.uppercase
+            
+            CGname = CGIlookup[problemContentGrouping]
+            idLen = 2
+            nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
+            attemptCount = 0
+            while(nameStr in problemTitles.keys()):
+                nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
+                attemptCount += 1
+                if (attemptCount > 1000):
+                    idLen += 1
+                    attemptCount = 0
+            questionTitle = nameStr
+            
+        
         answersAreUnique = False
         xml = ""
         qanswers = ""
+        if (shuffleAnswers):
+            random.shuffle(answers)
         
         if(dynamic == 'FALSE'):
             xml = make_problem_XML(
@@ -364,6 +406,7 @@ def makeQuestions():
                 solution_text=solutionText,
                 options=options)
             write_problem_file(xml,fileName)
+            qanswers = answers
         else:
             makeQuestionAttemptCount = 0
             while not answersAreUnique:
@@ -397,6 +440,8 @@ def makeQuestions():
             answerKCs = answer["knowledgeComponent"].split(";")
             for answerKC in answerKCs:
                 answerKC = answerKC.strip()
+                if answerKC == "":
+                    continue
                 KCs[answerKC] = 1
         problemKCString = ','.join(KCs.keys())
         
@@ -408,13 +453,13 @@ def makeQuestions():
         problemWebLoc = webLocRoot + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount)
         #problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
         dd.write(problemIDString+"\t"+problemDifficulty+"\t"+problemContentGrouping+"\t"+
-                 problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+problemOptions+"\t"+problemWebLoc+"\n")
+                 problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+problemOptions+"\t"+problemWebLoc+"\t"+questionTitle+"\n")
         
 ##MAIN
     
 nsp = NumericStringParser()
 
-infile = open("questionDescriptions.txt", "r")
+infile = open(questionDescriptionFileName, "r")
 lines = infile.readlines()
 lineCount = 0 #line count
 problemName = ""
@@ -428,7 +473,6 @@ answerText = ""
 rawVariables = []
 answers = []
 dynamic = 'FALSE'
-defaultNumDynamicQuestions = 3
 problemDifficulty = 0
 problemContentGrouping = ""
 problemMaxGrade = ""
@@ -436,10 +480,15 @@ problemOptions = ""
 problemFeedback = ""
 
 readQuestionCount = 0
-
-problemNames = {} #all question names must be unique
+problemNames = {} #all question names must be unique as read in from the descriptions
 problemIDs = {} #generate random problem ids -- must be unique as well
+problemTitles = {} #generate titles for each problem if they don't have one. These are unique as well
 
+CGIlookup = {}
+with open('CGlookup.txt','r') as f:
+    for line in f:
+        splitLine = line.split("\t")
+        CGIlookup[splitLine[0]] = splitLine[1]
 
 detailFile = os.path.basename(__file__)+'.details.txt'
 dd = open(detailFile,'w')
@@ -454,10 +503,27 @@ while (lineCount < len(lines)):
         continue
     lineEls = line.split("\t")
     if (lineEls[0] != ""):
-        logging.info("questionText is " + questionText + "and dynamic is " + dynamic)
+        logging.info("questionText is " + questionText + " question title is " + questionTitle + "and dynamic is " + dynamic)
         if (questionText != ""):
             readQuestionCount += 1
-            makeQuestions()
+            makeQuestions(
+                problemName = problemName,
+                questionTitle = questionTitle,
+                questionText = questionText,
+                labelText = labelText,
+                descriptionText = descriptionText,
+                solutionText = solutionText,
+                problemType = problemType,
+                answerText = answerText,
+                rawVariables = rawVariables,
+                answers = answers,
+                dynamic = dynamic,
+                problemDifficulty = problemDifficulty,
+                problemContentGrouping = problemContentGrouping,
+                problemMaxGrade = problemMaxGrade,
+                problemOptions = problemOptions,
+                problemFeedback = problemFeedback
+                )
 
 							    
 #            sys.exit("printed first")
@@ -468,7 +534,7 @@ while (lineCount < len(lines)):
         problemName = lineEls[0]
         questionTitle = ""
         questionText = ""
-        labelText = "Enter your answer below."
+        labelText = ""
         descriptionText = ""
         solutionText = ""
         problemType = "Numerical"
@@ -526,5 +592,23 @@ while (lineCount < len(lines)):
 #finish last question if there is one	
 if (questionText != ""):
     readQuestionCount += 1
-    makeQuestions()
+    makeQuestions(
+                problemName = problemName,
+                questionTitle = questionTitle,
+                questionText = questionText,
+                labelText = labelText,
+                descriptionText = descriptionText,
+                solutionText = solutionText,
+                problemType = problemType,
+                answerText = answerText,
+                rawVariables = rawVariables,
+                answers = answers,
+                dynamic = dynamic,
+                problemDifficulty = problemDifficulty,
+                problemContentGrouping = problemContentGrouping,
+                problemMaxGrade = problemMaxGrade,
+                problemOptions = problemOptions,
+                problemFeedback = problemFeedback
+                )
 print "Read " + str(lineCount) + " lines and " + str(readQuestionCount) + " questions"
+	
