@@ -18,9 +18,9 @@ defaultNumDynamicQuestions = 5#20
 questionDescriptionFileName = "questionDescriptions.txt"
 shuffleAnswers = True #shuffles answer order (Checkbox problems can't do this automatically)
 
-#logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
+logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
 #logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
-logging.basicConfig(stream=sys.stderr, level=logging.INFO)
+#logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 
 webLocRoot = "https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@"
 problemFolder = "problems"
@@ -351,7 +351,6 @@ def makeQuestion(
 #uses variables parsed from the questionDescriptions
 def makeQuestions(
                 problemName = "",
-                questionTitle = "",
                 questionText = "",
                 labelText = "",
                 descriptionText = "",
@@ -364,31 +363,31 @@ def makeQuestions(
                 problemDifficulty = 0,
                 problemContentGrouping = "",
                 problemMaxGrade = "",
-                problemOptions = "",
+                problemOptions = {},
                 problemFeedback = ""
                   
                   ):
     for questionCount in range(numDynamicQuestions):
         fileName = problemFolder + "/" + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount) + '.xml'
-        options = {'problem_type': problemType}
+        problemOptions['problem_type'] = problemType
         if (problemFeedback != ""):
-            options = {'problem_type': problemType, 'feedback': problemFeedback}
-        #print "question text is '" + questionText + "'"
-        if (questionTitle == ""):
-            sNums=string.digits
-            sLetters = string.uppercase
+            problemOptions['feedback'] = problemFeedback
             
-            CGname = CGIlookup[problemContentGrouping]
-            idLen = 2
+        #set question title
+        sNums=string.digits
+        sLetters = string.uppercase
+        
+        CGname = CGIlookup[problemContentGrouping]
+        idLen = 2
+        nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
+        attemptCount = 0
+        while(nameStr in problemTitles.keys()):
             nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
-            attemptCount = 0
-            while(nameStr in problemTitles.keys()):
-                nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
-                attemptCount += 1
-                if (attemptCount > 1000):
-                    idLen += 1
-                    attemptCount = 0
-            questionTitle = nameStr
+            attemptCount += 1
+            if (attemptCount > 1000):
+                idLen += 1
+                attemptCount = 0
+        questionTitle = nameStr
             
         
         answersAreUnique = False
@@ -404,7 +403,7 @@ def makeQuestions(
                 label_text=labelText,
                 answers=answers,
                 solution_text=solutionText,
-                options=options)
+                options=problemOptions)
             write_problem_file(xml,fileName)
             qanswers = answers
         else:
@@ -419,7 +418,7 @@ def makeQuestions(
                          rawVariables=rawVariables,
                          rawAnswers=answers,
                          problemType=problemType,
-                         options=options
+                         options=problemOptions
                          )
                 seenAnswers = {}
                 theseAnswersUnique = True
@@ -452,8 +451,9 @@ def makeQuestions(
             problemIDString = 'QMB'+''.join(random.sample(s,10))
         problemWebLoc = webLocRoot + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount)
         #problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
+        tutorGenOptions = ""
         dd.write(problemIDString+"\t"+problemDifficulty+"\t"+problemContentGrouping+"\t"+
-                 problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+problemOptions+"\t"+problemWebLoc+"\t"+questionTitle+"\n")
+                 problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+tutorGenOptions+"\t"+problemWebLoc+"\t"+questionTitle+"\n")
         
 ##MAIN
     
@@ -463,7 +463,6 @@ infile = open(questionDescriptionFileName, "r")
 lines = infile.readlines()
 lineCount = 0 #line count
 problemName = ""
-questionTitle = ""
 questionText = ""
 labelText = ""#"Enter your answer below."
 descriptionText = ""
@@ -476,7 +475,7 @@ dynamic = 'FALSE'
 problemDifficulty = 0
 problemContentGrouping = ""
 problemMaxGrade = ""
-problemOptions = ""
+problemOptions = {}
 problemFeedback = ""
 
 readQuestionCount = 0
@@ -503,12 +502,11 @@ while (lineCount < len(lines)):
         continue
     lineEls = line.split("\t")
     if (lineEls[0] != ""):
-        logging.info("questionText is " + questionText + " question title is " + questionTitle + "and dynamic is " + dynamic)
+        logging.info("questionText is " + questionText + " and dynamic is " + dynamic)
         if (questionText != ""):
             readQuestionCount += 1
             makeQuestions(
                 problemName = problemName,
-                questionTitle = questionTitle,
                 questionText = questionText,
                 labelText = labelText,
                 descriptionText = descriptionText,
@@ -532,7 +530,6 @@ while (lineCount < len(lines)):
             sys.exit('Problem with name "'+lineEls[0]+'" already exists (line '+str(lineCount)+'). Problem names must be unique.')
         problemNames[lineEls[0]] = 1
         problemName = lineEls[0]
-        questionTitle = ""
         questionText = ""
         labelText = ""
         descriptionText = ""
@@ -545,7 +542,7 @@ while (lineCount < len(lines)):
         problemContentGrouping = ""
         problemMaxGrade = ""
         problemFeedback = ""
-        problemOptions = ""
+        problemOptions = {}
         answers = []
         numDynamicQuestions = defaultNumDynamicQuestions
         
@@ -582,7 +579,8 @@ while (lineCount < len(lines)):
     elif (lineEls[1] == "feedback"):
         problemFeedback = lineEls[2]
     elif (lineEls[1] == "options"):
-        problemOptions = lineEls[2]
+        optionsEls = lineEls[2].split(":")
+        problemOptions[optionsEls[0]] = optionsEls[1]
     elif (lineEls[1] == ""):
         pass
     else:
@@ -594,7 +592,6 @@ if (questionText != ""):
     readQuestionCount += 1
     makeQuestions(
                 problemName = problemName,
-                questionTitle = questionTitle,
                 questionText = questionText,
                 labelText = labelText,
                 descriptionText = descriptionText,
@@ -611,4 +608,3 @@ if (questionText != ""):
                 problemFeedback = problemFeedback
                 )
 print "Read " + str(lineCount) + " lines and " + str(readQuestionCount) + " questions"
-	
