@@ -48,10 +48,10 @@ def make_problem_XML(
         "Numerical": Numerical problems, with a 5% tolerance
         "Text": Text-entry problem
         "AnyText": A custom-grader problem that marks any text entered as correct
-      And accepts "showanswer", "weight", "rerandomize", and "max_attempts",
+      Accepts "showanswer", "weight", "rerandomize", and "max_attempts",
         which take the typical values for those arguments in edX.
-      Also accepts "tolerance" for numerical problems.
-        Please send a decimal and we'll interpret it as a percentage.
+      Accepts "tolerance" for numerical problems.
+        Please send a decimal and we'll interpret it as a percentage. 0.1 = 10% tolerance.
       Later this may include other problem types, partial credit info, etc.
 
     The default values for these arguments are used for troubleshooting.
