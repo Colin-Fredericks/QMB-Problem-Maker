@@ -302,6 +302,13 @@ def makeQuestion(
                 vval = vval.replace(vval[m.start():m.end()], selVal)   
                 madeChange = 1
                 break
+		
+            p = re.compile("toInt\((-?[\d\.]+)\)") #toInt (for array indexing, etc)
+            for m in p.finditer(vval):
+                num = int(round(float(m.group(1))))
+                vval = vval.replace(vval[m.start():m.end()], str(num))   
+                madeChange = 1  
+                break
         
         if (('+' in vval or '-' in vval or '*' in vval or '/' in vval or '^' in vval) 
                 and (vval not in ('+','-','*','/','^'))):
