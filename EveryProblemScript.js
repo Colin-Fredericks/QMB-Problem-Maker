@@ -2,6 +2,11 @@ $(document).ready(function(){
     console.log('Every Problem Script working');
 
     var problemID;
+    var lti_tool_domain = "https://adaptive-edx-qmbio.vpal.io";
+    var lti_user_id;
+    window.addEventListener("message", receiveLtiUserId, false);
+    // set the value of the variable lti_user_id
+    requestLtiUserId();
 
     $('button.submit').off('.hx').one('click.hx tap.hx', function(){
         problemID = $(this).closest('.xblock').attr('data-usage-id');
@@ -84,7 +89,8 @@ $(document).ready(function(){
         }
 
         //Log info: edX username, problem ID, current and maximum grade.
-        console.log('User: ' + username);
+        console.log('User: ' + lti_user_id);
+        console.log('Username: ' + username);
         console.log('Problem ID: ' + problemID);
         console.log('Current grade: ' + gradeNumber);
         console.log('Max grade: ' + maxGradeNumber);
@@ -94,8 +100,9 @@ $(document).ready(function(){
 
 
         // Make POST request with grade info
-        $.post("https://adaptive-edx.vpal.io/api/problem_attempt", {
-                user: username,
+        $.post(lti_tool_domain+"/api/problem_attempt", {
+                user: lti_user_id,
+                username: username,
                 problem: problemID,
                 points: gradeNumber,
                 max_points: maxGradeNumber,
@@ -109,9 +116,25 @@ $(document).ready(function(){
     }
 
     function onCheckButton(problemID){
-
+        // sets the variable lti_user_id, called here in case message was missed on page load
+        requestLtiUserId();
         // Wait before rebinding the listeners and getting the log info.
         setTimeout(afterButtonPress.bind(null, problemID), 2000);
     }
 
+
+    function requestLtiUserId(){
+        // Send a message to the xblock iframe signalling it should send back the lti user id
+        parent.postMessage("request", lti_tool_domain);
+    }
+
+    function receiveLtiUserId(event){
+        // Receive the lti user id after requesting it in a previous message
+        if (event.origin !== lti_tool_domain) {
+            return;
+        }
+        lti_user_id = event.data;
+        console.log("lti user id:"+event.data);
+    }
+    
 });
