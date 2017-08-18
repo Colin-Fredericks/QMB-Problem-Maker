@@ -39,7 +39,7 @@ def make_problem_XML(
       [{'correctness': 'true' or 'false', 'answer': 'the text for this option'}, {etc}, {etc}]
       The text for MC and Checkbox can include LaTeX and images. No hints currently included.
 
-    - solution_text: The extended text for the problem, including paragraph tags and other HTML.
+    - solution_text: The extended text for the solution, including paragraph tags and other HTML.
 
     - options: A dictionary of options.
       Currently accepts "problem_type", which can be...
@@ -239,7 +239,7 @@ def make_anytext_problem_XML(
     answers=[{'correctness': 'true', 'answer': 'Answers are missing'}],
     solution_text = '<p>Missing solution</p>',
     options = {'problem_type': 'AnyText', 'feedback':'Thank you for your response.'}):
-    
+
     # Insert the python grading script
     pythonscript = """
 <![CDATA[
@@ -257,7 +257,7 @@ def hint_fn(answer_ids, student_answers, new_cmap, old_cmap):
     script_tag = ET.SubElement(problem_tag, 'script')
     script_tag.set('type','loncapa/python')
     script_tag.text = pythonscript
-    
+
     # Make the customresponse tag and its sub-tags
     type_tag = ET.SubElement(problem_tag, 'customresponse')
     type_tag.set('cfn', 'test_text')
@@ -268,7 +268,7 @@ def hint_fn(answer_ids, student_answers, new_cmap, old_cmap):
     textline_tag.set('label', 'Your response')
     hintgroup_tag = ET.SubElement(type_tag, 'hintgroup')
     hintgroup_tag.set('hintfn', 'hint_fn')
-    
+
     # Create the structure for the solution
     solution_tag = ET.SubElement(type_tag, 'solution')
     solution_div_tag = ET.SubElement(solution_tag, 'div')
