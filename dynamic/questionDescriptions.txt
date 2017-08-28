@@ -1,236 +1,1123 @@
-#QuestionTitle	setting	value1	value2	value3
-col1	questionText	A:B:C produces a sequence of numbers. Which value is the first value?
-	variable	A	int(1:10)
-	variable	B	int(1:5)
-	variable	C	A+int(1:5)*B
-#comment lines starting with '#' are ignored
-#answers are designated like this:		#answer value	#knowledge Components	#whether the answer is the correct one
-	answer	A	1.6.1	TRUE
-	answer	B	1.6.1; 1.6.3	FALSE
-	answer	C	1.6.1;1.6.2	FALSE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	0
+Intro6	questionText	What will happen if your type FIRST OPERATOR SECOND into the command window?					
+	variable	SECOND	int(1:10)				
+	variable	OPERATOR	{+,-,*,/}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	FIRST OPERATOR SECOND				
+	answer	ANS	0.1.2	TRUE			
+	problemType	Numerical					
+	feedback	Type your answer into Matlab.					
+	dynamic	TRUE					
+	difficulty	1					
+	contentGrouping	CG0.2					
+							
+Intro7	questionText	What might help you determine if a sequence is random?					
+#This is a static question	answer	I have come up with an answer.	0.0.0	TRUE			
+	problemType	AnyText					
+	feedback	Post your answer to the forum					
+	dynamic	FALSE	1				
+	difficulty	1					
+	contentGrouping	CG0.1					
+							
+Intro8	questionText	What is the first thing you should look for to help understand a line of code?					
+#This is a static question	answer	I have come up with an answer.	0.1.1	TRUE			
+	problemType	AnyText					
+	feedback	Look for an equals sign					
+	dynamic	FALSE	1				
+	difficulty	1					
+	contentGrouping	CG0.3					
+							
+Intro9	questionText	What is the first thing you should look for to help read a line of code?					
+	answer	the equal sign	0.1.1	TRUE			
+	answer	whatever is on the right of the equal sign	0.1.1	FALSE			
+	answer	whatever is on the left of the equal sign	0.1.1	FALSE			
+	problemType	Checkbox					
+	dynamic	FALSE	1				
+	difficulty	1					
+	contentGrouping	CG0.3					
+							
+Intro10	questionText	What specifies where the result of a line of code is stored?					
+	answer	the equal sign	0.1.1	FALSE			
+	answer	whatever is on the right of the equal sign	0.1.1	FALSE			
+	answer	whatever is on the left of the equal sign	0.1.1	TRUE			
+	problemType	Checkbox					
+	dynamic	FALSE	1				
+	difficulty	1					
+	contentGrouping	CG0.3					
+							
+Intro11	questionText	What part of a line of code is evaluated?					
+#This is a static question	answer	I have come up with an answer.	0.1.1	TRUE			
+	problemType	AnyText					
+	feedback	whatever is on the right of the equal sign					
+	dynamic	FALSE	1				
+	difficulty	1					
+	contentGrouping	CG0.3					
+							
+Intro12	questionText	What part of a line of code specifies where the results is stored?					
+#This is a static question	answer	I have come up with an answer.	0.1.1	TRUE			
+	problemType	AnyText					
+	feedback	whatever is on the left of the equal sign					
+	dynamic	FALSE	1				
+	difficulty	1					
+	contentGrouping	CG0.3					
+							
+Intro13	questionText	What will happen if your type <code>FIRST OPERATOR SECOND</code> into the command window?					
+	variable	SECOND	int(1:10)				
+	variable	OPERATOR	{+,-,*,/}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	FIRST OPERATOR SECOND				
+	answer	ANS	0.1.2; 0.1.4	TRUE			
+	problemType	Numerical					
+	feedback	Type your answer into Matlab.					
+	dynamic	TRUE					
+	difficulty	1					
+	contentGrouping	CG0.2					
+							
+Intro14	questionText	What will x equal if you type: <br/> <code>y=FIRST;<br/> x=y;</code>					
+	variable	FIRST	int(1:100)				
+	variable	ANS	FIRST				
+	answer	ANS	0.1.2; 0.1.4	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	2					
+	contentGrouping	CG0.2					
+							
+Intro15	questionText	What will x equal if you type: <br/> <code>y=FIRST; <br/>x=y OPERATOR SECOND;</code>					
+	variable	SECOND	int(1:10)				
+	variable	OPERATOR	{+,-,*}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	FIRST OPERATOR SECOND				
+	answer	ANS	0.1.2; 0.1.4	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	2					
+	contentGrouping	CG0.2					
+							
+Intro16	questionText	What will x equal? <br/><code> x= FIRST OPERATOR SECOND OPERATOR2 THIRD </code>					
+	variable	THIRD	int(1:10)				
+	variable	OPERATOR2	{+,-,*}				
+	variable	SECOND	int(1:10)				
+	variable	OPERATOR	{+,-,*}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	FIRST OPERATOR SECOND OPERATOR2 THIRD				
+	answer	ANS	0.1.2; 0.1.4	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	2					
+	contentGrouping	CG0.4					
+							
+Intro17	questionText	What will x equal? <br/> <code>x= FIRST OPERATOR SECOND / THIRD</code>					
+	variable	THIRD	int(1:10)				
+	variable	SECOND	int(1:10)*THIRD				
+	variable	OPERATOR	{+,-,*}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	FIRST OPERATOR SECOND / THIRD				
+	answer	ANS	0.1.2; 0.1.4	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	2					
+	contentGrouping	CG0.4					
+							
+Intro18	questionText	What will x equal? <br/> <code> x= SECOND / THIRD OPERATOR FIRST </code>					
+	variable	THIRD	int(1:10)				
+	variable	SECOND	int(1:10)*THIRD				
+	variable	OPERATOR	{+,-,*}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	SECOND / THIRD OPERATOR FIRST				
+	answer	ANS	0.1.2; 0.1.4	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	2					
+	contentGrouping	CG0.4					
+							
+Intro19	questionText	What does the ^ symbol do?					
+	answer	I have come up with an answer.	0.0.0	TRUE			
+	problemType	AnyText					
+	feedback	Try it in matlab					
+	dynamic	FALSE	1				
+	difficulty	1					
+	contentGrouping	CG0.4					
+							
+Intro20	questionText	What will x equal?<br/><code> x=FIRST^POWER;</code>					
+	variable	FIRST	int(1:10)				
+	variable	POWER	{2,3}				
+	variable	ANS	FIRST ^ POWER				
+	answer	ANS	0.1.2	TRUE			
+	problemType	Numerical					
+	feedback	Try it in matlab					
+	dynamic	TRUE	3				
+	difficulty	1					
+	contentGrouping	CG0.4					
+							
+Intro21	questionText	What will x equal? <br/> <code>x= FIRST OPERATOR ( SECOND OPERATOR2 THIRD )</code>					
+	variable	THIRD	int(1:10)				
+	variable	OPERATOR2	{+,-,*,*,*,*,*,*}				
+	variable	SECOND	int(1:10)				
+	variable	OPERATOR	{+,-,*,+,-}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	FIRST OPERATOR ( SECOND OPERATOR2 THIRD )				
+	answer	ANS	0.1.2; 0.1.5	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	2					
+	contentGrouping	CG0.4					
+							
+Intro22	questionText	What will x equal? <br/><code> y= FOURTH OPERATOR3 FIFTH; <br/> x= FIRST OPERATOR ( y OPERATOR2 THIRD )</code>					
+	variable	THIRD	int(1:10)				
+	variable	OPERATOR2	{+,-,*}				
+	variable	FOURTH	int(1:10)				
+	variable	OPERATOR3	{+,-,*}				
+	variable	FIFTH	int(1:10)				
+	variable	OPERATOR	{+,-,*,+,-}				
+	variable	FIRST	int(1:10)				
+	variable	ANS	FIRST OPERATOR ( (FOURTH OPERATOR3 FIFTH) OPERATOR2 THIRD )				
+	answer	ANS	0.1.2; 0.1.4; 0.1.5	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	2					
+	contentGrouping	CG0.4					
+							
+Intro23	questionText	Use MATLAB to perform the following operations: <br/>Store FIRST OPERATOR1 SECOND into the variable x. <br/>Make y equals to x OPERATOR2 THIRD. <br/>Store the value of x OPERATOR3 y OPERATOR4 (FOURTH OPERATOR5 FIFTH) in z. <br/>Paste the value for z as your answer.					
+	variable	THIRD	int(1:10)				
+	variable	OPERATOR2	{+,-,*,/}				
+	variable	FOURTH	int(1:10)				
+	variable	OPERATOR3	{+,-,*,/}				
+	variable	FIFTH	int(1:10)				
+	variable	OPERATOR1	{+,-,*,/,^}				
+	variable	FIRST	int(1:10)				
+	variable	SECOND	int(1:10)				
+	variable	OPERATOR4	{+,-,*,/}				
+	variable	OPERATOR5	{+,-,*,/,^}				
+	variable	T1	FIRST OPERATOR1 SECOND				
+	variable	T2	T1 OPERATOR2 THIRD				
+	variable	ANS	T1 OPERATOR3 T2 OPERATOR4 (FOURTH OPERATOR5 FIFTH)				
+	answer	ANS	0.1.2; 0.1.4; 0.1.5	TRUE			
+	problemType	Numerical					
+	feedback	Try it in MATLAB					
+	dynamic	TRUE					
+	difficulty	3					
+	contentGrouping	CG0.5					
 
-col2	questionText	A:B:C produces a sequence of numbers. Which value is the last value?
-	variable	A	int(1:10)
-	variable	B	int(1:5)
-	variable	C	A+int(1:5)*B
-	answer	C	1.6.3	TRUE
-	answer	B	1.6.1; 1.6.3	FALSE
-	incorrectAnswer	A	1.6.3;1.6.2	FALSE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	0
-
-col3	questionText	A:BB:C produces a sequence of numbers. By how much do consecutive numbers change?
-	variable	A	int(1:10)
-	variable	BB	int(1:5)
-	variable	C	A+int(1:5)*BB
-	answer	BB	1.6.2	TRUE
-	answer	A	1.6.2;1.6.1	FALSE
-	answer	C	1.6.1;1.6.2	FALSE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	0
-
-col4	questionText	A:C produces a sequence of numbers. Which value is the first value?
-	variable	A	int(1:10)
-	variable	C	A+int(1:10)
-	answer	A	1.6.1	TRUE
-	answer	C	1.6.1;1.6.2	FALSE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	0
-
-col5	questionText	A:C produces a sequence of numbers. Which value is the last value?
-	variable	A	int(1:10)
-	variable	C	A+int(1:10)
-	answer	C	1.6.2;1.6.4	TRUE
-	answer	A	1.6.1;1.6.4	FALSE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	0
-
-col6	questionText	A:C produces a sequence of numbers. By how much do consecutive numbers change?
-	variable	A	int(1:10)
-	variable	C	A+int(1:10)
-	answer	1	1.6.4	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	1
-
-col7	questionText	A:BB:C produces a sequence of numbers. By how much do consecutive numbers change?
-	variable	C	int(1:10)
-	variable	BB	int(-5:-1)
-	variable	A	C+int(1:5)*BB
-	answer	BB	1.6.5	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	1
-
-col8	questionText	A:B:C produces a sequence of numbers. Which value is the last value?
-	variable	A	int(1:10)
-	variable	B	int(2:5)
-	variable	S	int(1:5)
-	variable	E	B-1
-	variable	C	A+S*B+int(1:E)
-	variable	ANS	A+S*B
-	answer	ANS	1.6.2; 1.6.3	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	2
-
-col9	questionText	A:B:C produces a sequence of numbers. Which value is the first value?
-	variable	A	double(1:10)
-	variable	B	double(1:5)
-	variable	C	A+int(1:5)*B
-	answer	A	1.6.1	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	1
-
-col9	questionText	[A:BB:C] produces a sequence of numbers. By how much do consecutive numbers change?
-	variable	A	double(1:10)
-	variable	BB	double(1:5)
-	variable	C	A+int(1:5)*BB
-	answer	BB	1.6.3	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	1
-
-col10	questionText	[A:B:C] produces a sequence of numbers. Which value is the last value?
-	variable	A	double(1:10)
-	variable	B	double(1:5)
-	variable	E	B-1
-	variable	S	int(1:5)
-	variable	C	A+S*B+double(0:E)
-	answer	A+S*B	1.6.2; 1.6.3	TRUE
-	answer	C	1.6.2;1.6.3	FALSE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	1
-
-col11	questionText	What is the array that would result from typing A:B:C. Directly type in the resulting array {Use ans=['your text here']}
-	variable	A	int(1:5)
-	variable	B	int(1:5)
-	variable	SS	int(1:5)
-	variable	C	A+SS*B
-	answer	SS	1.6.1;1.6.2;1.6.3	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	2
-
-#In Context
-#Function on Colon
-col12	questionText	What will max(A:B:C) return
-	variable	A	int(1:10)
-	variable	B	int(2:5)
-	variable	S	int(1:5)
-	variable	E	B-1
-	variable	C	A+S*B+int(1:E)
-	answer	A+S*B	2.5.13;1.6.1;1.6.2;1.6.3	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	3
-
-col12	questionText	What will min(A:B:C) return
-	variable	A	int(1:10)
-	variable	B	int(2:5)
-	variable	S	int(1:5)
-	variable	E	B-1
-	variable	C	A+S*B+int(1:E)
-	answer	A	2.5.13;1.6.1	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	3
-
-
-
-#arrays
-arr1	questionText	What value will D(AA,BB) return?
-	variable	D	{myArray1,myArray2}
-	variable	AA	int(1:dim(D,1))
-	variable	BB	int(1:dim(D,2))
-	variable	ANS	D(AA,BB)
-	answer	ANS	2.3.9	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	1
-
-arr2	questionText	Which line of code would retrieve the value from S in matrix R
-	variable	R	{myArray1,myArray2}
-	variable	X	int(1:dim(R,1))
-	variable	Y	int(1:dim(R,2))
-	variable	S	{row X column Y,column Y row X}
-	answer	R(X,Y)	2.3.9	TRUE
-	answer	R(Y,X)	2.3.9	FALSE
-	problemType	MC
-	dynamic	TRUE
-	difficulty	1
-
-arr3	questionText	What value will R(end,C) return
-	variable	R	{myArray1,myArray2}
-	variable	C	int(1:dim(R,2))
-	variable	S	R(dim(R,1),C)
-	answer	S	2.3.13	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	2
-
-arr4	questionText	What will RR(AA:BB,CC:DD) return? Assign it to A, and input your answer from the MATLAB checking function below.
-	variable	RR	{myArray1,myArray2}
-	variable	AL1	dim(RR,1)-1
-	variable	AA	int(1:AL1)
-	variable	BL1	dim(RR,2)-AA
-	variable	BB	AA + int(1:BL1)
-	variable	CL1	dim(RR,2)-1
-	variable	CC	int(1:CL1)
-	variable	DL1	dim(RR,2)-CC
-	variable	DD	CC + int(1:DL1)
-	variable	RES	RR(AA:BB,CC:DD)
-	variable	ANS	answerFun(RES)
-	answer	ANS	2.3.9	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	3
-
-arr5	questionText	what is the MM of RR(AA:SS:BB,NN)
-	variable	MM	{min,max,mean}
-	variable	RR	{myArray1,myArray2}
-	variable	AL1	dim(RR,1)-1
-	variable	AA	int(1:AL1)
-	variable	BL1	dim(RR,2)-AA
-	variable	BB	AA + int(1:BL1)
-	variable	SS	int(1:3)
-	variable	NN	int(1:dim(RR,2))
-	variable	RES	RR(AA:SS:BB,NN)
-	variable	ANS	MM(RES)
-	answer	ANS	2.3.9	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	3
-
-arr6	questionText	What is the maximum value in the even numbered rows of column CC of array RR?
-	variable	RR	{myArray1,myArray2}
-	variable	CC	int(1:dim(RR,2))
-	variable	ROWS	dim(RR,1)
-	variable	SEL	RR(1:2:ROWS,CC)
-	variable	ANS	max(SEL)
-	answer	ANS	2.3.9	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	3
-
-arr7	questionText	What is the maximum value in every OO row (starting with row 1) of column CC in array RR?
-	variable	NN	int(1:10)
-	variable	OO	ordinal(NN)
-	variable	RR	{myArray1,myArray2}
-	variable	CC	int(1:dim(RR,2))
-	variable	ROWS	dim(RR,1)
-	variable	SEL	RR(1:2:ROWS,CC)
-	variable	ANS	max(SEL)
-	answer	ANS	2.3.9	TRUE
-	problemType	Numerical
-	dynamic	TRUE
-	difficulty	3
+###CG1 questions
+#arrays						
+arr1	questionText	Which data would be most suited for storage in an array?				
+	answer	The abstract for a publication you are preparing.	2	FALSE		
+	answer	The programming code for a script written in Matlab.	2	TRUE		
+	answer	Measurements of gene expression for 20 samples.	2	TRUE		
+	problemType	Checkbox				
+	dynamic	FALSE				
+	difficulty	1				
+	contentGrouping	CG1.1.1				
+						
+arr2.1	questionText	Given array <code>AA = [BB, CC, DD; EE, FF, GG]</code>, which command would return the value in the ORD2 column, ORD1 row?				
+	variable	AA	{A,B,C,myMatrix,mat}			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	variable	FF	int(1:10)			
+	variable	GG	int(1:10)			
+	variable	IND1	int(1:2)			
+	variable	IND2	int(1:3)			
+	variable	ORD1	ordinal(IND1)			
+	variable	ORD2	ordinal(IND2)			
+	answer	AA[IND1,IND2]	2.1.1;2.1.2;2.1.3	FALSE		
+	answer	AA(IND1,IND2)		TRUE		
+	answer	AA{IND1,IND2}		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.1				
+						
+arr2.2	questionText	Given array <code>AA</code>, which command would return the value in the ORD1 row, ORD2 column?				
+	variable	AA	{A,B,C,myArray,mat,data}			
+	variable	IND1	int(1:10)			
+	variable	IND2	int(1:10)			
+	variable	ORD1	ordinal(IND1)			
+	variable	ORD2	ordinal(IND2)			
+	answer	AA(IND1,IND2)	2.1.1;2.1.2;2.1.3	TRUE		
+	answer	AA(IND2,IND1)		FALSE		
+	answer	AA{IND2,IND1}		FALSE		
+	answer	AA{IND1,IND2}		FALSE		
+	answer	AA[IND1,IND2]		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.1				
+						
+arr2.2.1	questionText	Given array <code>AA</code>, which command would return the value in the ORD2 column, ORD1 row?				
+	variable	AA	{A,B,C,myArray,mat,data}			
+	variable	IND1	int(1:10)			
+	variable	IND2	int(1:10)			
+	variable	ORD1	ordinal(IND1)			
+	variable	ORD2	ordinal(IND2)			
+	answer	AA(IND1,IND2)	2.1.1;2.1.2;2.1.3	TRUE		
+	answer	AA(IND2,IND1)		FALSE		
+	answer	AA{IND2,IND1}		FALSE		
+	answer	AA{IND1,IND2}		FALSE		
+	answer	AA[IND1,IND2]		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.1				
+						
+arr2	questionText	How would you define a new matrix named AA?				
+	variable	AA	{A,B,C,myMatrix,mat}			
+	answer	AA=[1,2;3,4]	2.2.1;2.2.2;2.2.3;2.2.4	TRUE		
+	answer	AA		FALSE		
+	answer	AA[1,2;3,4]		FALSE		
+	answer	AA(1,2,3,4)		FALSE		
+	answer	AA=(1,2;3,4)		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.1				
+						
+arr3	questionText	You define a new matrix using the matlab command <code>AA = [1;2;3;4;5]</code>. Will the matrix AA have more rows or more columns?				
+	variable	AA	{A,B,C}			
+	answer	AA will have more rows.	2.2.1;2.2.2;2.2.3;2.2.4	TRUE		
+	answer	AA will have more columns.		FALSE		
+	answer	AA will have the same number of rows and columns.		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.1				
+						
+arr4	questionText	I define a new matrix using the matlab command <code>AA = [1,2,3,4,5]</code>. Will the matrix AA have more rows or more columns?				
+	variable	AA	{A,B,C}			
+	answer	AA will have more rows.	2.2.1;2.2.2;2.2.3;2.2.4	FALSE		
+	answer	AA will have more columns.		TRUE		
+	answer	AA will have the same number of rows and columns.		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.1				
+						
+arr5	questionText	You load an image into Matlab. The dimensions are RRxCC. If I display the image using the command <code>imshow</code>, will the image be vertically taller or horizontally wider?				
+	variable	CC	int(1:1000)			
+	variable	RR	CC+int(1:1000)			
+	answer	The image will be vertically taller.	2.3.9	TRUE		
+	answer	The image will be horizontally wider.		FALSE		
+	answer	The image will be square.		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE	20			
+	difficulty	1				
+	contentGrouping	CG1.1.2				
+						
+arr6	questionText	You load an image into Matlab. The dimensions are RRxCC. If I display the image using the command <code>imshow</code>, will the image be vertically taller or horizontally wider?				
+	variable	RR	int(1:1000)			
+	variable	CC	RR+int(1:1000)			
+	answer	The image will be vertically taller.	2.3.9	FALSE		
+	answer	The image will be horizontally wider.		TRUE		
+	answer	The image will be square.		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.2				
+						
+arr7	questionText	In an array representing an image, will cells with low values be light or dark?				
+	answer	The cells with low values correspond to light pixels.	2	FALSE		
+	answer	The cells with low values correspond to dark pixels.		TRUE		
+	problemType	Checkbox				
+	dynamic	FALSE				
+	difficulty	1				
+	contentGrouping	CG1.1.3				
+						
+arr8	questionText	Create an empty array in Matlab. Next, create an array of numbers (at least 10x10) in Excel. Copy values from the Excel sheet to Matlab into the empty array (see an example in the "Entering Arrays" section). Display this array as an image in Matlab using the <code>imshow</code> function.				
+	answer	I have completed this assignment.	2	TRUE		
+	problemType	Checkbox				
+	dynamic	FALSE				
+	difficulty	1				
+	contentGrouping	CG1.1.5				
+						
+#loading and creating arrays						
+arr9	questionText	The Matlab function <code>size</code> returns:				
+	answer	The number of rows and the number of columns.	2.5.17	TRUE		
+	answer	The number of columns and the number of rows.		FALSE		
+	answer	The number of elements in the matrix.		FALSE		
+	problemType	Checkbox				
+	dynamic	FALSE				
+	difficulty	1				
+	contentGrouping	CG1.1.6				
+						
+arr10	questionText	Given a matrix NAME, the Matlab function <code>size</code> produces: <br/><br/><code>size(NAME)<br/><br/>ans = <br/>ROWS COLS</code> <br/><br/>How many rows does array NAME have?				
+	variable	NAME	{A,B,C}			
+	variable	ROWS	int(1:100)			
+	variable	COLS	int(1:100)			
+	answer	ROWS	2.5.17	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.6				
+						
+arr11	questionText	Given a matrix NAME, the Matlab function <code>size</code> produces: <br/><br/><code>size(NAME)<br/><br/>ans = <br/>ROWS COLS</code> <br/><br/>How many columns does array NAME have?				
+	variable	NAME	{A,B,C}			
+	variable	ROWS	int(1:100)			
+	variable	COLS	int(1:100)			
+	answer	COLS	2.5.17	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.6				
+						
+						
+arr13	questionText	Which of the following are valid array names?				
+	variable	NN	int(4:10)			
+	variable	OO	ordinal(NN)			
+	answer	NNthArray	1.1.2	FALSE	A valid variable name begins with a letter. Valid variable names can include letters, digits, and underscores.	
+	answer	My Array NN		FALSE	A valid variable name begins with a letter. Valid variable names can include letters, digits, and underscores.	
+	answer	OO_Array		TRUE	A valid variable name begins with a letter. Valid variable names can include letters, digits, and underscores.	
+	problemType	Checkbox			A valid variable name begins with a letter. Valid variable names can include letters, digits, and underscores.	
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.1.6				
+						
+#linear indexing						
+arr14	questionText	Given array <br/><code>A = [BB,CC,DD,HH;EE,FF,GG,II]</code><br/>what would the matlab command<br/><code>A(IND)</code><br/>return?				
+	variable	BB	int(1:100)			
+	variable	CC	int(1:100)			
+	variable	DD	int(1:100)			
+	variable	EE	int(1:100)			
+	variable	FF	int(1:100)			
+	variable	GG	int(1:100)			
+	variable	HH	int(1:100)			
+	variable	II	int(1:100)			
+	variable	VEC	#BB,EE,CC,FF,DD,GG,HH,II#			
+	variable	IND	int(1:8)			
+	variable	ANS	VEC(IND)			
+	answer	ANS	2.3.3	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.1				
+						
+						
+arr15	questionText	Given the vector <code>VV = [AA,BB,CC,DD,EE]</code> what is VV(VV(IND))?				
+	variable	VV	{v,V,vec}			
+	variable	AA	int(1:5)			
+	variable	BB	int(1:5)			
+	variable	CC	int(1:5)			
+	variable	DD	int(1:5)			
+	variable	EE	int(1:5)			
+	variable	IND	int(1:5)			
+	variable	VEC	#AA,BB,CC,DD,EE#			
+	variable	ANS	VEC(VEC(IND))			
+	answer	ANS	2.3.1	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.2				
+						
+arr16	questionText	Given the vector <code>VV = [AA,BB,CC,DD,EE,FF,GG]</code> what is VV(VV(VV(IND)))?				
+	variable	VV	{v,V,vec}			
+	variable	AA	int(1:7)			
+	variable	BB	int(1:7)			
+	variable	CC	int(1:7)			
+	variable	DD	int(1:7)			
+	variable	EE	int(1:7)			
+	variable	FF	int(1:7)			
+	variable	GG	int(1:7)			
+	variable	IND	int(1:7)			
+	variable	VEC	#AA,BB,CC,DD,EE,FF,GG#			
+	variable	ANS	VEC(VEC(VEC(IND)))			
+	answer	ANS	2.3.1	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.2				
+						
+arr17	questionText	AA is a matrix with ROWS rows and COLS columns. What is the size of AA after running the command <br/><code>AA(NEWROW,NEWCOL)=VAL</code>				
+	variable	AA	{A,B,C,myArray}			
+	variable	ROWS	int(2:5)			
+	variable	COLS	int(2:5)			
+	variable	NEWROW	ROWS+int(1:5)			
+	variable	NEWCOL	int(1:10)			
+	variable	VAL	int(1:100)			
+	variable	ROWDIM	max(ROWS,NEWROW)			
+	variable	COLDIM	max(COLS,NEWCOL)			
+	answer	size(AA) = ROWS COLS	2.2.1;2.8.3	FALSE		
+	answer	size(AA) = ROWDIM COLDIM		TRUE		
+	answer	size(AA) = VAL COLS		FALSE		
+	answer	size(AA) = NEWCOL NEWROW		FALSE		
+	answer	size(AA) = COLDIM ROWDIM		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.3				
+						
+arr18	questionText	AA is a matrix with ROWS rows and COLS columns. What is the size of AA after running the command <br/><code>AA(NEWROW,NEWCOL,NEWDIM) = VAL</code>				
+	variable	AA	{A,B,C,myArray}			
+	variable	ROWS	int(2:5)			
+	variable	COLS	int(2:5)			
+	variable	NEWROW	ROWS+int(1:5)			
+	variable	NEWCOL	int(1:10)			
+	variable	NEWDIM	int(1:10)			
+	variable	VAL	int(1:100)			
+	variable	ROWDIM	max(ROWS,NEWROW)			
+	variable	COLDIM	max(COLS,NEWCOL)			
+	answer	size(AA) = ROWDIM NEWDIM COLDIM	2.3.10;2.8.3	FALSE		
+	answer	size(AA) = ROWDIM COLDIM NEWDIM		TRUE		
+	answer	size(AA) = VAL COLS NEWDIM		FALSE		
+	answer	size(AA) = NEWCOL NEWROW		FALSE		
+	answer	size(AA) = COLDIM ROWDIM		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.4				
+						
+arr19	questionText	Given the array <code>ARR = [AA,BB,CC,DD,LL;EE,FF,II,GG,HH;II,JJ,KK,AA,LL;DD,FF,BB,GG,AA;HH,EE,LL,KK,CC]</code> what is ARR(ARR(IND1,IND2),ARR(IND3,IND4))?				
+	variable	ARR	{a,A,arr}			
+	variable	AA	int(1:5)			
+	variable	BB	int(1:5)			
+	variable	CC	int(1:5)			
+	variable	DD	int(1:5)			
+	variable	EE	int(1:5)			
+	variable	FF	int(1:5)			
+	variable	GG	int(1:5)			
+	variable	HH	int(1:5)			
+	variable	II	int(1:5)			
+	variable	JJ	int(1:5)			
+	variable	KK	int(1:5)			
+	variable	LL	int(1:5)			
+	variable	AVAL	#AA,BB,CC,DD,LL;EE,FF,II,GG,HH;II,JJ,KK,AA,LL;DD,FF,BB,GG,AA;HH,EE,LL,KK,CC#			
+	variable	IND1	int(1:5)			
+	variable	IND2	int(1:5)			
+	variable	IND3	int(1:5)			
+	variable	IND4	int(1:5)			
+	variable	ANS	AVAL(AVAL(IND1,IND2),AVAL(IND3,IND4))			
+	answer	ANS	2.1.1;2.1.2;2.1.3;2.3.1;2.3.3;2.3.8;2.3.14;2.3.15	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.5				
+						
+arr20	questionText	Given the vector <code>VV = [AA,BB,CC,DD]</code> what is COMPARATOR(VV OPERATOR NUM)?				
+	variable	VV	{v,V,vec}			
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	OPERATOR	{+,-,*}			
+	variable	COMPARATOR	{max,min,sum,mean}			
+	variable	NUM	int(1:10)			
+	variable	ANSA	AA OPERATOR NUM			
+	variable	ANSB	BB OPERATOR NUM			
+	variable	ANSC	CC OPERATOR NUM			
+	variable	ANSD	DD OPERATOR NUM			
+	variable	ANS	COMPARATOR(ANSA,ANSB,ANSC,ANSD)			
+	answer	ANS	2.5.1;2.5.8;2.5.9;2.5.10;2.5.11;2.7.1	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+	options	tolerance:0				
+						
+arr21	questionText	Given the vector <code>VV = [AA,BB,CC,DD]</code> if you type <code>N = [VV,NUM]</code> what will N equal?				
+	variable	VV	{v,V,vec}			
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	NUM	int(1:10)			
+	answer	[AA,BB,CC,DD,NUM]	2.8.1;2.8.2;2.2.1	TRUE		
+	answer	Nothing. Matlab will throw an error.		FALSE		
+	answer	[AA,BB,CC,DD; NUM]		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr22	questionText	Given the vector <code>VV = [AA,BB,CC,DD]</code> if you type <code>N = [VV;NUM]</code> what will N equal?				
+	variable	VV	{v,V,vec}			
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	NUM	int(1:10)			
+	answer	[AA,BB,CC,DD,NUM]	2.8.1;2.8.2	FALSE		
+	answer	Nothing. Matlab will throw an error.		TRUE		
+	answer	[AA,BB,CC,DD; NUM]		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr23	questionText	Given the array <code>ARR = [AA,BB;CC,DD;EE,FF;DD,AA;CC,EE]</code> if you type <code>N=[ARR;NUM]</code> how many rows will N have?				
+	variable	ARR	{a,A,arr}			
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	variable	FF	int(1:10)			
+	variable	NUM	int(1:10)			
+	answer	Matlab will throw an error.	2.1.1;2.1.2;2.1.3;2.3.1;2.3.3;2.3.8;2.3.14;2.3.15;2.8.1	TRUE		
+	answer	6		FALSE	Matlab will throw an error. In this case, N is adding a row with a single number onto the bottom of a 5x2 matrix. When adding rows to the bottom of arrays, they must have the same number of columns.	
+	answer	2		FALSE	Matlab will throw an error. In this case, N is adding a row with a single number onto the bottom of a 5x2 matrix. When adding rows to the bottom of arrays, they must have the same number of columns.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.6				
+						
+arr24	questionText	Given the array <br/><code>A = [AA,BB,EE;CC,DD,DD;BB,EE,FF;AA,CC,EE]</code><br/> if you type <br/><code>N=[A;[FF;NUM;AA]]</code><br/> how many rows will N have?				
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	variable	FF	int(1:10)			
+	variable	NUM	int(1:10)			
+	answer	Matlab will throw an error.	2.1.1;2.1.2;2.1.3;2.3.1;2.3.3;2.3.8;2.3.14;2.3.15;2.8.1	FALSE	Matlab will throw an error when combining two arrays vertically if they do not have the same number of columns. In this case, they have the same number of columns.	
+	answer	3		FALSE	The semicolon operator in the declaration of N tells you that a new row is being added to the bottom of A. Although there are 3 columns, there are now 5 rows.	
+	answer	5		TRUE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.6				
+						
+arr24.1	questionText	Which is the matlab shorthand for creating an array filled with zeros with RR rows and CC columns?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	answer	A = zeros(RR,CC)	2.6.4	TRUE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	answer	A = zeros(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	answer	A = zeros(CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	answer	A = 0s(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr24.2	questionText	Which is the matlab shorthand for creating an array filled with zeros with RR rows and RR columns?				
+	variable	RR	int(2:10)			
+	variable	CC	RR+ int(1:5)			
+	answer	A = zeros(RR)	2.6.6	TRUE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	answer	A = zeros(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	answer	A = zeros(CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	answer	A = 0s(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/zeros.html">https://www.mathworks.com/help/matlab/ref/zeros.html</a>.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr24.3	questionText	Which is the matlab shorthand for creating an array filled with the number 1 with RR rows and CC columns?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	answer	A = ones(RR,CC)	2.6.6	TRUE		
+	answer	A = ones(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/ones.html">https://www.mathworks.com/help/matlab/ref/ones.html</a>.	
+	answer	A = ones(CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/ones.html">https://www.mathworks.com/help/matlab/ref/ones.html</a>.	
+	answer	A = 1s(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/ones.html">https://www.mathworks.com/help/matlab/ref/ones.html</a>.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr24.4	questionText	Which is the matlab shorthand for creating an array filled with ones with RR rows and RR columns?				
+	variable	RR	int(1:10)			
+	variable	CC	RR+ int(1:5)			
+	answer	A = ones(RR)	2.6.4	TRUE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/ones.html">https://www.mathworks.com/help/matlab/ref/ones.html</a>.	
+	answer	A = ones(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/ones.html">https://www.mathworks.com/help/matlab/ref/ones.html</a>.	
+	answer	A = ones(CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/ones.html">https://www.mathworks.com/help/matlab/ref/ones.html</a>.	
+	answer	A = 1s(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/matlab/ref/ones.html">https://www.mathworks.com/help/matlab/ref/ones.html</a>.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr24.5	questionText	Which is the matlab shorthand for creating an array filled with random values (evenly spaced between zero and one) with RR rows and CC columns?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	answer	rand(RR,CC)	2.6.5	TRUE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	zeros(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	rand(CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	randi(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	randn(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr24.6	questionText	Which is the matlab shorthand for creating an array filled with random values (evenly spaced between zero and one) with RR rows and RR columns?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	answer	rand(RR)	2.6.5	TRUE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	zeros(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	rand(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	randi(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	answer	randn(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr24.7	questionText	Which is the matlab shorthand for creating an array filled with random integer values (evenly spaced between zero and one) with RR rows and RR columns?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	answer	rand(RR)	2.6.5	FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/randi.html">https://www.mathworks.com/help/distcomp/randi.html</a>. Note that <code>rand</code> generates a matrix with uniformly distributed random numbers in the interval (0,1)	
+	answer	zeros(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/randi.html">https://www.mathworks.com/help/distcomp/randi.html</a>.	
+	answer	randi(CC,RR)		TRUE	For help, see <a href="https://www.mathworks.com/help/distcomp/randi.html">https://www.mathworks.com/help/distcomp/randi.html</a>.	
+	answer	randn(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/rand.html">https://www.mathworks.com/help/distcomp/rand.html</a>.	
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	3				
+	contentGrouping	CG1.2.6				
+						
+						
+arr25	questionText	Given the array A, how many values will <code>A((BB,CC),(DD,EE))</code> return?				
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	answer	4	2.3.8;2.3.11	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.7				
+						
+arr26	questionText	Given the array A, how many values will <code>A((BB,BB,CC),(DD,EE))</code> return?				
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	answer	6	2.3.8;2.3.11	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.3.1				
+						
+arr27	questionText	Given the array A, what will <code>size(A((BB,BB,CC),(DD,EE)))</code> return?				
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	answer	size = 6	2.3.8;2.3.11	FALSE		
+	answer	size = 3 2		TRUE		
+	answer	size = 2 3		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.3.1				
+						
+arr28	questionText	Given the array <code>ARR = [AA,BB,EE;<br/>CC,DD,DD;<br/>BB,EE,FF;<br/>AA,CC,EE]</code> if you set <code>N=ARR OPERATOR ARR</code>, what is <code>N(IND1,IND2)</code>?				
+	variable	ARR	{a,A,arr}			
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	variable	FF	int(1:10)			
+	variable	VALS	#AA,BB,EE;CC,DD,DD;BB,EE,FF;AA,CC,EE#			
+	variable	IND1	int(1:4)			
+	variable	IND2	int(1:3)			
+	variable	OPERATOR	{+,-}			
+	variable	ANS	VALS(IND1,IND2) OPERATOR VALS(IND1,IND2)			
+	answer	ANS	2.7.1	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.3.2				
+						
+arr29	questionText	How does the <code>*</code> operator differ from the <code>.*</code> operator when applied to arrays?				
+	answer	The <code>*</code> operator performs matrix multiplication. Try multiplying an array by itself in Matrix using these two operators.	2.7.1	TRUE		
+	problemType	AnyText				
+	feedback	The <code>*</code> operator performs matrix multiplication. Try multiplying an array by itself in Matlab using these two operators.				
+	dynamic	FALSE				
+	difficulty	1				
+	contentGrouping	CG1.3.2				
+						
+arr30	questionText	If A is a matrix with RR rows and CC columns, how many columns will <code>A(:)</code> return?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	answer	1	2.2.5	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.3.3				
+						
+arr31	questionText	If A is a matrix with RR rows and CC columns, what will <code>size(A(:))</code> return?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	variable	ANS	RR*CC			
+	answer	size = ANS 1	2.2.5	TRUE		
+	answer	size = RR CC		FALSE		
+	answer	size = RR		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.3.3				
+						
+arr32	questionText	If A is a matrix RR by CC by DD matrix, what will <code>size(A(:))</code> return?				
+	variable	RR	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	ANS	RR*CC*DD			
+	answer	size = ANS 1	2.2.5	TRUE		
+	answer	size = RR CC		FALSE		
+	answer	size = RR CC DD		FALSE		
+	answer	Matlab will return an error.		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.3.3				
+						
+arr33	questionText	Given the array <code>ARR = [AA,BB,EE;<br/>CC,DD,DD;<br/>BB,EE,FF;<br/>AA,CC,EE]</code> what is <code>ARR(IND1,IND2)</code>?				
+	variable	ARR	{a,A,arr}			
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	EE	int(1:10)			
+	variable	FF	int(1:10)			
+	variable	VALS	#AA,BB,EE;CC,DD,DD;BB,EE,FF;AA,CC,EE#			
+	variable	IND1	int(1:4)			
+	variable	IND2	int(1:3)			
+	variable	ANS	VALS(IND1,IND2)			
+	answer	ANS	2.7.1;2.3.8;2.3.9	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.1				
+						
+arr34	questionText	Describe the difference between row-column indexing and linear indexing in arrays.				
+	answer	Row-column indexing requires two parameters separated by a comma. Linear indexing requires a single parameter, and creates a single vector with all of the elements of the array and returns the index of that vector.	2.3.8	TRUE		
+	problemType	AnyText				
+	feedback	Row-column indexing requires two parameters separated by a comma. Linear indexing requires a single parameter, and creates a single vector with all of the elements of the array and returns the index of that vector.				
+	dynamic	FALSE				
+	difficulty	1				
+	contentGrouping	CG1.4.1				
+						
+arr35	questionText	If A is a matrix with RR rows and CC columns, if I set <code>V = [A,A]</code>, how many columns will V have?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	variable	ANS	CC*2			
+	answer	ANS	2.8.1;2.8.2	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.2				
+						
+arr36	questionText	If A is a matrix with RR rows and CC columns, if I set <code>V = [A,A+1,A+2]</code>, how many columns will V have?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	variable	ANS	CC*3			
+	answer	ANS	2.8.1;2.8.2	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.2				
+						
+arr37	questionText	If A is a matrix with RR rows and CC columns, if I set <code>V = [A;A+1;A+2]</code>, how many columns will V have?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	variable	ANS	CC			
+	answer	CC	2.8.1;2.8.2	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.2				
+						
+col1	questionText	The command <code>A:B:C</code> produces a sequence of numbers. Which value is the first value?				
+	variable	A	int(1:10)			
+	variable	B	int(1:5)			
+	variable	C	A+int(1:5)*B			
+	answer	A	1.6.1	TRUE		
+	answer	B	1.6.1; 1.6.3	FALSE		
+	answer	C	1.6.1;1.6.2	FALSE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.3				
+						
+col2	questionText	The command <code>A:B:C</code> produces a sequence of numbers. Which value is the last value?				
+	variable	A	int(1:10)			
+	variable	B	int(1:5)			
+	variable	C	A+int(1:5)*B			
+	answer	C	1.6.3	TRUE		
+	answer	B	1.6.1; 1.6.3	FALSE		
+	answer	A	1.6.3;1.6.2	FALSE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.3				
+						
+col3	questionText	The command <code>A:BB:C</code> produces a sequence of numbers. By how much do consecutive number change?				
+	variable	A	int(1:10)			
+	variable	BB	int(1:5)			
+	variable	C	A+int(1:5)*BB			
+	answer	BB	1.6.2	TRUE		
+	answer	A	1.6.2;1.6.1	FALSE		
+	answer	C	1.6.1;1.6.2	FALSE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.3				
+						
+col4	questionText	The command <code>A:C</code> produces a sequence of numbers. Which value is the first value?				
+	variable	A	int(1:10)			
+	variable	C	A+int(1:10)			
+	answer	A	1.6.1	TRUE		
+	answer	C	1.6.1;1.6.2	FALSE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.3				
+						
+col5	questionText	The command <code>A:C</code> produces a sequence of numbers. Which value is the last value?				
+	variable	A	int(1:10)			
+	variable	C	A+int(1:10)			
+	answer	C	1.6.2;1.6.4	TRUE		
+	answer	A	1.6.1;1.6.4	FALSE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.3				
+						
+col6	questionText	The command <code>A:C</code> produces a sequence of numbers. By how much do consecutive number change?				
+	variable	A	int(1:10)			
+	variable	C	A+int(1:10)			
+	answer	1	1.6.4	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.4.3				
+						
+col7	questionText	The command <code>A:BB:C</code> produces a sequence of numbers. By how much do consecutive number change?				
+	variable	C	int(1:10)			
+	variable	BB	int(-5:-1)			
+	variable	A	C+int(1:5)*BB			
+	answer	BB	1.6.5	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.4.3				
+						
+col8	questionText	The command <code>A:B:C</code> produces a sequence of numbers. Which value is the last value?				
+	variable	A	int(1:10)			
+	variable	B	int(2:5)			
+	variable	S	int(1:5)			
+	variable	E	B-1			
+	variable	C	A+S*B+int(1:E)			
+	variable	ANS	A+S*B			
+	answer	ANS	1.6.2; 1.6.3	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	3				
+	contentGrouping	CG1.4.3				
+						
+col9	questionText	The command <code>A:B:C produces a sequence of numbers. Which value is the first value?				
+	variable	A	double(1:10)			
+	variable	B	double(1:5)			
+	variable	C	A+int(1:5)*B			
+	answer	A	1.6.1	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.4.3				
+						
+col10	questionText	The command <code>[A:BB:C]</code> produces a sequence of numbers. By how much do consecutive number change?				
+	variable	A	double(1:10)			
+	variable	BB	double(1:5)			
+	variable	C	A+int(1:5)*BB			
+	answer	BB	1.6.3	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.4.3				
+						
+col11	questionText	The command <code>[A:B:C]</code> produces a sequence of numbers. Which value is the last value?				
+	variable	A	double(1:10)			
+	variable	B	double(1:5)			
+	variable	E	B-1			
+	variable	S	int(1:5)			
+	variable	C	A+S*B+double(0:E)			
+	answer	A+S*B	1.6.2; 1.6.3	TRUE		
+	answer	C	1.6.2;1.6.3	FALSE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.4.3				
+						
+						
+#In Context						
+#Function on Colon						
+col13	questionText	What will <code>max(A:B:C)</code> return				
+	variable	A	int(1:10)			
+	variable	B	int(2:5)			
+	variable	S	int(1:5)			
+	variable	E	B-1			
+	variable	C	A+S*B+int(1:E)			
+	answer	A+S*B	2.5.13;1.6.1;1.6.2;1.6.3	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	3				
+	contentGrouping	CG1.4.3				
+						
+col14	questionText	What will <code>min(A:B:C)</code> return				
+	variable	A	int(1:10)			
+	variable	B	int(2:5)			
+	variable	S	int(1:5)			
+	variable	E	B-1			
+	variable	C	A+S*B+int(1:E)			
+	answer	A	2.5.13;1.6.1	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	3				
+	contentGrouping	CG1.4.3				
+						
+arr38	questionText	Given the vector <code>VV = [AA,BB,CC,DD;EE,FF,GG,HH]</code> what is VV(VV(VV(IND)))?				
+	variable	VV	{v,V,vec}			
+	variable	AA	int(1:8)			
+	variable	BB	int(1:8)			
+	variable	CC	int(1:8)			
+	variable	DD	int(1:8)			
+	variable	EE	int(1:8)			
+	variable	FF	int(1:8)			
+	variable	GG	int(1:8)			
+	variable	HH	int(1:8)			
+	variable	IND	int(1:8)			
+	variable	VEC	#AA,BB,CC,DD,EE,FF,GG,HH#			
+	variable	ANS	VEC(VEC(VEC(IND)))			
+	answer	ANS	2.3.1; 2.3.15; 2.3.16	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.2				
+						
+arr39	questionText	AA is a matrix with ROWS rows and COLS columns. What will B equal after the commands <br/><code>AA(NEWROW,NEWCOL) = VAL;<br/>B=sum(size(AA));</code>				
+	variable	AA	{A,B,C,myArray}			
+	variable	ROWS	int(2:5)			
+	variable	COLS	int(2:5)			
+	variable	NEWROW	ROWS+int(1:5)			
+	variable	NEWCOL	int(1:10)			
+	variable	VAL	int(1:100)			
+	variable	ROWDIM	max(ROWS,NEWROW)			
+	variable	COLDIM	max(COLS,NEWCOL)			
+	variable	ANS	ROWDIM+COLDIM			
+	answer	ANS	2.2.1;2.8.3	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.3				
+	options	tolerance:0				
+						
+arr40	questionText	AA is a matrix with ROWS rows and COLS columns. What will B equal after the commands <br/><code>AA(NEWROW,NEWCOL,NEWDIM) = VAL;<br/>B=sum(size(AA));</code>				
+	variable	AA	{A,B,C,myArray}			
+	variable	ROWS	int(2:5)			
+	variable	COLS	int(2:5)			
+	variable	NEWROW	ROWS+int(1:5)			
+	variable	NEWCOL	int(1:10)			
+	variable	NEWDIM	int(1:10)			
+	variable	VAL	int(1:100)			
+	variable	ROWDIM	max(ROWS,NEWROW)			
+	variable	COLDIM	max(COLS,NEWCOL)			
+	variable	ANS	ROWDIM+COLDIM+NEWDIM			
+	answer	ANS	2.8.3	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.4				
+	options	tolerance:0				
+						
+arr41	questionText	Given the vector <code>VV = [AA,BB,CC,DD]</code> if you type <code>N = [VV,NUM]</code> what will N equal?				
+	variable	VV	{v,V,vec}			
+	variable	AA	int(1:10)			
+	variable	BB	int(1:10)			
+	variable	CC	int(1:10)			
+	variable	DD	int(1:10)			
+	variable	NUM	int(1:10)			
+	answer	[AA,BB,CC,DD,NUM]	2.8.1;2.8.2	TRUE		
+	answer	Nothing. Matlab will throw an error.		FALSE		
+	answer	[AA,BB,CC,DD; NUM]		FALSE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	2				
+	contentGrouping	CG1.2.6				
+						
+arr42	questionText	Which is the matlab shorthand for creating an array filled with randomvalues (normally spaced with a mean of zeroa and standard devaition of 1) with RR rows and RR columns?				
+	variable	RR	int(2:10)			
+	variable	CC	int(2:10)			
+	answer	rand(RR)	2.6.5	FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/randi.html">https://www.mathworks.com/help/distcomp/randi.html</a>. Note that <code>rand</code> generates a matrix with uniformly distributed random numbers in the interval (0,1)	
+	answer	zeros(RR,CC)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/randi.html">https://www.mathworks.com/help/distcomp/randi.html</a>.	
+	answer	randi(CC,RR)		FALSE	For help, see <a href="https://www.mathworks.com/help/distcomp/randi.html">https://www.mathworks.com/help/distcomp/randi.html</a>.	
+	answer	randn(CC,RR)		TRUE		
+	problemType	Checkbox				
+	dynamic	TRUE				
+	difficulty	1				
+	contentGrouping	CG1.2.6				
+						
+arr43	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is ARR2(ARR1(IND1))?				
+	variable	ARR1	{a,A,arr1}			
+	variable	ARR2	{b,B,arr2}			
+	variable	AA	int(1:5)			
+	variable	BB	int(1:5)			
+	variable	CC	int(1:5)			
+	variable	DD	int(1:5)			
+	variable	EE	int(1:5)			
+	variable	FF	int(1:5)			
+	variable	GG	int(1:5)			
+	variable	HH	int(1:5)			
+	variable	II	int(1:5)			
+	variable	AVAL1	#AA,BB,CC,DD,EE#			
+	variable	AVAL2	#EE,FF,GG,HH,II#			
+	variable	IND1	int(1:5)			
+	variable	ANS	AVAL2(AVAL1(IND1))			
+	answer	ANS	2.1.1;2.1.2;2.1.3;2.3.1;2.3.3;2.3.8;2.3.14;2.3.15	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	4				
+	contentGrouping	CG1.2.5				
+						
+arr44	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is ARR2(min(ARR1(IND1)+ARR2(IND2),5))?				
+	variable	ARR1	{a,A,arr1}			
+	variable	ARR2	{b,B,arr2}			
+	variable	AA	int(1:5)			
+	variable	BB	int(1:5)			
+	variable	CC	int(1:5)			
+	variable	DD	int(1:5)			
+	variable	EE	int(1:5)			
+	variable	FF	int(1:5)			
+	variable	GG	int(1:5)			
+	variable	HH	int(1:5)			
+	variable	II	int(1:5)			
+	variable	AVAL1	#AA,BB,CC,DD,EE#			
+	variable	AVAL2	#EE,FF,GG,HH,II#			
+	variable	IND1	int(1:5)			
+	variable	IND2	int(1:5)			
+	variable	MYMIN	AVAL1(IND1)+AVAL2(IND2)			
+	variable	ANS	AVAL2(toInt(min(MYMIN,5)))			
+	answer	ANS	2.1.1;2.1.2;2.1.3;2.3.1;2.3.3;2.3.8;2.3.14;2.3.15	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	4				
+	contentGrouping	CG1.2.5				
+						
+arr45	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is ARR2(max(ARR1(IND1)-ARR2(IND2),1))?				
+	variable	ARR1	{a,A,arr1}			
+	variable	ARR2	{b,B,arr2}			
+	variable	AA	int(1:5)			
+	variable	BB	int(1:5)			
+	variable	CC	int(1:5)			
+	variable	DD	int(1:5)			
+	variable	EE	int(1:5)			
+	variable	FF	int(1:5)			
+	variable	GG	int(1:5)			
+	variable	HH	int(1:5)			
+	variable	II	int(1:5)			
+	variable	JJ	int(1:5)			
+	variable	AVAL1	#AA,BB,CC,DD,EE#			
+	variable	AVAL2	#FF,GG,HH,II,JJ#			
+	variable	IND1	int(1:5)			
+	variable	IND2	int(1:5)			
+	variable	MYSUB	AVAL1(IND1)-AVAL2(IND2)			
+	variable	MYINT	toInt(MYSUB)			
+	variable	ANS	AVAL2(toInt(max(MYINT,1)))			
+	answer	ANS	2.1.1;2.1.2;2.1.3;2.3.1;2.3.3;2.3.8;2.3.14;2.3.15	TRUE		
+	problemType	Numerical				
+	dynamic	TRUE				
+	difficulty	4				
+	contentGrouping	CG1.2.5				
