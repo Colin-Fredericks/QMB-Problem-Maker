@@ -398,7 +398,7 @@ arr14	questionText	Given array <br/><code>A = [BB,CC,DD,HH;EE,FF,GG,II]</code><b
 	contentGrouping	CG1.2.1				
 						
 						
-arr15	questionText	Given the vector <code>VV = [AA,BB,CC,DD,EE]</code> what is VV(VV(IND))?				
+arr15	questionText	Given the vector <code>VV = [AA,BB,CC,DD,EE]</code>, what is <code>VV(VV(IND))</code>?				
 	variable	VV	{v,V,vec}			
 	variable	AA	int(1:5)			
 	variable	BB	int(1:5)			
@@ -414,7 +414,7 @@ arr15	questionText	Given the vector <code>VV = [AA,BB,CC,DD,EE]</code> what is V
 	difficulty	2				
 	contentGrouping	CG1.2.2				
 						
-arr16	questionText	Given the vector <code>VV = [AA,BB,CC,DD,EE,FF,GG]</code> what is VV(VV(VV(IND)))?				
+arr16	questionText	Given the vector <code>VV = [AA,BB,CC,DD,EE,FF,GG]</code>, what is <code>VV(VV(VV(IND)))</code>?				
 	variable	VV	{v,V,vec}			
 	variable	AA	int(1:7)			
 	variable	BB	int(1:7)			
@@ -471,7 +471,7 @@ arr18	questionText	AA is a matrix with ROWS rows and COLS columns. What is the s
 	difficulty	1				
 	contentGrouping	CG1.2.4				
 						
-arr19	questionText	Given the array <code>ARR = [AA,BB,CC,DD,LL;EE,FF,II,GG,HH;II,JJ,KK,AA,LL;DD,FF,BB,GG,AA;HH,EE,LL,KK,CC]</code> what is ARR(ARR(IND1,IND2),ARR(IND3,IND4))?				
+arr19	questionText	Given the array <code>ARR = [AA,BB,CC,DD,LL;EE,FF,II,GG,HH;II,JJ,KK,AA,LL;DD,FF,BB,GG,AA;HH,EE,LL,KK,CC]</code> what is <code>ARR(ARR(IND1,IND2),ARR(IND3,IND4))</code>?				
 	variable	ARR	{a,A,arr}			
 	variable	AA	int(1:5)			
 	variable	BB	int(1:5)			
@@ -497,7 +497,7 @@ arr19	questionText	Given the array <code>ARR = [AA,BB,CC,DD,LL;EE,FF,II,GG,HH;II
 	difficulty	2				
 	contentGrouping	CG1.2.5				
 						
-arr20	questionText	Given the vector <code>VV = [AA,BB,CC,DD]</code> what is COMPARATOR(VV OPERATOR NUM)?				
+arr20	questionText	Given the vector <code>VV = [AA,BB,CC,DD]</code> what is <code>COMPARATOR(VV OPERATOR NUM)</code>?				
 	variable	VV	{v,V,vec}			
 	variable	AA	int(1:10)			
 	variable	BB	int(1:10)			
@@ -668,7 +668,7 @@ arr24.7	questionText	Which is the matlab shorthand for creating an array filled 
 	contentGrouping	CG1.2.6				
 						
 						
-arr25	questionText	Given the array A, how many values will <code>A((BB,CC),(DD,EE))</code> return?				
+arr25	questionText	Given a sufficiently large array A, how many values will <code>A((BB,CC),(DD,EE))</code> return?				
 	variable	BB	int(1:10)			
 	variable	CC	int(1:10)			
 	variable	DD	int(1:10)			
@@ -679,7 +679,7 @@ arr25	questionText	Given the array A, how many values will <code>A((BB,CC),(DD,E
 	difficulty	2				
 	contentGrouping	CG1.2.7				
 						
-arr26	questionText	Given the array A, how many values will <code>A((BB,BB,CC),(DD,EE))</code> return?				
+arr26	questionText	Given a sufficiently large array A, how many values will <code>A((BB,BB,CC),(DD,EE))</code> return?				
 	variable	BB	int(1:10)			
 	variable	CC	int(1:10)			
 	variable	DD	int(1:10)			
@@ -690,7 +690,7 @@ arr26	questionText	Given the array A, how many values will <code>A((BB,BB,CC),(D
 	difficulty	2				
 	contentGrouping	CG1.3.1				
 						
-arr27	questionText	Given the array A, what will <code>size(A((BB,BB,CC),(DD,EE)))</code> return?				
+arr27	questionText	Given a sufficiently large array A, what will <code>size(A((BB,BB,CC),(DD,EE)))</code> return?				
 	variable	BB	int(1:10)			
 	variable	CC	int(1:10)			
 	variable	DD	int(1:10)			
@@ -1050,7 +1050,7 @@ arr42	questionText	Which is the matlab shorthand for creating an array filled wi
 	difficulty	1				
 	contentGrouping	CG1.2.6				
 						
-arr43	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is ARR2(ARR1(IND1))?				
+arr43	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is <code>ARR2(ARR1(IND1))</code>?				
 	variable	ARR1	{a,A,arr1}			
 	variable	ARR2	{b,B,arr2}			
 	variable	AA	int(1:5)			
@@ -1072,7 +1072,7 @@ arr43	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF
 	difficulty	4				
 	contentGrouping	CG1.2.5				
 						
-arr44	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is ARR2(min(ARR1(IND1)+ARR2(IND2),5))?				
+arr44	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is <code>ARR2(min(ARR1(IND1)+ARR2(IND2),5))</code>?				
 	variable	ARR1	{a,A,arr1}			
 	variable	ARR2	{b,B,arr2}			
 	variable	AA	int(1:5)			
@@ -1096,7 +1096,7 @@ arr44	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF
 	difficulty	4				
 	contentGrouping	CG1.2.5				
 						
-arr45	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is ARR2(max(ARR1(IND1)-ARR2(IND2),1))?				
+arr45	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is <code>ARR2(max(ARR1(IND1)-ARR2(IND2),1))</code>?				
 	variable	ARR1	{a,A,arr1}			
 	variable	ARR2	{b,B,arr2}			
 	variable	AA	int(1:5)			
