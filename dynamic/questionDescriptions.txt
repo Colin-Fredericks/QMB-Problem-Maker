@@ -72,7 +72,7 @@ Intro13	questionText	What will happen if your type <code>FIRST OPERATOR SECOND</
 	difficulty	1					
 	contentGrouping	CG0.2					
 							
-Intro14	questionText	What will x equal if you type: <br/> <code>y=FIRST;<br/> x=y;</code>					
+Intro14	questionText	What will x equal if you type: \r<pre><code>y=FIRST;\rx=y;</code></pre>
 	variable	FIRST	int(1:100)				
 	variable	ANS	FIRST				
 	answer	ANS	0.1.2; 0.1.4	TRUE			
@@ -82,7 +82,7 @@ Intro14	questionText	What will x equal if you type: <br/> <code>y=FIRST;<br/> x=
 	difficulty	2					
 	contentGrouping	CG0.2					
 							
-Intro15	questionText	What will x equal if you type: <br/> <code>y=FIRST; <br/>x=y OPERATOR SECOND;</code>					
+Intro15	questionText	What will x equal if you type: \r<pre><code>y=FIRST;\rx=y OPERATOR SECOND;</code></pre>
 	variable	SECOND	int(1:10)				
 	variable	OPERATOR	{+,-,*}				
 	variable	FIRST	int(1:10)				
@@ -94,7 +94,7 @@ Intro15	questionText	What will x equal if you type: <br/> <code>y=FIRST; <br/>x=
 	difficulty	2					
 	contentGrouping	CG0.2					
 							
-Intro16	questionText	What will x equal? <br/><code> x= FIRST OPERATOR SECOND OPERATOR2 THIRD </code>					
+Intro16	questionText	What will x equal? \r<pre><code> x= FIRST OPERATOR SECOND OPERATOR2 THIRD </code></pre>
 	variable	THIRD	int(1:10)				
 	variable	OPERATOR2	{+,-,*}				
 	variable	SECOND	int(1:10)				
@@ -108,7 +108,7 @@ Intro16	questionText	What will x equal? <br/><code> x= FIRST OPERATOR SECOND OPE
 	difficulty	2					
 	contentGrouping	CG0.4					
 							
-Intro17	questionText	What will x equal? <br/> <code>x= FIRST OPERATOR SECOND / THIRD</code>					
+Intro17	questionText	What will x equal? \r<pre><code>x= FIRST OPERATOR SECOND / THIRD</code></pre>
 	variable	THIRD	int(1:10)				
 	variable	SECOND	int(1:10)*THIRD				
 	variable	OPERATOR	{+,-,*}				
@@ -121,7 +121,7 @@ Intro17	questionText	What will x equal? <br/> <code>x= FIRST OPERATOR SECOND / T
 	difficulty	2					
 	contentGrouping	CG0.4					
 							
-Intro18	questionText	What will x equal? <br/> <code> x= SECOND / THIRD OPERATOR FIRST </code>					
+Intro18	questionText	What will x equal? \r<pre><code> x= SECOND / THIRD OPERATOR FIRST </code></pre>
 	variable	THIRD	int(1:10)				
 	variable	SECOND	int(1:10)*THIRD				
 	variable	OPERATOR	{+,-,*}				
@@ -142,7 +142,7 @@ Intro19	questionText	What does the ^ symbol do?
 	difficulty	1					
 	contentGrouping	CG0.4					
 							
-Intro20	questionText	What will x equal?<br/><code> x=FIRST^POWER;</code>					
+Intro20	questionText	What will x equal?\r<pre><code> x=FIRST^POWER;</code></pre>
 	variable	FIRST	int(1:10)				
 	variable	POWER	{2,3}				
 	variable	ANS	FIRST ^ POWER				
@@ -153,7 +153,7 @@ Intro20	questionText	What will x equal?<br/><code> x=FIRST^POWER;</code>
 	difficulty	1					
 	contentGrouping	CG0.4					
 							
-Intro21	questionText	What will x equal? <br/> <code>x= FIRST OPERATOR ( SECOND OPERATOR2 THIRD )</code>					
+Intro21	questionText	What will x equal? \r<pre><code>x= FIRST OPERATOR ( SECOND OPERATOR2 THIRD )</code></pre>
 	variable	THIRD	int(1:10)				
 	variable	OPERATOR2	{+,-,*,*,*,*,*,*}				
 	variable	SECOND	int(1:10)				
@@ -167,7 +167,7 @@ Intro21	questionText	What will x equal? <br/> <code>x= FIRST OPERATOR ( SECOND O
 	difficulty	2					
 	contentGrouping	CG0.4					
 							
-Intro22	questionText	What will x equal? <br/><code> y= FOURTH OPERATOR3 FIFTH; <br/> x= FIRST OPERATOR ( y OPERATOR2 THIRD )</code>					
+Intro22	questionText	What will x equal? \r<pre><code> y= FOURTH OPERATOR3 FIFTH; \rx= FIRST OPERATOR ( y OPERATOR2 THIRD )</code></pre>
 	variable	THIRD	int(1:10)				
 	variable	OPERATOR2	{+,-,*}				
 	variable	FOURTH	int(1:10)				
@@ -346,7 +346,7 @@ arr9	questionText	The Matlab function <code>size</code> returns:
 	difficulty	1				
 	contentGrouping	CG1.1.6				
 						
-arr10	questionText	Given a matrix NAME, the Matlab function <code>size</code> produces: <br/><br/><code>size(NAME)<br/><br/>ans = <br/>ROWS COLS</code> <br/><br/>How many rows does array NAME have?				
+arr10	questionText	Given a particular matrix NAME, the Matlab function <code>size</code> produces: \r<pre><code>size(NAME)\r\rans = \rROWS COLS</code></pre>\r\rHow many rows does array NAME have?				
 	variable	NAME	{A,B,C}			
 	variable	ROWS	int(1:100)			
 	variable	COLS	int(1:100)			
@@ -356,7 +356,7 @@ arr10	questionText	Given a matrix NAME, the Matlab function <code>size</code> pr
 	difficulty	1				
 	contentGrouping	CG1.1.6				
 						
-arr11	questionText	Given a matrix NAME, the Matlab function <code>size</code> produces: <br/><br/><code>size(NAME)<br/><br/>ans = <br/>ROWS COLS</code> <br/><br/>How many columns does array NAME have?				
+arr11	questionText	Given a particular matrix NAME, the Matlab function <code>size</code> produces: \r<pre><code>size(NAME)\r\rans = \rROWS COLS</code></pre>\r\rHow many columns does array NAME have?
 	variable	NAME	{A,B,C}			
 	variable	ROWS	int(1:100)			
 	variable	COLS	int(1:100)			
@@ -703,7 +703,7 @@ arr27	questionText	Given a sufficiently large array A, what will <code>size(A((B
 	difficulty	2				
 	contentGrouping	CG1.3.1				
 						
-arr28	questionText	Given the array <pre><code>ARR = [AA,BB,EE;\rCC,DD,DD;\rBB,EE,FF;\rAA,CC,EE]</code></pre> if you set <code>N=ARR OPERATOR ARR</code>, what is <code>N(IND1,IND2)</code>?
+arr28	questionText	Given the array <pre>ARR = [AA,BB,EE;\rCC,DD,DD;\rBB,EE,FF;\rAA,CC,EE]</code></pre> if you set <code>N=ARR OPERATOR ARR</code>, what is <code>N(IND1,IND2)</code>?
 	variable	ARR	{a,A,arr}			
 	variable	AA	int(1:10)			
 	variable	BB	int(1:10)			
@@ -988,7 +988,7 @@ arr38	questionText	Given the vector <code>VV = [AA,BB,CC,DD;EE,FF,GG,HH]</code> 
 	difficulty	2				
 	contentGrouping	CG1.2.2				
 						
-arr39	questionText	AA is a matrix with ROWS rows and COLS columns. What will B equal after the commands <br/><code>AA(NEWROW,NEWCOL) = VAL;<br/>B=sum(size(AA));</code>				
+arr39	questionText	AA is a matrix with ROWS rows and COLS columns. What will B equal after the commands\r<code>AA(NEWROW,NEWCOL) = VAL;\rB=sum(size(AA));</code>				
 	variable	AA	{A,B,C,myArray}			
 	variable	ROWS	int(2:5)			
 	variable	COLS	int(2:5)			
@@ -1005,7 +1005,7 @@ arr39	questionText	AA is a matrix with ROWS rows and COLS columns. What will B e
 	contentGrouping	CG1.2.3				
 	options	tolerance:0				
 						
-arr40	questionText	AA is a matrix with ROWS rows and COLS columns. What will B equal after the commands <br/><code>AA(NEWROW,NEWCOL,NEWDIM) = VAL;<br/>B=sum(size(AA));</code>				
+arr40	questionText	AA is a matrix with ROWS rows and COLS columns. What will B equal after the following commands? <br/><pre><code>AA(NEWROW,NEWCOL,NEWDIM) = VAL;\rB=sum(size(AA));</code></pre>				
 	variable	AA	{A,B,C,myArray}			
 	variable	ROWS	int(2:5)			
 	variable	COLS	int(2:5)			
