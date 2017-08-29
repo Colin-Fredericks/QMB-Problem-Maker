@@ -507,7 +507,7 @@ while (lineCount < len(lines)):
     if (line.startswith("#")):
         lineCount += 1
         continue
-    lineEls = line.split("\t")
+    lineEls = line.replace('\\r','\r').split("\t")
     if (lineEls[0] != ""):
         logging.info("questionText is " + questionText + " and dynamic is " + dynamic)
         if (questionText != ""):
