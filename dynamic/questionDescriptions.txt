@@ -703,7 +703,7 @@ arr27	questionText	Given a sufficiently large array A, what will <code>size(A((B
 	difficulty	2				
 	contentGrouping	CG1.3.1				
 						
-arr28	questionText	Given the array <code>ARR = [AA,BB,EE;<br/>CC,DD,DD;<br/>BB,EE,FF;<br/>AA,CC,EE]</code> if you set <code>N=ARR OPERATOR ARR</code>, what is <code>N(IND1,IND2)</code>?				
+arr28	questionText	Given the array <pre><code>ARR = [AA,BB,EE;\rCC,DD,DD;\rBB,EE,FF;\rAA,CC,EE]</code></pre> if you set <code>N=ARR OPERATOR ARR</code>, what is <code>N(IND1,IND2)</code>?				
 	variable	ARR	{a,A,arr}			
 	variable	AA	int(1:10)			
 	variable	BB	int(1:10)			
@@ -765,7 +765,7 @@ arr32	questionText	If A is a matrix RR by CC by DD matrix, what will <code>size(
 	difficulty	1				
 	contentGrouping	CG1.3.3				
 						
-arr33	questionText	Given the array <code>ARR = [AA,BB,EE;<br/>CC,DD,DD;<br/>BB,EE,FF;<br/>AA,CC,EE]</code> what is <code>ARR(IND1,IND2)</code>?				
+arr33	questionText	Given the array <pre><code>ARR = [AA,BB,EE;\rCC,DD,DD;\rBB,EE,FF;\rAA,CC,EE]</code></pre> what is <code>ARR(IND1,IND2)</code>?				
 	variable	ARR	{a,A,arr}			
 	variable	AA	int(1:10)			
 	variable	BB	int(1:10)			
@@ -1050,7 +1050,7 @@ arr42	questionText	Which is the matlab shorthand for creating an array filled wi
 	difficulty	1				
 	contentGrouping	CG1.2.6				
 						
-arr43	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is <code>ARR2(ARR1(IND1))</code>?				
+arr43	questionText	Given the array <pre><code>ARR1 = [AA,BB,CC,DD,EE];\rARR2=[FF,GG,HH,II,JJ];</code></pre> what is <code>ARR2(ARR1(IND1))</code>?				
 	variable	ARR1	{a,A,arr1}			
 	variable	ARR2	{b,B,arr2}			
 	variable	AA	int(1:5)			
@@ -1072,7 +1072,7 @@ arr43	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF
 	difficulty	4				
 	contentGrouping	CG1.2.5				
 						
-arr44	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is <code>ARR2(min(ARR1(IND1)+ARR2(IND2),5))</code>?				
+arr44	questionText	Given the array <pre><code>ARR1 = [AA,BB,CC,DD,EE];\rARR2=[FF,GG,HH,II,JJ];</code></pre> what is <code>ARR2(min(ARR1(IND1)+ARR2(IND2),5))</code>?				
 	variable	ARR1	{a,A,arr1}			
 	variable	ARR2	{b,B,arr2}			
 	variable	AA	int(1:5)			
@@ -1096,7 +1096,7 @@ arr44	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF
 	difficulty	4				
 	contentGrouping	CG1.2.5				
 						
-arr45	questionText	Given the array <code>ARR1 = [AA,BB,CC,DD,EE]; <br/> ARR2=[FF,GG,HH,II,JJ];</code> what is <code>ARR2(max(ARR1(IND1)-ARR2(IND2),1))</code>?				
+arr45	questionText	Given the array <pre><code>ARR1 = [AA,BB,CC,DD,EE];\rARR2=[FF,GG,HH,II,JJ];</code></pre> what is <code>ARR2(max(ARR1(IND1)-ARR2(IND2),1))</code>?				
 	variable	ARR1	{a,A,arr1}			
 	variable	ARR2	{b,B,arr2}			
 	variable	AA	int(1:5)			
