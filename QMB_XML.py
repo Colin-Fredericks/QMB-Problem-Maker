@@ -65,10 +65,11 @@ def make_problem_XML(
     problem_tag.set('display_name', problem_title)
     problem_tree = ET.ElementTree(problem_tag)
 
+    # DEPRECATED using the new LTI Turduckin approach.
     # Add the script tag so our problems can communicate properly.
-    script_tag = ET.SubElement(problem_tag, 'script')
-    script_tag.set('src', '/static/EveryProblemScript.js')
-    script_tag.set('type', 'text/javascript')
+    # script_tag = ET.SubElement(problem_tag, 'script')
+    # script_tag.set('src', '/static/EveryProblemScript.js')
+    # script_tag.set('type', 'text/javascript')
 
     # Set other problem options. For partial documentation see:
     # https://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/components/problem-components.html
