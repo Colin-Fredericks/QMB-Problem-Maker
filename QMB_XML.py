@@ -187,8 +187,8 @@ def make_line_problem_XML(
         type_tag.set('type', 'ci')   # case-insensitive by default.
 
     # Needs some expansion for various extra credit options.
-#     if 'extra_credit' in options:
-#         type_tag.set('extra_credit', options['extra_credit'])
+    #     if 'extra_credit' in options:
+    #         type_tag.set('extra_credit', options['extra_credit'])
 
     type_tag.set('answer', answers[0]['answer'])
 
