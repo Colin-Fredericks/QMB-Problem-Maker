@@ -1,0 +1,386 @@
+QMBvpyPxT6wYi	1	CG0.2	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro6.0	MATLAB Basics #08M
+QMBqQydHo4ugf	1	CG0.2	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro6.1	MATLAB Basics #64D
+QMBZ7VIO3Gbjt	1	CG0.2	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro6.2	MATLAB Basics #94D
+QMBQFlXPHjbGs	1	CG0.2	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro6.3	MATLAB Basics #29U
+QMBJ1r2987hbc	1	CG0.2	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro6.4	MATLAB Basics #14U
+QMBQ53XWAFO6z	1	CG0.1			AnyText		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro7.0	Randomness #13F
+QMBafVMNtycr2	1	CG0.3			AnyText		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro8.0	Reading a Line of Code #78I
+QMBagRZY8Bt7r	1	CG0.3	0.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro9.0	Reading a Line of Code #24A
+QMBiF1a8n24Qy	1	CG0.3	0.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro10.0	Reading a Line of Code #41A
+QMBjhlX69AwZe	1	CG0.3			AnyText		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro11.0	Reading a Line of Code #16H
+QMBedA6slMzvW	1	CG0.3			AnyText		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro12.0	Reading a Line of Code #50D
+QMBLWKuaqRA0l	1	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro13.0	MATLAB Basics #58S
+QMBpPVf52icGQ	1	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro13.1	MATLAB Basics #58S
+QMBkhcu4f5GER	1	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro13.2	MATLAB Basics #81P
+QMBATx4MjHRDv	1	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro13.3	MATLAB Basics #27C
+QMBWye5UbrhVk	1	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro13.4	MATLAB Basics #69A
+QMBcAYQs25hEu	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro14.0	MATLAB Basics #70Z
+QMB4SAs0UvuBY	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro14.1	MATLAB Basics #86Q
+QMBraPkV6TRMd	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro14.2	MATLAB Basics #04C
+QMB2Qid38ZxTu	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro14.3	MATLAB Basics #15G
+QMBBqe1E3sPcY	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro14.4	MATLAB Basics #01J
+QMBeVlWNkrJ9n	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro15.0	MATLAB Basics #19Y
+QMBZKwaC9X1LG	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro15.1	MATLAB Basics #96N
+QMBpJMXEV6Tbc	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro15.2	MATLAB Basics #21U
+QMBahtbDiSTE1	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro15.3	MATLAB Basics #36J
+QMBK42FEXcyb7	2	CG0.2	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro15.4	MATLAB Basics #71V
+QMB86pAdsWJuh	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro16.0	Order of Operations #76Z
+QMBfJPzDcrY1b	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro16.1	Order of Operations #58M
+QMBPmKieJZrgx	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro16.2	Order of Operations #62J
+QMBcQFtfpBAUG	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro16.3	Order of Operations #98R
+QMBL7oCGBurvK	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro16.4	Order of Operations #54Z
+QMBcm6OKp0nBH	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro17.0	Order of Operations #68O
+QMB36wWZjvdRV	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro17.1	Order of Operations #62B
+QMB1kLRDTnG8J	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro17.2	Order of Operations #12C
+QMBtPMCqfTQA3	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro17.3	Order of Operations #13R
+QMBoAu57Q2S3i	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro17.4	Order of Operations #17P
+QMB3GFdnisJyQ	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro18.0	Order of Operations #97I
+QMB0ioqdWCtMN	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro18.1	Order of Operations #25Y
+QMBqzocQ2HOr4	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro18.2	Order of Operations #63I
+QMBU3qw5OrzId	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro18.3	Order of Operations #46K
+QMBPzj1l3R4KO	2	CG0.4	0.1.2,0.1.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro18.4	Order of Operations #13V
+QMB2UQRiPhIjW	1	CG0.4	0.0.0		AnyText		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro19.0	Order of Operations #64Z
+QMBZ83rvuw6ch	1	CG0.4	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro20.0	Order of Operations #15V
+QMBwT68nVzmBs	1	CG0.4	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro20.1	Order of Operations #05U
+QMBngupZojLse	1	CG0.4	0.1.2		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro20.2	Order of Operations #37F
+QMBjzLH6O28KZ	2	CG0.4	0.1.2,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro21.0	Order of Operations #21Y
+QMBwFjoGeipAs	2	CG0.4	0.1.2,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro21.1	Order of Operations #28P
+QMB62zSViE0U9	2	CG0.4	0.1.2,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro21.2	Order of Operations #20D
+QMBSspXAQjarm	2	CG0.4	0.1.2,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro21.3	Order of Operations #80T
+QMBfaNJByXECq	2	CG0.4	0.1.2,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro21.4	Order of Operations #45B
+QMB8ZneuA4FEI	2	CG0.4	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro22.0	Order of Operations #35Q
+QMBXmf1yaQkUB	2	CG0.4	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro22.1	Order of Operations #41E
+QMBcu2dBHKrzU	2	CG0.4	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro22.2	Order of Operations #56Z
+QMBMz1S8Guj2J	2	CG0.4	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro22.3	Order of Operations #62W
+QMBITsEc7zdtQ	2	CG0.4	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro22.4	Order of Operations #32C
+QMBDPZfCg9GxB	3	CG0.5	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro23.0	Turning Words into Code #82A
+QMBVSLxAnhQ3s	3	CG0.5	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro23.1	Turning Words into Code #94L
+QMBOC98mbi6I7	3	CG0.5	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro23.2	Turning Words into Code #60B
+QMBToNWSJwaIR	3	CG0.5	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro23.3	Turning Words into Code #09Y
+QMB3eWkxompD6	3	CG0.5	0.1.2,0.1.4,0.1.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.Intro23.4	Turning Words into Code #34P
+QMB3wrUz7ZAhH	1	CG1.1.1	2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr1.0	Intro to Arrays #39C
+QMBk6ZaPsxf8F	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.1.0	Intro to Arrays #74E
+QMBwqBunYER4t	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.1.1	Intro to Arrays #41T
+QMBHcR6JKi2Yv	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.1.2	Intro to Arrays #61Z
+QMB1Gza0SXD2Z	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.1.3	Intro to Arrays #38X
+QMB9maTYO46Fb	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.1.4	Intro to Arrays #47M
+QMBoH1AY7sRDV	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.0	Intro to Arrays #26F
+QMBGXYhWI1QDp	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.1	Intro to Arrays #23N
+QMB8zJaSn6rWO	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.2	Intro to Arrays #46T
+QMB0mXScUGp5E	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.3	Intro to Arrays #45H
+QMBvafkA3hIyC	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.4	Intro to Arrays #81J
+QMB7jdBzbUKtq	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.1.0	Intro to Arrays #91R
+QMBFzj5TklS4W	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.1.1	Intro to Arrays #49E
+QMBFCTVz1bJ5L	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.1.2	Intro to Arrays #07P
+QMBIQeyfLn193	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.1.3	Intro to Arrays #56B
+QMBltrDpAfwd8	1	CG1.1.1	2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2.1.4	Intro to Arrays #75D
+QMBTXuvlgMQwP	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.0	Intro to Arrays #61C
+QMBjOrGIc7gkU	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.1	Intro to Arrays #52B
+QMBWHjyMiBYpU	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.2	Intro to Arrays #14Z
+QMBfKNXLgVqB5	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.3	Intro to Arrays #08H
+QMBerMO1YufBc	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr2.4	Intro to Arrays #62K
+QMBcyfCJd0mwq	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr3.0	Intro to Arrays #79I
+QMBtfHkLzAd5s	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr3.1	Intro to Arrays #49I
+QMB2nAsE6bRJz	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr3.2	Intro to Arrays #21S
+QMBvHGmeJfoUP	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr3.3	Intro to Arrays #68B
+QMBUztNAyKHk6	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr3.4	Intro to Arrays #05N
+QMBxrjP2YcnSA	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr4.0	Intro to Arrays #69D
+QMBuhNAtwUKEv	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr4.1	Intro to Arrays #79U
+QMB6BQfNST709	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr4.2	Intro to Arrays #76X
+QMBnmRHZXY6I1	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr4.3	Intro to Arrays #18O
+QMBBzc9lh7RyH	1	CG1.1.1	2.2.4,2.2.1,2.2.3,2.2.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr4.4	Intro to Arrays #39P
+QMBpXLJPqMmoQ	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.0	Loading Images as Arrays #48I
+QMBUh9NKysg3b	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.1	Loading Images as Arrays #38L
+QMB9UHuYJoBli	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.2	Loading Images as Arrays #53S
+QMBafLjHMnqJy	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.3	Loading Images as Arrays #83J
+QMBaCAyh9g2YO	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.4	Loading Images as Arrays #49Z
+QMBEN9hYWCAOM	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.5	Loading Images as Arrays #54G
+QMBvTC7BEnafb	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.6	Loading Images as Arrays #67U
+QMBzCPxITGeXy	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.7	Loading Images as Arrays #12K
+QMBE59plm8VUx	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.8	Loading Images as Arrays #47H
+QMBoOs1tYl7gU	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.9	Loading Images as Arrays #35V
+QMBkwdOjf27rK	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.10	Loading Images as Arrays #67Y
+QMB6rJvTDbP2H	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.11	Loading Images as Arrays #78X
+QMBU71rp4HKcI	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.12	Loading Images as Arrays #42H
+QMBYpW8T0yRS5	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.13	Loading Images as Arrays #52N
+QMBQg1K5W6BXe	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.14	Loading Images as Arrays #26X
+QMBJSzaGmEurb	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.15	Loading Images as Arrays #67G
+QMBjMhE1HDNA0	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.16	Loading Images as Arrays #68K
+QMBzGcFNyYMhw	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.17	Loading Images as Arrays #87V
+QMBj21eLHcU6t	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.18	Loading Images as Arrays #06Y
+QMBoFp5ZgvDRb	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr5.19	Loading Images as Arrays #13E
+QMBKTA748cRSW	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr6.0	Loading Images as Arrays #95Q
+QMB9eDUo5cHyT	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr6.1	Loading Images as Arrays #26S
+QMBfzMe0N7p8A	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr6.2	Loading Images as Arrays #58E
+QMBzuaF2TUdqx	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr6.3	Loading Images as Arrays #30C
+QMBEL3nbpvls9	1	CG1.1.2	2.3.9		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr6.4	Loading Images as Arrays #76B
+QMB5dzwKUSFk4	1	CG1.1.3	2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr7.0	Inspecting Arrays #18O
+QMBMVLKDpwsP9	1	CG1.1.5	2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr8.0	Entering Arrays #80E
+QMBvH2CP6EzmK	1	CG1.1.6	2.5.17		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr9.0	Loading and Creating Arrays #30N
+QMBgCHEZTeQ0G	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr10.0	Loading and Creating Arrays #68A
+QMBhkXyrEufL9	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr10.1	Loading and Creating Arrays #64Y
+QMB6OCZt2njiv	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr10.2	Loading and Creating Arrays #18T
+QMBEWVOXjcSoP	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr10.3	Loading and Creating Arrays #25K
+QMBQbuT3s1KWG	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr10.4	Loading and Creating Arrays #96I
+QMBFfqw8oZbez	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr11.0	Loading and Creating Arrays #10O
+QMBBJfhVTEHuO	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr11.1	Loading and Creating Arrays #62K
+QMBsqVCLQMl1u	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr11.2	Loading and Creating Arrays #90O
+QMBd1Z6CSQiH5	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr11.3	Loading and Creating Arrays #37S
+QMBw9mhiTkE2N	1	CG1.1.6	2.5.17		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr11.4	Loading and Creating Arrays #25E
+QMBjeu3Vtalf7	1	CG1.1.6	1.1.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr13.0	Loading and Creating Arrays #76W
+QMBvGEdQsDTtA	1	CG1.1.6	1.1.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr13.1	Loading and Creating Arrays #91D
+QMBrZgiT3BaJq	1	CG1.1.6	1.1.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr13.2	Loading and Creating Arrays #79A
+QMBkoj0q9lLaB	1	CG1.1.6	1.1.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr13.3	Loading and Creating Arrays #56N
+QMBsUhGSAkjQ1	1	CG1.1.6	1.1.2		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr13.4	Loading and Creating Arrays #39U
+QMBMrpYFdLRkK	1	CG1.2.1	2.3.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr14.0	Linear Indexing #72X
+QMBCKfLxNWstG	1	CG1.2.1	2.3.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr14.1	Linear Indexing #01K
+QMB28kUTYdiQK	1	CG1.2.1	2.3.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr14.2	Linear Indexing #83C
+QMBSlWHoE3PtZ	1	CG1.2.1	2.3.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr14.3	Linear Indexing #21R
+QMBu5lN8wQtKJ	1	CG1.2.1	2.3.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr14.4	Linear Indexing #59I
+QMB5mInZU78VM	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr15.0	Array Indexing Challenge #61V
+QMBxouLi1haWV	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr15.1	Array Indexing Challenge #54O
+QMBBJWqLzExFC	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr15.2	Array Indexing Challenge #60E
+QMB4pZTMzx9tL	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr15.3	Array Indexing Challenge #72G
+QMBwIme6u7j3A	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr15.4	Array Indexing Challenge #30Q
+QMBIAfOtidBKD	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr16.0	Array Indexing Challenge #82O
+QMBBx1D9yrCQY	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr16.1	Array Indexing Challenge #23E
+QMBohLefXdKA7	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr16.2	Array Indexing Challenge #94A
+QMB4RxsJrEQGV	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr16.3	Array Indexing Challenge #20A
+QMB3zNfxCaA0J	2	CG1.2.2	2.3.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr16.4	Array Indexing Challenge #74E
+QMBNGuQipUwrh	1	CG1.2.3	2.8.3,2.2.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr17.0	Storing Values in Arrays #05P
+QMBcXYv0EfUD5	1	CG1.2.3	2.8.3,2.2.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr17.1	Storing Values in Arrays #59W
+QMBrq0F4kXc3I	1	CG1.2.3	2.8.3,2.2.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr17.2	Storing Values in Arrays #02T
+QMBxbSBO1doKv	1	CG1.2.3	2.8.3,2.2.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr17.3	Storing Values in Arrays #31M
+QMBeydH6goqt3	1	CG1.2.3	2.8.3,2.2.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr17.4	Storing Values in Arrays #51W
+QMBrU8iKFQwqn	1	CG1.2.4	2.3.10,2.8.3		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr18.0	Multidimensional Arrays #15C
+QMBmOPRytaXbB	1	CG1.2.4	2.3.10,2.8.3		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr18.1	Multidimensional Arrays #19J
+QMBti8vTH1Olm	1	CG1.2.4	2.3.10,2.8.3		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr18.2	Multidimensional Arrays #35G
+QMBtynRmHFBq8	1	CG1.2.4	2.3.10,2.8.3		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr18.3	Multidimensional Arrays #51P
+QMBPLFp9iTfj0	1	CG1.2.4	2.3.10,2.8.3		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr18.4	Multidimensional Arrays #38Y
+QMBbyt5NdvExK	2	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr19.0	From One Array to Another #36B
+QMBYePzKN5Lvh	2	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr19.1	From One Array to Another #58Y
+QMB2ZRuF9WDbd	2	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr19.2	From One Array to Another #10V
+QMBfkI6gDxS0e	2	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr19.3	From One Array to Another #37M
+QMBGlvKRMFWwk	2	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr19.4	From One Array to Another #81U
+QMB60pfV9aKgX	2	CG1.2.6	2.7.1,2.5.8,2.5.9,2.5.10,2.5.11,2.5.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr20.0	Other Ways to Create and Change Arrays #95Y
+QMBVTeqFJSQtD	2	CG1.2.6	2.7.1,2.5.8,2.5.9,2.5.10,2.5.11,2.5.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr20.1	Other Ways to Create and Change Arrays #68Z
+QMBT75GKMj2am	2	CG1.2.6	2.7.1,2.5.8,2.5.9,2.5.10,2.5.11,2.5.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr20.2	Other Ways to Create and Change Arrays #93Y
+QMBUICWYL1b2x	2	CG1.2.6	2.7.1,2.5.8,2.5.9,2.5.10,2.5.11,2.5.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr20.3	Other Ways to Create and Change Arrays #03R
+QMBfHv8hDVCWQ	2	CG1.2.6	2.7.1,2.5.8,2.5.9,2.5.10,2.5.11,2.5.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr20.4	Other Ways to Create and Change Arrays #79K
+QMBmaWhxiYG0Q	2	CG1.2.6	2.2.1,2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr21.0	Other Ways to Create and Change Arrays #05I
+QMBlVOc8ESmUD	2	CG1.2.6	2.2.1,2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr21.1	Other Ways to Create and Change Arrays #15B
+QMBH1T70UwvDo	2	CG1.2.6	2.2.1,2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr21.2	Other Ways to Create and Change Arrays #41U
+QMB9d8vauxUZn	2	CG1.2.6	2.2.1,2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr21.3	Other Ways to Create and Change Arrays #06B
+QMBPJ40M5RtlT	2	CG1.2.6	2.2.1,2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr21.4	Other Ways to Create and Change Arrays #46T
+QMBkJqp7oLOHv	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr22.0	Other Ways to Create and Change Arrays #43G
+QMBHC8G9cRNZd	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr22.1	Other Ways to Create and Change Arrays #89S
+QMBJchwQG4KrV	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr22.2	Other Ways to Create and Change Arrays #05L
+QMBzDQe9l5YdC	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr22.3	Other Ways to Create and Change Arrays #01A
+QMB9z7VZICtQ5	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr22.4	Other Ways to Create and Change Arrays #34R
+QMBkIeVAq7jaN	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr23.0	Other Ways to Create and Change Arrays #75J
+QMBVY0xmOTlRh	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr23.1	Other Ways to Create and Change Arrays #75U
+QMBmzXJyRDjTY	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr23.2	Other Ways to Create and Change Arrays #91S
+QMBXwZkLAMIv0	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr23.3	Other Ways to Create and Change Arrays #13A
+QMB6Cfjw0PEsx	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr23.4	Other Ways to Create and Change Arrays #04A
+QMBmkSO27WZQA	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.0	Other Ways to Create and Change Arrays #67Y
+QMB5Wg6uEjNM0	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.1	Other Ways to Create and Change Arrays #72N
+QMBLzQlu6024U	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.2	Other Ways to Create and Change Arrays #95B
+QMBopdbRMTxCg	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.3	Other Ways to Create and Change Arrays #48Q
+QMB2rwDOqi8xv	1	CG1.2.6	2.3.8,2.3.1,2.3.3,2.8.1,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.4	Other Ways to Create and Change Arrays #60Z
+QMBQczh1xkREq	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.1.0	Other Ways to Create and Change Arrays #38R
+QMBmYXHtw5B8N	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.1.1	Other Ways to Create and Change Arrays #21S
+QMBoa8ez3qFQv	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.1.2	Other Ways to Create and Change Arrays #91V
+QMBwZaHJomvi3	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.1.3	Other Ways to Create and Change Arrays #28J
+QMBWHrqMe2mli	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.1.4	Other Ways to Create and Change Arrays #62C
+QMB5NbpH8TBDK	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.2.0	Other Ways to Create and Change Arrays #50L
+QMBnKRV49s0yg	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.2.1	Other Ways to Create and Change Arrays #89E
+QMBTnIEN4jRbO	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.2.2	Other Ways to Create and Change Arrays #60L
+QMBoH1UbqYjEN	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.2.3	Other Ways to Create and Change Arrays #68W
+QMBwmn8l9NdfX	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.2.4	Other Ways to Create and Change Arrays #70A
+QMByJ14F093hV	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.3.0	Other Ways to Create and Change Arrays #91M
+QMB3lY9dKv8qN	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.3.1	Other Ways to Create and Change Arrays #93G
+QMB1hBdW2yfrC	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.3.2	Other Ways to Create and Change Arrays #59I
+QMBOcAerhE98Q	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.3.3	Other Ways to Create and Change Arrays #54F
+QMBEI52FKU8zJ	2	CG1.2.6	2.6.6		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.3.4	Other Ways to Create and Change Arrays #41B
+QMBBcQ9RYN6LS	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.4.0	Other Ways to Create and Change Arrays #52B
+QMBr5gxKtB4HV	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.4.1	Other Ways to Create and Change Arrays #94J
+QMBnVpoXB0Q29	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.4.2	Other Ways to Create and Change Arrays #21K
+QMBeNhuda2I7J	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.4.3	Other Ways to Create and Change Arrays #47K
+QMBNbercqTo9B	2	CG1.2.6	2.6.4		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.4.4	Other Ways to Create and Change Arrays #71H
+QMBgYQ9NMJwnr	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.5.0	Other Ways to Create and Change Arrays #94P
+QMBeItQouC2Ts	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.5.1	Other Ways to Create and Change Arrays #76M
+QMBirW45BXSl7	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.5.2	Other Ways to Create and Change Arrays #65C
+QMB5r2OkGhNKw	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.5.3	Other Ways to Create and Change Arrays #70A
+QMBLOJDjPn61V	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.5.4	Other Ways to Create and Change Arrays #07R
+QMBtbfohZ79R3	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.6.0	Other Ways to Create and Change Arrays #58S
+QMBGd6McZNh0g	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.6.1	Other Ways to Create and Change Arrays #45J
+QMBVoX4Nnqc30	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.6.2	Other Ways to Create and Change Arrays #80J
+QMBFcvBYxwQho	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.6.3	Other Ways to Create and Change Arrays #67F
+QMB1SmPDRfCKO	2	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.6.4	Other Ways to Create and Change Arrays #64T
+QMBZVtfyg5cr7	3	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.7.0	Other Ways to Create and Change Arrays #37S
+QMBkyhQJSMFsu	3	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.7.1	Other Ways to Create and Change Arrays #41M
+QMBdlrIatk4X8	3	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.7.2	Other Ways to Create and Change Arrays #91V
+QMBlKrqDZ4tbs	3	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.7.3	Other Ways to Create and Change Arrays #58V
+QMBkzEc7Hn6WX	3	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr24.7.4	Other Ways to Create and Change Arrays #61B
+QMB6ZioXwV75e	2	CG1.2.7	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr25.0	Array Slicing #37N
+QMBZHgPzITWKS	2	CG1.2.7	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr25.1	Array Slicing #67Y
+QMBpMH5eqzs3V	2	CG1.2.7	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr25.2	Array Slicing #46C
+QMB1mrLPnczYW	2	CG1.2.7	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr25.3	Array Slicing #52R
+QMBcVkS4YCBu5	2	CG1.2.7	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr25.4	Array Slicing #42B
+QMBdSCY1wQyZp	2	CG1.3.1	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr26.0	Advanced Array Operations #86I
+QMBAV52w6fkB8	2	CG1.3.1	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr26.1	Advanced Array Operations #64B
+QMBCbXEeZn98d	2	CG1.3.1	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr26.2	Advanced Array Operations #95C
+QMB12ozN7wFyk	2	CG1.3.1	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr26.3	Advanced Array Operations #81U
+QMBLoIr6qtU1Q	2	CG1.3.1	2.3.8,2.3.11		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr26.4	Advanced Array Operations #97Y
+QMBtnR1oV6bSM	2	CG1.3.1	2.3.8,2.3.11		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr27.0	Advanced Array Operations #58Y
+QMBxDX9QgmcN1	2	CG1.3.1	2.3.8,2.3.11		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr27.1	Advanced Array Operations #97T
+QMBYKtnpTS6qJ	2	CG1.3.1	2.3.8,2.3.11		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr27.2	Advanced Array Operations #96F
+QMBXwvRiN5kJS	2	CG1.3.1	2.3.8,2.3.11		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr27.3	Advanced Array Operations #61V
+QMB5Pphj9sfce	2	CG1.3.1	2.3.8,2.3.11		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr27.4	Advanced Array Operations #03Y
+QMBZWEqMHth6a	1	CG1.3.2	2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr28.0	Element Operations #80V
+QMBvSNuKGIYHr	1	CG1.3.2	2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr28.1	Element Operations #30B
+QMB90Il56YPjH	1	CG1.3.2	2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr28.2	Element Operations #09P
+QMBRPx8fyKkX4	1	CG1.3.2	2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr28.3	Element Operations #39B
+QMB1JA5npf6yb	1	CG1.3.2	2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr28.4	Element Operations #38H
+QMBXcT6LBwqzF	1	CG1.3.2	2.7.1		AnyText		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr29.0	Element Operations #84F
+QMBGqItEwLaAh	1	CG1.3.3	2.2.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr30.0	Changing Dimensions #71K
+QMBRDxspf2wrT	1	CG1.3.3	2.2.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr30.1	Changing Dimensions #47B
+QMBQidvqGgsEb	1	CG1.3.3	2.2.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr30.2	Changing Dimensions #89M
+QMBF5kDuaW70m	1	CG1.3.3	2.2.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr30.3	Changing Dimensions #78R
+QMBQrc6CoNO3x	1	CG1.3.3	2.2.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr30.4	Changing Dimensions #69U
+QMBI9jVCPRJaW	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr31.0	Changing Dimensions #08M
+QMBHImX2qs5kW	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr31.1	Changing Dimensions #47J
+QMBT05pWEcInL	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr31.2	Changing Dimensions #60I
+QMBb1Up9WlHe8	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr31.3	Changing Dimensions #35T
+QMBof7r1URcyq	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr31.4	Changing Dimensions #14U
+QMBs6N8bYOFJU	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr32.0	Changing Dimensions #42C
+QMB9Z2G3KIqHV	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr32.1	Changing Dimensions #07V
+QMB7apxvfKkGD	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr32.2	Changing Dimensions #12H
+QMBto60IGLiKx	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr32.3	Changing Dimensions #91J
+QMBpwJKAYEDhN	1	CG1.3.3	2.2.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr32.4	Changing Dimensions #39V
+QMBSvlhqCgIfw	1	CG1.4.1	2.3.8,2.3.9,2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr33.0	Review: Arrays #92C
+QMBNksT02dHMp	1	CG1.4.1	2.3.8,2.3.9,2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr33.1	Review: Arrays #92Z
+QMBao29eTSybL	1	CG1.4.1	2.3.8,2.3.9,2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr33.2	Review: Arrays #70B
+QMB1KrjW3LnV9	1	CG1.4.1	2.3.8,2.3.9,2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr33.3	Review: Arrays #61A
+QMB7LbyjHzS6T	1	CG1.4.1	2.3.8,2.3.9,2.7.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr33.4	Review: Arrays #56Q
+QMBuljeq4OV1M	1	CG1.4.1	2.3.8		AnyText		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr34.0	Review: Arrays #35E
+QMBhK7TRDQAoI	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr35.0	Array Operations #28E
+QMBiZmWoY0v2D	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr35.1	Array Operations #61J
+QMBH9PVYU3sMa	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr35.2	Array Operations #71P
+QMBbDtcaTvdMr	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr35.3	Array Operations #14J
+QMBjkV2mJ3DvT	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr35.4	Array Operations #96J
+QMBIOogUYpXyB	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr36.0	Array Operations #08R
+QMBUPIJnH2fBb	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr36.1	Array Operations #58Q
+QMB5oAOW1VwJT	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr36.2	Array Operations #64Y
+QMBYFwNTbXeiS	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr36.3	Array Operations #68W
+QMBKF304Rqf8M	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr36.4	Array Operations #27C
+QMB2o0kqtWa7M	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr37.0	Array Operations #94Y
+QMBQioqzNTPUj	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr37.1	Array Operations #95I
+QMBxKQzUcuE2R	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr37.2	Array Operations #10V
+QMBUrs0uExH2e	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr37.3	Array Operations #18L
+QMBNAELRJ3eIQ	1	CG1.4.2	2.8.2,2.8.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr37.4	Array Operations #84K
+QMBW9MXg1FpVQ	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col1.0	Review of Arrays #12Q
+QMBxhQnvreCaz	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col1.1	Review of Arrays #82A
+QMBoIXJMFC8OB	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col1.2	Review of Arrays #97T
+QMBVctxwpmkfP	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col1.3	Review of Arrays #06G
+QMB2fYJ86VT4g	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col1.4	Review of Arrays #85X
+QMB0yEoXRG9Ww	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col2.0	Review of Arrays #58M
+QMBRwoqaUugEv	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col2.1	Review of Arrays #16U
+QMBKZnrUqYdzA	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col2.2	Review of Arrays #40O
+QMBEFbi2xz49n	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col2.3	Review of Arrays #71G
+QMBUDKrAhR8GE	1	CG1.4.3	1.6.2,1.6.3,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col2.4	Review of Arrays #94F
+QMBY7oEqeFulV	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col3.0	Review of Arrays #61T
+QMBsxHzmKcFTP	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col3.1	Review of Arrays #92A
+QMBbTyvWXYK3x	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col3.2	Review of Arrays #69D
+QMBKc3CsQeduF	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col3.3	Review of Arrays #68Y
+QMBEhNH2t4d7C	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col3.4	Review of Arrays #25L
+QMBKb2z0DnfTW	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col4.0	Review of Arrays #81X
+QMBcTNfAoaObn	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col4.1	Review of Arrays #26B
+QMBSVeNybsvX7	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col4.2	Review of Arrays #18S
+QMBRvdPezlEaO	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col4.3	Review of Arrays #29W
+QMBiWlrwoOmE2	1	CG1.4.3	1.6.2,1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col4.4	Review of Arrays #61N
+QMBfNhjp3I9HS	1	CG1.4.3	1.6.2,1.6.1,1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col5.0	Review of Arrays #89W
+QMBzQI8EtKTFc	1	CG1.4.3	1.6.2,1.6.1,1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col5.1	Review of Arrays #02Q
+QMBZ9V1IdJaMD	1	CG1.4.3	1.6.2,1.6.1,1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col5.2	Review of Arrays #27X
+QMBChGzEKnvSt	1	CG1.4.3	1.6.2,1.6.1,1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col5.3	Review of Arrays #94C
+QMBlfVknwDqyN	1	CG1.4.3	1.6.2,1.6.1,1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col5.4	Review of Arrays #39Q
+QMBs38qpPrMBn	1	CG1.4.3	1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col6.0	Review of Arrays #98X
+QMBK92oQBasVr	1	CG1.4.3	1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col6.1	Review of Arrays #57V
+QMByrJ6Y9k8Gv	1	CG1.4.3	1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col6.2	Review of Arrays #57W
+QMB5MseIFJwDi	1	CG1.4.3	1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col6.3	Review of Arrays #64M
+QMByBkl1fxetP	1	CG1.4.3	1.6.4		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col6.4	Review of Arrays #29B
+QMBB23ygV1q7T	2	CG1.4.3	1.6.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col7.0	Review of Arrays #39Q
+QMBIfaOEykqom	2	CG1.4.3	1.6.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col7.1	Review of Arrays #12O
+QMBToI2yKD1e8	2	CG1.4.3	1.6.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col7.2	Review of Arrays #20G
+QMBBsdnQhq03v	2	CG1.4.3	1.6.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col7.3	Review of Arrays #87T
+QMBxBQed0U7nY	2	CG1.4.3	1.6.5		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col7.4	Review of Arrays #87H
+QMBrHKjq3d10e	3	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col8.0	Review of Arrays #69Y
+QMBsgfFcVLwCi	3	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col8.1	Review of Arrays #71L
+QMBoU6pezNvAj	3	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col8.2	Review of Arrays #92Q
+QMBg2OhZLQWdT	3	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col8.3	Review of Arrays #24G
+QMBDwr8UoNfhY	3	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col8.4	Review of Arrays #79K
+QMBk31tQ9DzOy	2	CG1.4.3	1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col9.0	Review of Arrays #39B
+QMBAIb8pRFiUP	2	CG1.4.3	1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col9.1	Review of Arrays #69Q
+QMB7K54uvHWMV	2	CG1.4.3	1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col9.2	Review of Arrays #68L
+QMBg18p2IAzm7	2	CG1.4.3	1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col9.3	Review of Arrays #58H
+QMBWhc9PfgqrY	2	CG1.4.3	1.6.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col9.4	Review of Arrays #89C
+QMBgk2MiLDvTH	2	CG1.4.3	1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col10.0	Review of Arrays #34X
+QMBHrcKlE0UGw	2	CG1.4.3	1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col10.1	Review of Arrays #39O
+QMBMF2ChnWJZc	2	CG1.4.3	1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col10.2	Review of Arrays #59V
+QMByjRqFNvxVa	2	CG1.4.3	1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col10.3	Review of Arrays #05V
+QMBIf94pcHAwQ	2	CG1.4.3	1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col10.4	Review of Arrays #15E
+QMBiL7ufYaCed	2	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col11.0	Review of Arrays #98P
+QMBe4tAJIXmqw	2	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col11.1	Review of Arrays #29F
+QMBQWuChAsKgb	2	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col11.2	Review of Arrays #06B
+QMBA0jbYWhxM4	2	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col11.3	Review of Arrays #51U
+QMBjB0UQ9G7ZN	2	CG1.4.3	1.6.2,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col11.4	Review of Arrays #96B
+QMBDMVBnOKNXS	3	CG1.4.3	1.6.2,1.6.1,2.5.13,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col13.0	Review of Arrays #61S
+QMBGH3lK4XEWp	3	CG1.4.3	1.6.2,1.6.1,2.5.13,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col13.1	Review of Arrays #23M
+QMBhM36qYJA2n	3	CG1.4.3	1.6.2,1.6.1,2.5.13,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col13.2	Review of Arrays #21S
+QMB1t0xfD6aQA	3	CG1.4.3	1.6.2,1.6.1,2.5.13,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col13.3	Review of Arrays #37Z
+QMB937hgJB1oS	3	CG1.4.3	1.6.2,1.6.1,2.5.13,1.6.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col13.4	Review of Arrays #05B
+QMBNM6yBPvxzo	3	CG1.4.3	1.6.1,2.5.13		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col14.0	Review of Arrays #83C
+QMBo07fdm29DC	3	CG1.4.3	1.6.1,2.5.13		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col14.1	Review of Arrays #67D
+QMB6HRlPZWzrj	3	CG1.4.3	1.6.1,2.5.13		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col14.2	Review of Arrays #73D
+QMBoYB6GXbPgV	3	CG1.4.3	1.6.1,2.5.13		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col14.3	Review of Arrays #43L
+QMB5fBDn7rox0	3	CG1.4.3	1.6.1,2.5.13		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.col14.4	Review of Arrays #91N
+QMBm49HDoenUN	2	CG1.2.2	2.3.1,2.3.16,2.3.15		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr38.0	Array Indexing Challenge #50P
+QMBKaiNc5DXFV	2	CG1.2.2	2.3.1,2.3.16,2.3.15		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr38.1	Array Indexing Challenge #29N
+QMBFGlDWmyzRn	2	CG1.2.2	2.3.1,2.3.16,2.3.15		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr38.2	Array Indexing Challenge #82B
+QMBtg41YuqcH2	2	CG1.2.2	2.3.1,2.3.16,2.3.15		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr38.3	Array Indexing Challenge #95C
+QMBXPn6Q08c4r	2	CG1.2.2	2.3.1,2.3.16,2.3.15		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr38.4	Array Indexing Challenge #29B
+QMBk2Ou7h4mCd	1	CG1.2.3	2.8.3,2.2.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr39.0	Storing Values in Arrays #61G
+QMBf5iUw6TFas	1	CG1.2.3	2.8.3,2.2.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr39.1	Storing Values in Arrays #91F
+QMBCFfcozVQsk	1	CG1.2.3	2.8.3,2.2.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr39.2	Storing Values in Arrays #96E
+QMBXp51dz9PjY	1	CG1.2.3	2.8.3,2.2.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr39.3	Storing Values in Arrays #79F
+QMB09fQtUIzH7	1	CG1.2.3	2.8.3,2.2.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr39.4	Storing Values in Arrays #80R
+QMBwto8aJqQgL	1	CG1.2.4	2.8.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr40.0	Multidimensional Arrays #68N
+QMBb54uic298w	1	CG1.2.4	2.8.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr40.1	Multidimensional Arrays #52T
+QMBch09bSIYpO	1	CG1.2.4	2.8.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr40.2	Multidimensional Arrays #49O
+QMBpIbLwTikqr	1	CG1.2.4	2.8.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr40.3	Multidimensional Arrays #60B
+QMBNPa9LfB8DT	1	CG1.2.4	2.8.3		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr40.4	Multidimensional Arrays #40U
+QMB750GE3bHjY	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr41.0	Other Ways to Create and Change Arrays #13L
+QMBlAs13V0hjp	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr41.1	Other Ways to Create and Change Arrays #40T
+QMBAYajG4nJlI	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr41.2	Other Ways to Create and Change Arrays #61U
+QMBejUVIdnsGA	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr41.3	Other Ways to Create and Change Arrays #80I
+QMBszwHirkPTx	2	CG1.2.6	2.8.2,2.8.1		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr41.4	Other Ways to Create and Change Arrays #89N
+QMBMRNceI1XHY	1	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr42.0	Other Ways to Create and Change Arrays #97W
+QMByIgd4Thvmw	1	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr42.1	Other Ways to Create and Change Arrays #83W
+QMBvwU6kWHmyM	1	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr42.2	Other Ways to Create and Change Arrays #71O
+QMBY4xv7XBJRV	1	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr42.3	Other Ways to Create and Change Arrays #67J
+QMB4jo7rEqOYC	1	CG1.2.6	2.6.5		Checkbox		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr42.4	Other Ways to Create and Change Arrays #04Z
+QMBb9qw2yoSGB	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr43.0	From One Array to Another #21I
+QMBTHuKCbB56Q	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr43.1	From One Array to Another #24C
+QMBZSgDC3NbMs	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr43.2	From One Array to Another #54S
+QMBekzKS8owJH	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr43.3	From One Array to Another #69V
+QMByhWXwVqN3Q	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr43.4	From One Array to Another #09K
+QMBR0nL1HVqK8	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr44.0	From One Array to Another #41W
+QMBsOmdlDe7gj	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr44.1	From One Array to Another #02M
+QMBSU0d4OePBi	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr44.2	From One Array to Another #63X
+QMBZkxFb69oOM	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr44.3	From One Array to Another #56K
+QMBTwaWv2XEZR	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr44.4	From One Array to Another #56N
+QMB3ieyJrCQ8O	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr45.0	From One Array to Another #71Y
+QMBnmyIH1Blcg	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr45.1	From One Array to Another #16Z
+QMBk6ZwvODpga	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr45.2	From One Array to Another #58Y
+QMBnAJ7NgOThR	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr45.3	From One Array to Another #35L
+QMBv17sHBQYoD	4	CG1.2.5	2.3.8,2.3.1,2.3.3,2.3.14,2.3.15,2.1.2,2.1.3,2.1.1		Numerical		https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@makeDynamicQuestions.py.arr45.4	From One Array to Another #51Q
