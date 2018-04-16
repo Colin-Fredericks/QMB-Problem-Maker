@@ -69,11 +69,20 @@ def make_problem_XML(
     problem_tag.set('display_name', problem_title)
     problem_tree = ET.ElementTree(problem_tag)
 
-    # DEPRECATED using the new LTI Turduckin approach.
-    # Add the script tag so our problems can communicate properly.
-    # script_tag = ET.SubElement(problem_tag, 'script')
-    # script_tag.set('src', '/static/EveryProblemScript.js')
-    # script_tag.set('type', 'text/javascript')
+    # Add a script tag so our problems can re-render properly
+    # with a minimum of download burden.
+    # Relies on having Prism.js available.
+    script_tag = ET.SubElement(problem_tag, 'script')
+    script_tag.set('type', 'text/javascript')
+    script_raw = """
+    $(document).ready(function(){
+        console.log('highlighting MATLAB syntax');
+        $('.language-matlab').each(function(e){
+            window.Prism.highlightAllUnder(this);
+        });
+    });
+    """
+    script_tag.text = script_raw
 
     # Set other problem options. For partial documentation see:
     # https://edx.readthedocs.io/projects/edx-open-learning-xml/en/latest/components/problem-components.html
