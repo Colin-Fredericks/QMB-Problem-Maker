@@ -156,8 +156,9 @@ def make_choice_problem_XML(
         item_tag.set('correct', item['correctness'])
         item_tag.text = item['answer']
         if 'hint' in item:
-            hint_tag = ET.SubElement(item_tag, 'choicehint')
-            hint_tag.text = item['hint']
+			hint_tag = ET.SubElement(item_tag, 'choicehint')
+			hint_tag.set('selected','TRUE')
+			hint_tag.text = '<strong>' + item['answer'] + ':  </strong>' + item['hint']
 
     # Create the structure for the solution
     solution_tag = ET.SubElement(type_tag, 'solution')
