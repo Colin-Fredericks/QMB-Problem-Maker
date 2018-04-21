@@ -524,7 +524,9 @@ detailFile = os.path.basename(__file__)+'.details.txt'
 dd = open(detailFile,'w')
 
 while (lineCount < len(lines)):
-    line = lines[lineCount]
+
+	#Read in line without newline
+    line = lines[lineCount].rstrip("\n") 
     if (line.rstrip() == ""):
         lineCount += 1
         continue
@@ -585,8 +587,12 @@ while (lineCount < len(lines)):
         varName = lineEls[2]
         varValue = lineEls[3]
         rawVariables.append([varName,varValue])
-    elif (lineEls[1] == "answer"):
-        answers.append({'answer':lineEls[2],
+    elif (lineEls[1] == "answer"):		
+		
+		#Add empty hint if it was left out
+		if len(lineEls) < 6:
+			lineEls.append("")
+		answers.append({'answer':lineEls[2],
                         'knowledgeComponent':lineEls[3],
                         'correctness':lineEls[4],
                         'hint':lineEls[5]})
