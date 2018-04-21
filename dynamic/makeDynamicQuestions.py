@@ -4,26 +4,50 @@ import re
 import random
 import string
 import numpy as np
+import sys, argparse
 from random import randint
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir)
-
+ 
 from QMB_XML import *
 from QMB_utils import *
 from parseNum import *
 from simplifyNumber import *
 
-defaultNumDynamicQuestions = 5#20
-questionDescriptionFileName = "questionDescriptions.txt"
-shuffleAnswers = True #shuffles answer order (Checkbox problems can't do this automatically)
+#Define arguments. The filename is a positional argument, i.e. required
+parser = argparse.ArgumentParser()
+parser.add_argument("fileName", help = "The name of the question description text file")
+parser.add_argument("-nd","--numDynamicQuestions",type=int, 
+	help="Number of dynamic questions to make")
+parser.add_argument("-od","--outputDir", 
+	help="Directory to save XML problem files")
+parser.add_argument("-sf","--shuffleAnswers", action="store_true",  
+	help="Shuffles the order of checkbox answers")
+	
+	
+#Parse arguments
+args = parser.parse_args()
+questionDescriptionFileName = args.fileName
+if args.numDynamicQuestions > 0:
+	defaultNumDynamicQuestions = args.numDynamicQuestions
+else:
+	defaultNumDynamicQuestions = 20
+if args.outputDir is None:
+	problemFolder = "problems"
+else:
+	problemFolder = args.outputDir	
+if args.shuffleAnswers:
+	shuffleAnswers = True
+else:
+	shuffleAnswers = False
 
 logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
 #logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 #logging.basicConfig(stream=sys.stderr, level=logging.INFO)
 
 webLocRoot = "https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@"
-problemFolder = "problems"
+myArray1Dat = load_matlab_matrix("myArray1")
 myArray1Dat = load_matlab_matrix("myArray1")
 myArray2Dat = load_matlab_matrix("myArray2")
 dataArrays = {'myArray1':myArray1Dat,'myArray2':myArray2Dat}
