@@ -1,20 +1,33 @@
-import os, sys, inspect, logging
+import os, sys, inspect
 import copy
 import re
 import random
 import string
-import numpy as np
-import sys, argparse
 from random import randint
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir)
 
 from QMB_XML import *
 from QMB_utils import *
 from parseNum import *
 from simplifyNumber import *
+from matlab2python import *
 
+
+myArray1Dat = load_matlab_matrix("myArray1")
+myArray2Dat = load_matlab_matrix("myArray2")
+dataArrays = {'myArray1':myArray1Dat,'myArray2':myArray2Dat}
+
+ordinalLookup = {'1':"first",
+                 '2':"second",
+                 '3':"third",
+                 '4':"fourth",
+                 '5':"fifth",
+                 '6':"sixth",
+                 '7':"seventh",
+                 '8':"eighth",
+                 '9':"ninth",
+                 '10':"tenth"}
+
+nsp = NumericStringParser()
 
 #assign values to variables and perform calculations
 #returns EdX xml and the list of answers (to test for uniqueness of answers)
@@ -38,7 +51,7 @@ def makeQuestion(
 
     variables = []
     for var in qRawVariables:
-        logging.debug("working on var " + var[0])
+
         vname = var[0]
         vval = var[1]
         for otherVar in variables:
@@ -47,7 +60,6 @@ def makeQuestion(
         madeChange = 1
         while (madeChange == 1): #keep doing substitutions while we can..
             madeChange = 0
-            logging.debug("vvar top: "  + vval)
 
     #       sub data (e.g. myArray)
             for arrName in dataArrays:
@@ -103,9 +115,7 @@ def makeQuestion(
                     ans = len(dataArrays[arrName])
                     if (dim == 2):
                         ans = len(dataArrays[arrName][0])
-                    logging.debug("dim presub: " + vval)
                     vval = vval.replace(vval[m.start():m.end()], str(ans))
-                    logging.debug("dim postsub: " + vval)
                     madeChange = 1
 
             #sub values from vectors
@@ -114,9 +124,7 @@ def makeQuestion(
             for m in p.finditer(vval):
                 arr = m.group(1).split(",")
                 ans = arr[int(m.group(2))-1]
-                logging.debug("vectorEval presub: " + vval)
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("vectorEval postsub: " + vval)
                 madeChange = 1
                 break
 
@@ -126,63 +134,49 @@ def makeQuestion(
             for m in p.finditer(vval):
                 arr = [[int(n) for n in row.split(",")] for row in m.group(1).split(";")]
                 ans = arr[int(m.group(2))-1][int(m.group(3))-1]
-                logging.debug("arrayEval presub: " + vval + " replacing "+ str(m.start())+ "to" + str(m.end()) + " with " + str(ans))
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("arrayEval postsub: " + vval)
                 madeChange = 1
                 break
 
             p = re.compile("answerFun\(([\d\[\]\.\,\s]+)\)") #get matlab function answer
             for m in p.finditer(vval):
                 ans = matlabAnswerFun(m.group(1))
-                logging.debug("matlabFun presub: " + vval)
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("matlabFun postsub: " + vval)
                 madeChange = 1
                 break
 
             p = re.compile("ordinal\((\d+)\)") # go from 1 to 'first', etc.
             for m in p.finditer(vval):
                 ans = ordinalLookup[m.group(1)]
-                logging.debug("ordinal presub: " + vval)
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("ordinal postsub: " + vval)
                 madeChange = 1
                 break
 
             p = re.compile("max\(([-\d\[\]\.\,\s]+)\)") # find max
             for m in p.finditer(vval):
                 ans = getMax(m.group(1))
-                logging.debug("max presub: " + vval)
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("max postsub: " + vval)
                 madeChange = 1
                 break
 
-            p = re.compile("min\(([-\d\[\]\.\,\s]+)\)") # find max
+            p = re.compile("min\(([-\d\[\]\.\,\s]+)\)") # find min
             for m in p.finditer(vval):
                 ans = getMin(m.group(1))
-                logging.debug("min presub: " + vval)
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("min postsub: " + vval)
                 madeChange = 1
                 break
 
-            p = re.compile("mean\(([-\d\[\]\.\,\s]+)\)") # find max
+            p = re.compile("mean\(([-\d\[\]\.\,\s]+)\)") # find mean
             for m in p.finditer(vval):
                 ans = getMean(m.group(1))
-                logging.debug("mean presub: " + vval)
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("mean postsub: " + vval)
                 madeChange = 1
                 break
 
             p = re.compile("sum\(([-\d\[\]\.\,\s]+)\)") # find sum
             for m in p.finditer(vval):
                 ans = getSum(m.group(1))
-                logging.debug("sum presub: " + vval)
                 vval = vval.replace(vval[m.start():m.end()], str(ans))
-                logging.debug("sum postsub: " + vval)
                 madeChange = 1
                 break
 
@@ -192,7 +186,6 @@ def makeQuestion(
                 rFrom = m.group(1)
                 rTo = m.group(2)
                 if (int(rTo) < int(rFrom)):
-                    logging.ERROR('Asking for randint from ' + rFrom + ' to ' + rTo)
                     rFrom = rTo
                 rand1 = randint(int(rFrom), int(rTo))
                 vval = vval.replace(vval[m.start():m.end()], str(rand1))
@@ -232,13 +225,11 @@ def makeQuestion(
                 vval = nsp.eval(vval)
             except Exception as exc:
                 sys.exit("Could not parse variable vval to number'" + vval + "'\n" + str(exc))
-            logging.debug('var after nsp is '+str(vval))
         try:
             float(vval)
             vval = simplifyNumber(str(vval))
         except:
             pass
-        logging.debug('var ' + vname + ' after simplify is '+str(vval))
         variables.append([vname,str(vval)])
 
     for otherVar in variables:
@@ -246,19 +237,6 @@ def makeQuestion(
         for answer in qRawAnswers:
 			answer['answer'] = answer['answer'].replace(otherVar[0], otherVar[1])
 
-
-
-
-    #set 'text' to 'answer' -- needed for multiple choice
-#    for answer in qRawAnswers:
-#        answer['text'] = answer['answer']
-
-    logging.info("problem_title=" + questionTitle + "\n" +
-        "problem_text=" + qRawQuestionText + "\n" +
-        "label_text=" + labelText + "\n" +
-        "answers=" + str(qRawAnswers) + "\n" +
-        "solution_text=" + solutionText + "\n" +
-        "options=" + str(options) + "\n")
 
     the_xml = make_problem_XML(
 	    problem_title=questionTitle,
@@ -288,7 +266,9 @@ def makeQuestions(
                 problemOptions = {},
                 problemFeedback = "",
                 numDynamicQuestions = 1,
-                problemFolder = "problems"
+                problemFolder = "",
+                CGIlookup = {},
+                shuffleAnswers = False
 
                   ):
     for questionCount in range(numDynamicQuestions):
@@ -305,12 +285,12 @@ def makeQuestions(
         idLen = 2
         nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
         attemptCount = 0
-        while(nameStr in problemTitles.keys()):
-            nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
-            attemptCount += 1
-            if (attemptCount > 1000):
-                idLen += 1
-                attemptCount = 0
+        # while(nameStr in problemTitles.keys()):
+        #     nameStr = CGname+' #' + ''.join(random.sample(sNums,idLen)) + ''.join(random.sample(sLetters,1))
+        #     attemptCount += 1
+        #     if (attemptCount > 1000):
+        #         idLen += 1
+        #         attemptCount = 0
         questionTitle = nameStr
 
 
@@ -369,12 +349,12 @@ def makeQuestions(
         problemKCString = ','.join(KCs.keys())
 
         #write question info to log for tutorgen
-        s=string.lowercase+string.digits+string.uppercase
-        problemIDString = 'QMB'+''.join(random.sample(s,10))
-        while (problemIDString in problemIDs):
-            problemIDString = 'QMB'+''.join(random.sample(s,10))
-        problemWebLoc = webLocRoot + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount)
-        #problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
-        tutorGenOptions = ""
-        dd.write(problemIDString+"\t"+problemDifficulty+"\t"+problemContentGrouping+"\t"+
-                 problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+tutorGenOptions+"\t"+problemWebLoc+"\t"+questionTitle+"\n")
+        # s=string.lowercase+string.digits+string.uppercase
+        # problemIDString = 'QMB'+''.join(random.sample(s,10))
+        # while (problemIDString in problemIDs):
+        #     problemIDString = 'QMB'+''.join(random.sample(s,10))
+        # problemWebLoc = webLocRoot + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount)
+        # #problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
+        # tutorGenOptions = ""
+        # dd.write(problemIDString+"\t"+problemDifficulty+"\t"+problemContentGrouping+"\t"+
+        #          problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+tutorGenOptions+"\t"+problemWebLoc+"\t"+questionTitle+"\n")

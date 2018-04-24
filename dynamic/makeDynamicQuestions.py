@@ -1,14 +1,6 @@
-import os, sys, inspect, logging
-import copy
-import re
-import random
-import string
-import numpy as np
+import os, sys
+import re, string
 import sys, argparse
-from random import randint
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir)
 
 from QMB_XML import *
 from QMB_utils import *
@@ -17,7 +9,7 @@ from simplifyNumber import *
 from matlab2python import *
 from makeXMLQuestions import *
 
-#Define arguments. The filename is a positional argument, i.e. required
+#Define input arguments. The filename is a positional argument, i.e. required
 parser = argparse.ArgumentParser()
 parser.add_argument("fileName", help = "The name of the question description text file")
 parser.add_argument("-nd","--numDynamicQuestions",type=int,
@@ -26,7 +18,6 @@ parser.add_argument("-od","--outputDir",
 	help="Directory to save XML problem files")
 parser.add_argument("-sf","--shuffleAnswers", action="store_true",
 	help="Shuffles the order of checkbox answers")
-
 
 #Parse arguments
 args = parser.parse_args()
@@ -44,28 +35,9 @@ if args.shuffleAnswers:
 else:
 	shuffleAnswers = False
 
-logging.basicConfig(stream=sys.stderr, level=logging.CRITICAL)
-#logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
-#logging.basicConfig(stream=sys.stderr, level=logging.INFO)
-
-webLocRoot = "https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@"
-myArray1Dat = load_matlab_matrix("myArray1")
-myArray1Dat = load_matlab_matrix("myArray1")
-myArray2Dat = load_matlab_matrix("myArray2")
-dataArrays = {'myArray1':myArray1Dat,'myArray2':myArray2Dat}
-
-ordinalLookup = {'1':"first",
-                 '2':"second",
-                 '3':"third",
-                 '4':"fourth",
-                 '5':"fifth",
-                 '6':"sixth",
-                 '7':"seventh",
-                 '8':"eighth",
-                 '9':"ninth",
-                 '10':"tenth"}
-
-nsp = NumericStringParser()
+#Create output dir if it doesn't exist
+if not os.path.isdir(problemFolder):
+	os.makedirs(problemFolder)
 
 infile = open(questionDescriptionFileName, "r")
 lines = infile.readlines()
@@ -97,8 +69,6 @@ with open('CGlookup.txt','r') as f:
         splitLine = line.split("\t")
         CGIlookup[splitLine[0]] = splitLine[1]
 
-detailFile = os.path.basename(__file__)+'.details.txt'
-dd = open(detailFile,'w')
 
 while (lineCount < len(lines)):
 
@@ -112,7 +82,6 @@ while (lineCount < len(lines)):
         continue
     lineEls = line.replace('\\r','\r').split("\t")
     if (lineEls[0] != ""):
-        logging.info("questionText is " + questionText + " and dynamic is " + dynamic)
         if (questionText != ""):
             readQuestionCount += 1
             makeQuestions(
@@ -131,7 +100,10 @@ while (lineCount < len(lines)):
                 problemMaxGrade = problemMaxGrade,
                 problemOptions = problemOptions,
                 problemFeedback = problemFeedback,
-                CGIlookup = CGIlookup
+				numDynamicQuestions = defaultNumDynamicQuestions,
+                problemFolder = problemFolder,
+                CGIlookup = CGIlookup,
+				shuffleAnswers = shuffleAnswers
                 )
 
 
@@ -220,6 +192,10 @@ if (questionText != ""):
                 problemContentGrouping = problemContentGrouping,
                 problemMaxGrade = problemMaxGrade,
                 problemOptions = problemOptions,
-                problemFeedback = problemFeedback
+                problemFeedback = problemFeedback,
+				numDynamicQuestions = defaultNumDynamicQuestions,
+                problemFolder = problemFolder,
+                CGIlookup = CGIlookup,
+				shuffleAnswers = shuffleAnswers
                 )
 print "Read " + str(lineCount) + " lines and " + str(readQuestionCount) + " questions"

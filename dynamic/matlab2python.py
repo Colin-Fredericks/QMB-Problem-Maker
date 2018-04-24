@@ -1,9 +1,8 @@
-import os, sys, inspect, logging
+import os, sys, inspect
 import copy
 import re
 import random
 import string
-import numpy as np
 import sys, argparse
 from random import randint
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -15,7 +14,7 @@ from QMB_utils import *
 from parseNum import *
 from simplifyNumber import *
 
-
+nsp = NumericStringParser()
 
 #hash function that turns an array into a number that can be graded in the EdX LTI
 #input: array
