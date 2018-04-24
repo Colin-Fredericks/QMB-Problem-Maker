@@ -25,14 +25,14 @@ problem_starts(end+1) = size(excel_data,1); %Add last row for last problem
 
 
 for ii = 1:num_problems
-        
-    % -----------------------------------------------------------------
-    % Extract the excel data for just this problem
-    % -----------------------------------------------------------------
-    rows = problem_starts(ii) : problem_starts(ii+1)-1;
-    section = excel_data(rows,:);    
-    
     for qq = 1:num_dynamic
+        
+        % -----------------------------------------------------------------
+        % Extract the excel data for just this problem
+        % -----------------------------------------------------------------
+        rows = problem_starts(ii) : problem_starts(ii+1)-1;
+        section = excel_data(rows,:);    
+    
         
         % -----------------------------------------------------------------        
         % Evaluate variables
