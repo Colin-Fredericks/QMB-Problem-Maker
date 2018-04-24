@@ -1,11 +1,9 @@
 import os, sys, argparse
 import string, random, openpyxl
 
-#Add above directory for QMC_xml
+#Add above directory for QMB_xml
 sys.path.append('..')
 from QMB_XML import *
-
-
 
 #Define input arguments. The filename is a positional argument, i.e. required
 parser = argparse.ArgumentParser()
