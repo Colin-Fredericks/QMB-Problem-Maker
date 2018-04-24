@@ -2,3 +2,9 @@
 *.pyc
 *.xml
 *.xlsx
+dynamic/test_questions.txt
+dynamic/new_questions.txt
+matlab_attempt/CGlookup.txt
+matlab_scripts/loop_problems.m
+matlab_scripts/conditional_problems.m
+*.asv
