@@ -4,7 +4,7 @@ clear
 close all
 
 
-num_dynamic = 2; %Number of dyanmic questions to make
+num_dynamic = 5; %Number of dyanmic questions to make
 input_fname = 'new_questions'; %Excel file name
 sheet = 'matlab_questions'; %Sheet in excel file
 output_dir = 'Filled-in Excel files';
@@ -23,14 +23,16 @@ problem_starts = find(~cellfun(@isempty,excel_data(:,1)));
 num_problems = length(problem_starts);
 problem_starts(end+1) = size(excel_data,1); %Add last row for last problem
 
-for ii = 1:num_dynamic
-    for jj = 1:num_problems
+
+for ii = 1:num_problems
         
-        % -----------------------------------------------------------------
-        % Extract the excel data for just this problem
-        % -----------------------------------------------------------------
-        rows = problem_starts(jj) : problem_starts(jj+1)-1;
-        section = excel_data(rows,:);
+    % -----------------------------------------------------------------
+    % Extract the excel data for just this problem
+    % -----------------------------------------------------------------
+    rows = problem_starts(ii) : problem_starts(ii+1)-1;
+    section = excel_data(rows,:);    
+    
+    for qq = 1:num_dynamic
         
         % -----------------------------------------------------------------        
         % Evaluate variables
@@ -103,9 +105,14 @@ for ii = 1:num_dynamic
         % -----------------------------------------------------------------
         non_var_rows = ~ismember(section(:,2),'variable');
         section = section(non_var_rows,:);
-        output_fname = [section{1,1} '.' num2str(ii-1)];
+        output_fname = [section{1,1} '.' num2str(qq-1)];
         xlswrite([output_dir '\' output_fname '.xlsx'],section);
         
-    
+        % Check to see if this is a dynamic problem. If not, break from the
+        % loop and more on to next problem
+        if ~strcmp(section(ismember(section(:,2),'dynamic'),3),'true')            
+            break;            
+        end
     end
+    fprintf('Finished %d of %d problems\n',ii,num_problems)
 end
