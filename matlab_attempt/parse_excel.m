@@ -4,9 +4,9 @@ clear
 close all
 
 
-num_dynamic = 5; %Number of dyanmic questions to make
+num_dynamic = 1; %Number of dyanmic questions to make
 input_fname = 'new_questions'; %Excel file name
-sheet = 'matlab_questions'; %Sheet in excel file
+sheet = 1;%'matlab_questions'; %Sheet in excel file
 output_dir = 'Filled-in Excel files';
 
 % Read in file
@@ -21,7 +21,7 @@ end
 % Figure out lines where questions start
 problem_starts = find(~cellfun(@isempty,excel_data(:,1)));
 num_problems = length(problem_starts);
-problem_starts(end+1) = size(excel_data,1); %Add last row for last problem
+problem_starts(end+1) = size(excel_data,1)+1; %Add last row for last problem
 
 
 for ii = 1:num_problems
@@ -53,8 +53,13 @@ for ii = 1:num_problems
                 end
             end
             
-            %Now evaluate
-            var_eval =  eval(var_expr);
+            % Now evaluate. Dont save value if code is only meant to
+            % execute, which is denoted by the CODE variable
+            if strcmp(var_names{kk},'CODE')
+                eval(var_expr);
+            else
+                var_eval =  eval(var_expr);
+            end
             
             % If string, save as answer
             if ischar(var_eval)
