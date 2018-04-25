@@ -79,17 +79,19 @@ for ii = 1:num_problems
         end
         
         % -----------------------------------------------------------------
-        % Now replace variables in answers and questionText with generated
-        % values
+        % Now replace variables in answers, questionText and solutionText
+        % with generated values. Also add code tags for $ characters
         % -----------------------------------------------------------------
         
         % First the question text
         questionText = section{1,3};
         for mm = 1:length(var_names)
             if strfind(questionText,var_names{mm});
-                questionText = strrep(questionText,var_names{mm},var_values{mm});
+                questionText = strrep(questionText,var_names{mm},var_values{mm});           
             end
         end
+        questionText = strrep(questionText,'/$','</code>');                
+        questionText = strrep(questionText,'$','<code class="lang-matlab">');
         section{1,3} = questionText;
         
         % Now the answers. 
@@ -102,7 +104,21 @@ for ii = 1:num_problems
                 end
             end
             section{ind_ans(kk),3} = answerText;
-        end        
+        end
+        
+        % Now the solution text
+        ind_sol = ismember(section(:,2),'solutionText');
+        if any(ind_sol)
+            solutionText= section{ind_sol,3};
+            for mm = 1:length(var_names)
+                if strfind(solutionText,var_names{mm});
+                    solutionText = strrep(solutionText,var_names{mm},var_values{mm});           
+                end
+            end
+            solutionText = strrep(solutionText,'/$','</code>');                
+            solutionText = strrep(solutionText,'$','<code class="lang-matlab">');
+            section{ind_sol,3} = solutionText;
+        end
          
         % -----------------------------------------------------------------
         % Since we no longer need variables remove from section and write
