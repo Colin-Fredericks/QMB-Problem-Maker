@@ -66,7 +66,6 @@ for file in files:
 	difficulty = 1
 
 	#Iterate through rows in worksheet
-	rows = tuple(workSheet.rows)
 	for row in workSheet.iter_rows():
 
 		#Assign single values
