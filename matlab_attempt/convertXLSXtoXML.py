@@ -82,7 +82,7 @@ for file in files:
 		if row[1].value == 'showanswer': options['showanswer'] = row[2].value
 		if row[1].value == 'rerandomize': options['rerandomize'] = row[2].value
 		if row[1].value == 'weight': options['weight'] = row[2].value
-		if row[1].value == 'max_attempts': options['max_attempts'] = row[2].value
+		if row[1].value == 'max_attempts': options['max_attempts'] = str(row[2].value)
 		if row[1].value == 'tolerance': options['tolerance'] = row[2].value
 
 		# Create answer dictionary. Add hint if exists
