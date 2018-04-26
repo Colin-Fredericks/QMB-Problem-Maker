@@ -1,13 +1,35 @@
-% Attempt to parse question file into something that can be used by python
-% script
-clear
-close all
+function parse_excel(input_fname,varargin)
+% PARSE_EXCEL - Reads in the problem descriptions in one excel file and
+% writes the dynamic problems to separate EXCEL files
+%
+%   parse_excel(FNAME) reads in the Excel file FNAME that contains the
+%   problem descriptions and variable expressions that will be used for
+%   dynamic problem generations. The output is one excel file for each
+%   problem in a seaparate directory
+%
+%   parse_excel(FNAME,'PropertyName',PropertyValue, ... ) allows for
+%   multiple properties to be set below
+%
+%       excel_sheet - Name or number of sheet in excel file used by xlsread
+%           Default: 1
+%       output_dir - Name of output directory for individual excel files
+%           Default: 'Filled-in Excel files'
+%       num_dynamic - Number of dynamic copies of each problem to make.
+%           This will only apply if the 'dynamic' property in the excel
+%           file is set to true. Default: 1
+%       
+%
 
-
+% Input variables
 num_dynamic = 1; %Number of dyanmic questions to make
-input_fname = 'new_questions'; %Excel file name
-sheet = 1;%'matlab_questions'; %Sheet in excel file
-output_dir = 'Filled-in Excel files';
+sheet = 1; %Sheet in excel file
+output_dir = 'Filled-in Excel files'; %Output directory for excel files
+
+% Parse varargin
+unparsed = ParseArgin(varargin{:});
+if ~isempty(unparsed)
+     error(['Unable to parse input: ''' unparsed{1} '''']);
+end
 
 % Read in file
 excel_data = xls_read_as_string(input_fname,sheet);
