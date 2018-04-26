@@ -14,12 +14,10 @@ function str = escape_XML(str)
 %
 
 %Regular expression for matching an html or xml tag
-expression = '<[^(><)]+>';
+tag_expression = '<[^(><)]+>';
+[tag_starts,tag_ends] = regexp(str,tag_expression);
 
-%First look for tags with this expression
-[tag_starts,tag_ends] = regexp(str,expression);
-
-%Find all < and > characters
+%Find all < and > characters (including tags)
 lessThan_indices = regexp(str,'<');
 greaterThan_indices = regexp(str,'>');
 
