@@ -13,6 +13,12 @@ function str = escape_XML(str)
 %       escape_XML('<p>x < 3</p>') should return '<p> x &lt; 3</p>
 %
 
+%First, do the easy ones. Need to do amp first so it doesn't interfere with
+%the others
+str = strrep(str,'&','&amp;');
+%str = strrep(str,'"','&quot;');  %<-maybe add back in, but not necessary
+%str = strrep(str,'''','&apos;'); %<-maybe add back in, but not necessary
+
 %Regular expression for matching an html or xml tag
 tag_expression = '<[^(><)]+>';
 [tag_starts,tag_ends] = regexp(str,tag_expression);
@@ -33,7 +39,3 @@ for ii = greaterThan_indices(~is_tag_end)
     str = [str(1:ii-1) '&gt;' str(ii+1:end)];
 end
 
-%Lastly, replace the easy characters
-str = strrep(str,'&','&amp;');
-str = strrep(str,'"','&quot;');
-str = strrep(str,'''','&apos;');

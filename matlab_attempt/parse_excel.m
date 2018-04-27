@@ -17,6 +17,7 @@ function parse_excel(input_fname,varargin)
 %       num_dynamic - Number of dynamic copies of each problem to make.
 %           This will only apply if the 'dynamic' property in the excel
 %           file is set to true. Default: 1
+%      
 %       
 %
 
@@ -47,7 +48,7 @@ problem_starts(end+1) = size(excel_data,1)+1; %Add last row for last problem
 
 
 for ii = 1:num_problems
-    for qq = 1:num_dynamic
+    for jj = 1:num_dynamic
         
         % -----------------------------------------------------------------
         % Extract the excel data for just this problem
@@ -70,7 +71,7 @@ for ii = 1:num_problems
             % First, see if this expression calls another variable and 
             % Replace with the value if necessary.
             for mm = 1:length(var_names)
-                if strfind(var_expr,var_names{mm});
+                if strfind(var_expr,var_names{mm})
                     var_expr = strrep(var_expr,var_names{mm},var_values{mm});
                 end
             end
@@ -101,54 +102,34 @@ for ii = 1:num_problems
         end
         
         % -----------------------------------------------------------------
-        % Now replace variables in answers, questionText and solutionText
+        % Now iterate through each element, replacing any variables
         % with generated values. Also add code tags for $ characters
         % -----------------------------------------------------------------
-        
-        % First the question text
-        questionText = section{1,3};
-        for mm = 1:length(var_names)
-            if strfind(questionText,var_names{mm});
-                questionText = strrep(questionText,var_names{mm},var_values{mm});           
-            end
-        end
-        questionText = strrep(questionText,'/$','</code>');                
-        questionText = strrep(questionText,'$','<code class="lang-matlab">');
-        section{1,3} = questionText;
-        
-        % Now the answers. 
-        ind_ans = find(ismember(section(:,2),'answer'));
-        for kk = 1:length(ind_ans)
-            answerText = section{ind_ans(kk),3};
-            for mm = 1:length(var_names)
-                if strfind(answerText,var_names{mm});
-                    answerText = strrep(answerText,var_names{mm},var_values{mm});
+        for mm = 1:numel(section)
+            
+            %First variables
+            for nn = 1:length(var_names)
+                if strfind(section{mm},var_names{nn})
+                    section{mm} = strrep(section{mm},var_names{nn},var_values{nn});
                 end
             end
-            section{ind_ans(kk),3} = answerText;
+            
+            %Now XML escape characters
+            section{mm} = escape_XML(section{mm});
+            
+            %Finally, the $ tags for matlab code
+            section{mm} = strrep(section{mm},'/$','</code>');                
+            section{mm} = strrep(section{mm},'$','<code class="lang-matlab">');
+            
         end
-        
-        % Now the solution text
-        ind_sol = ismember(section(:,2),'solutionText');
-        if any(ind_sol)
-            solutionText= section{ind_sol,3};
-            for mm = 1:length(var_names)
-                if strfind(solutionText,var_names{mm});
-                    solutionText = strrep(solutionText,var_names{mm},var_values{mm});           
-                end
-            end
-            solutionText = strrep(solutionText,'/$','</code>');                
-            solutionText = strrep(solutionText,'$','<code class="lang-matlab">');
-            section{ind_sol,3} = solutionText;
-        end
-         
+            
         % -----------------------------------------------------------------
         % Since we no longer need variables remove from section and write
         % to an output file
         % -----------------------------------------------------------------
         non_var_rows = ~ismember(section(:,2),'variable');
         section = section(non_var_rows,:);
-        output_fname = [section{1,1} '.' num2str(qq-1)];
+        output_fname = [section{1,1} '.' num2str(jj-1)];
         xlswrite([output_dir '\' output_fname '.xlsx'],section);
         
         % Check to see if this is a dynamic problem. If not, break from the
