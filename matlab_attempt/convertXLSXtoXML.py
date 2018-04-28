@@ -39,7 +39,7 @@ with open('CGlookup.txt','r') as f:
 #Default description text (different for each type of problem)
 description_texts = {'MC':'Select the most correct answer',
 	'Checkbox':'Select all that apply',
-	'Numerical':'Enter your answer below',
+	'Numerical':'Enter your answer below. Type "e" if this code would produce an error',
 	'Text':'Enter your answer below',
 	'AnyText':'Enter your answer below'}
 

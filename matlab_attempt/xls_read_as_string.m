@@ -13,10 +13,9 @@ end
 
 [num,txt,raw] = xlsread(fileName,sheet);
 
-%Pull out the part of raw we want using dimensions max dimensions of txt or
-%num
-num_rows = max(size(txt,1),size(num,1));
-num_cols = max(size(txt,2),size(num,2));
+%Pull out the part of raw we want 
+num_cols = min(size(txt,2) + size(num,2),size(raw,2));
+num_rows = min( max(size(txt,1),size(num,1)), size(raw,1));
 excel_data = raw(1:num_rows,1:num_cols);
 
 

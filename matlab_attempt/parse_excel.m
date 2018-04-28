@@ -17,6 +17,11 @@ function parse_excel(input_fname,varargin)
 %       num_dynamic - Number of dynamic copies of each problem to make.
 %           This will only apply if the 'dynamic' property in the excel
 %           file is set to true. Default: 1
+%       problem_list - List of problem names in excel sheet to parse. If
+%           empty, all problems in the sheet will be written. If a row
+%           array, then those problem indices will be written, e.g. 1:4
+%           will make the first 4 problems from that sheet
+%           Default: {}
 %      
 %       
 %
@@ -25,6 +30,7 @@ function parse_excel(input_fname,varargin)
 num_dynamic = 1; %Number of dyanmic questions to make
 sheet = 1; %Sheet in excel file
 output_dir = 'Filled-in Excel files'; %Output directory for excel files
+problem_list = {};
 
 % Parse varargin
 unparsed = ParseArgin(varargin{:});
@@ -40,14 +46,26 @@ if ~exist(output_dir,'dir')
     mkdir(output_dir);
 end
     
-
 % Figure out lines where questions start
 problem_starts = find(~cellfun(@isempty,excel_data(:,1)));
-num_problems = length(problem_starts);
+problem_names = excel_data(problem_starts,1);
+
+%Choose what problems to print
+if isempty(problem_list)
+    problem_ind = 1:length(problem_starts);
+elseif iscell(problem_list)    
+    problem_ind = find(ismember(problem_names,problem_list))';
+elseif isnumeric(problem_list)
+    problem_ind = problem_list;
+else
+    error(['Problem list is an invalid data type. Must be a list of problem ' ...
+        'names or vector of indices']);
+end
+num_problems = length(problem_ind);
 problem_starts(end+1) = size(excel_data,1)+1; %Add last row for last problem
 
-
-for ii = 1:num_problems
+% Iterate through problems
+for ii = problem_ind
     for jj = 1:num_dynamic
         
         % -----------------------------------------------------------------
@@ -138,5 +156,5 @@ for ii = 1:num_problems
             break;            
         end
     end
-    fprintf('Finished %d of %d problems\n',ii,num_problems)
+    fprintf('Finished %d of %d problems\n',find(ii==problem_ind),num_problems)
 end
