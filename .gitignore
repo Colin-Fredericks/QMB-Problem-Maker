@@ -1,9 +1,12 @@
 
 *.pyc
 *.xml
-*.xlsx
+matlab_attempt/Filled-in Excel files/*.xlsx
 dynamic/test_questions.txt
 dynamic/new_questions.txt
 matlab_scripts/loop_problems.m
 matlab_scripts/conditional_problems.m
 *.asv
+matlab_attempt/code_example.txt
+matlab_attempt/meeting notes
+matlab_attempt/example_problems
