@@ -10,7 +10,7 @@ function parse_excel(input_fname,varargin)
 %   parse_excel(FNAME,'PropertyName',PropertyValue, ... ) allows for
 %   multiple properties to be set below
 %
-%       excel_sheet - Name or number of sheet in excel file used by xlsread
+%       sheet - Name or number of sheet in excel file used by xlsread
 %           Default: 1
 %       output_dir - Name of output directory for individual excel files
 %           Default: 'Filled-in Excel files'
@@ -31,6 +31,7 @@ num_dynamic = 1; %Number of dyanmic questions to make
 sheet = 1; %Sheet in excel file
 output_dir = 'Filled-in Excel files'; %Output directory for excel files
 problem_list = {};
+
 
 % Parse varargin
 unparsed = ParseArgin(varargin{:});
