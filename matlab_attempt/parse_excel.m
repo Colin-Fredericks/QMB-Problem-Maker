@@ -137,6 +137,8 @@ for ii = problem_ind
             section{mm} = escape_XML(section{mm});
             
             %Finally, the $ tags for matlab code
+            section{mm} = strrep(section{mm},'/$$','</code></pre>');                
+            section{mm} = strrep(section{mm},'$$','<pre><code class="lang-matlab">');
             section{mm} = strrep(section{mm},'/$','</code>');                
             section{mm} = strrep(section{mm},'$','<code class="lang-matlab">');
             
