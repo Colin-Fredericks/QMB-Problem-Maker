@@ -111,7 +111,7 @@ for ii = problem_ind
                 if length(var_eval)==1
                     var_values(kk) = var_eval;
                 else
-                    error('Something went wrong with evaluating: %s',val_expr);
+                    error('Something went wrong with evaluating: %s',var_expr);
                 end
             % Else, try converting from num2str (should work for bools and
             % numeric values)
