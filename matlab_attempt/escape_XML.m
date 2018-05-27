@@ -20,7 +20,9 @@ str = strrep(str,'&','&amp;');
 %str = strrep(str,'''','&apos;'); %<-maybe add back in, but not necessary
 
 %Regular expression for matching an html or xml tag
-tag_expression = '<[^(><)]+>';
+% Note: I hate using this and don't understand regex
+%tag_expression = '<[^(><)]+>';
+tag_expression = '<(?:"[^"]*"[''"]*|''[^'']*''[''"]*|[^''">])+>';
 [tag_starts,tag_ends] = regexp(str,tag_expression);
 
 %Find all < and > characters (including tags)
