@@ -23,21 +23,28 @@ str = strrep(str,'&','&amp;');
 % Note: I hate using this and don't understand regex
 %tag_expression = '<[^(><)]+>';
 tag_expression = '<(?:"[^"]*"[''"]*|''[^'']*''[''"]*|[^''">])+>';
-[tag_starts,tag_ends] = regexp(str,tag_expression);
+[tag_starts,~] = regexp(str,tag_expression);
 
-%Find all < and > characters (including tags)
+%Find all < characters (including tags)
 lessThan_indices = regexp(str,'<');
-greaterThan_indices = regexp(str,'>');
 
-%Only replace characters that aren't xml/html tags
+%Only replace < characters that aren't xml/html tags
+orig_length = length(str);
 is_tag_start = ismember(lessThan_indices,tag_starts);
 for ii = lessThan_indices(~is_tag_start)
-    str = [str(1:ii-1) '&lt;' str(ii+1:end)];
+    ind = ii + (length(str) - orig_length);    
+    str = [str(1:ind-1) '&lt;' str(ind+1:end)];
 end
 
-%Repeat for greater than
+%Redo the tag and symbol search for > in case string has changed length
+[~,tag_ends] = regexp(str,tag_expression);
+greaterThan_indices = regexp(str,'>');
+
+%Now repeat for greater than
+orig_length = length(str);
 is_tag_end = ismember(greaterThan_indices,tag_ends);
 for ii = greaterThan_indices(~is_tag_end)
-    str = [str(1:ii-1) '&gt;' str(ii+1:end)];
+    ind = ii + (length(str) - orig_length);
+    str = [str(1:ind-1) '&gt;' str(ind+1:end)];
 end
 
