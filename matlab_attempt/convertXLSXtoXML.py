@@ -48,6 +48,7 @@ files = [f for f in os.listdir(inputDir) if os.path.isfile(os.path.join(inputDir
 
 #Iterate through files, converting to QMB_XML
 problem_count = 0;
+problemIDs = []
 for file in files:
 
 	#Open Excel file. Assume only one worksheet
@@ -89,7 +90,7 @@ for file in files:
 		if row[1].value == 'answer':
 			answerDict = {
 				'answer':str(row[2].value),
-       			'knowledgeComponent':row[3].value,
+       			'knowledgeComponent':str(row[3].value),
        			'correctness':str(row[4].value)}
 			if len(row) > 5: answerDict['hint'] = row[5].value
 			answers.append(answerDict)
@@ -120,9 +121,35 @@ for file in files:
 	#Use same filename as excel file
 	output_filename = os.path.splitext(file)[0] + '.xml'
 	write_problem_file(xml_problem,os.path.join(outputDir,output_filename))
-	problem_count += 1
 
-	# TODO Add code for TutorGen maybe?
+
+
+	# #Find KC string (should be with any correct answer)
+	# for answer in answers:
+	# 	if answer["correctness"] == 'True':
+	# 		problemKCString = answer["knowledgeComponent"]
+	# 		break
+	#
+    # # Genwerate random ID
+	# s=string.lowercase+string.digits+string.uppercase
+	# problemIDString = 'QMB'+''.join(random.sample(s,10))
+	# while (problemIDString in problemIDs):
+    # 	problemIDString = 'QMB'+''.join(random.sample(s,10))
+	# problemIDs.append(problemIDString)
+	# problemWebLoc = webLocRoot + os.path.basename(__file__) + '.' + problemName
+
+    # s=string.lowercase+string.digits+string.uppercase
+    # problemIDString = 'QMB'+''.join(random.sample(s,10))
+    # while (problemIDString in problemIDs):
+    #     problemIDString = 'QMB'+''.join(random.sample(s,10))
+    # problemWebLoc = webLocRoot + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount)
+    # #problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
+    # tutorGenOptions = ""
+    # dd.write(problemIDString+"\t"+problemDifficulty+"\t"+problemContentGrouping+"\t"+
+    #          problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+tutorGenOptions+"\t"+problemWebLoc+"\t"+questionTitle+"\n")
+
+	#Increment problem count
+	problem_count += 1
 
 
 print 'Finished writing ' + str(problem_count) + ' problems'
