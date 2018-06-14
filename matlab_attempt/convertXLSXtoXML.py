@@ -46,9 +46,15 @@ description_texts = {'MC':'Select the most correct answer',
 #Get list of files to read
 files = [f for f in os.listdir(inputDir) if os.path.isfile(os.path.join(inputDir, f))]
 
+#Infor for tutorgen logging
+detailFile = os.path.basename(__file__)+'.details.txt'
+file_id = open(detailFile,'w')
+web_location_root = "https://courses.edx.org/xblock/block-v1:HarvardX+QMB1+2T2017+type@problem+block@"
+all_characters=string.lowercase+string.digits+string.uppercase
+
 #Iterate through files, converting to QMB_XML
 problem_count = 0;
-problemIDs = []
+problem_ids = []
 for file in files:
 
 	#Open Excel file. Assume only one worksheet
@@ -72,9 +78,9 @@ for file in files:
 		#Assign single values
 		if row[1].value == 'questionText': problem_text = row[2].value
 		if row[1].value == 'dynamic': str_is_dynamic = str(row[2].value)
-		if row[1].value == 'difficult': difficult = row[2].value
-		if row[1].value == 'contentGrouping': content_group = row[2].value
-		if row[1].value == 'labelText': label_text = row[2].value
+		if row[1].value == 'difficulty': problem_difficulty = str(row[2].value)
+		if row[1].value == 'contentGrouping': content_group = str(row[2].value)
+		if row[1].value == 'labelText': label_text = str(row[2].value)
 		if row[1].value == 'solutionText': solution_text = row[2].value
 
 		#Assign options dictionary values
@@ -85,6 +91,7 @@ for file in files:
 		if row[1].value == 'weight': options['weight'] = row[2].value
 		if row[1].value == 'max_attempts': options['max_attempts'] = str(row[2].value)
 		if row[1].value == 'tolerance': options['tolerance'] = row[2].value
+		if row[1].value == 'isCaseSensitive': options['isCaseSensitive'] = row[2].value
 
 		# Create answer dictionary. Add hint if exists
 		if row[1].value == 'answer':
@@ -119,34 +126,31 @@ for file in files:
 	    options = options)
 
 	#Use same filename as excel file
-	output_filename = os.path.splitext(file)[0] + '.xml'
+	problem_name = os.path.splitext(file)[0]
+	output_filename = problem_name + '.xml'
 	write_problem_file(xml_problem,os.path.join(outputDir,output_filename))
 
+	#Find KC string (should be with any correct answer)
+	for answer in answers:
+		if answer["correctness"] == 'True':
+			problem_kc_string = answer["knowledgeComponent"].replace(" ", "")
+			break
+
+    # Genwerate random ID
+	problem_id_string = 'QMB'+''.join(random.sample(all_characters,10))
+	while (problem_id_string in problem_ids):
+		problem_id_string = 'QMB'+''.join(random.sample(all_characters,10))
+	problem_ids.append(problem_id_string)
 
 
-	# #Find KC string (should be with any correct answer)
-	# for answer in answers:
-	# 	if answer["correctness"] == 'True':
-	# 		problemKCString = answer["knowledgeComponent"]
-	# 		break
-	#
-    # # Genwerate random ID
-	# s=string.lowercase+string.digits+string.uppercase
-	# problemIDString = 'QMB'+''.join(random.sample(s,10))
-	# while (problemIDString in problemIDs):
-    # 	problemIDString = 'QMB'+''.join(random.sample(s,10))
-	# problemIDs.append(problemIDString)
-	# problemWebLoc = webLocRoot + os.path.basename(__file__) + '.' + problemName
-
-    # s=string.lowercase+string.digits+string.uppercase
-    # problemIDString = 'QMB'+''.join(random.sample(s,10))
-    # while (problemIDString in problemIDs):
-    #     problemIDString = 'QMB'+''.join(random.sample(s,10))
-    # problemWebLoc = webLocRoot + os.path.basename(__file__) + '.'+problemName+'.' + str(questionCount)
-    # #problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
-    # tutorGenOptions = ""
-    # dd.write(problemIDString+"\t"+problemDifficulty+"\t"+problemContentGrouping+"\t"+
-    #          problemKCString+"\t"+problemMaxGrade+"\t"+problemType+"\t"+tutorGenOptions+"\t"+problemWebLoc+"\t"+questionTitle+"\n")
+	# Write tutorgen output
+	web_location = web_location_root + os.path.basename(__file__) + '.' + problem_name
+	tutorgen_options = ""
+	problem_max_grade = ""
+	#problem_id    difficulty    content_grouping    KCs (comma separated)    max grade    type    options
+	file_id.write(problem_id_string + "\t" + problem_difficulty + "\t" + content_group + "\t"+
+	      problem_kc_string + "\t"+ problem_max_grade + "\t" + str(options['problem_type']) + "\t" +
+		  tutorgen_options + "\t" + web_location + "\t"+ problem_title +"\n")
 
 	#Increment problem count
 	problem_count += 1
