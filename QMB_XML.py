@@ -190,7 +190,10 @@ def make_line_problem_XML(
             options['tolerance'] = 0.05   # 5% tolerance on numerical problems by default.
     else:
         type_tag = ET.SubElement(problem_tag, 'stringresponse')
-        type_tag.set('type', 'ci')   # case-insensitive by default.
+        if 'isCaseSensitive' in options and options['isCaseSensitive']:
+            type_tag.set('type', 'cs')
+        else:
+            type_tag.set('type', 'ci') # case-insensitive by default.
 
     # Needs some expansion for various extra credit options.
     #     if 'extra_credit' in options:
