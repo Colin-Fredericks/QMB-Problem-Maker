@@ -22,7 +22,8 @@ str = strrep(str,'&','&amp;');
 %Regular expression for matching an html or xml tag
 % Note: I hate using this and don't understand regex
 %tag_expression = '<[^(><)]+>';
-tag_expression = '<(?:"[^"]*"[''"]*|''[^'']*''[''"]*|[^''">])+>';
+tag_expression = '</?\w+((\s+\w+(\s*=\s*(?:".*?"|''.*?''|[\^''">\s]+))?)+\s*|\s*)/?>'; % <--seriously wtf. Source: https://haacked.com/archive/2004/10/25/usingregularexpressionstomatchhtml.aspx/
+%tag_expression = '<(?:"[^"]*"[''"]*|''[^'']*''[''"]*|[^''">])+>';
 [tag_starts,~] = regexp(str,tag_expression);
 
 %Find all < characters (including tags)
