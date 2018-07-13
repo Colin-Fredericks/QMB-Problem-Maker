@@ -44,3 +44,14 @@ CG3.2.2	Student exercise review	67
 CG4.1.1	Conditional statements	68
 CG4.1.2	If else statements	69
 CG4.1.3	Compound logical statements	70
+CG2.1.1	Loading files	71
+CG2.1.2	Images	7
+CG2.1.3 Knowledge Check	73
+CG2.2.1	Student Exercise: Images as Data and the Colon Operator	74
+CG2.2.2	Student Exercise Reviewed: Images as Data and the Colon Operator	75
+CG2.2.3	Knolwedge Check	76
+CG2.3.1	Images: Improving Contrast	77
+CG2.3.2	Images and Logical Arrays	78
+CG2.3.3	Images and Logical Operations	79
+CG2.3.4	Knowledge Check	80
+CG2.4.1	Knowledge Check	81
