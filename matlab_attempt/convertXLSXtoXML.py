@@ -40,7 +40,7 @@ with open('CGlookup.txt','r') as f:
 description_texts = {'MC':'Select the most correct answer',
 	'Checkbox':'Select all that apply',
 	'Numerical':'Enter your answer below. Type "e" if this code would produce an error',
-	'Text':'Enter your answer below',
+	'Text':'Enter your answer below. Type "Error" if this code would produce an error (Warning: case sesnsitive!)',
 	'AnyText':'Enter your answer below'}
 
 #Get list of files to read
