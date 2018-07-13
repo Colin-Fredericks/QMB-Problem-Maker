@@ -1,4 +1,5 @@
-function [correct_str,incorrect_str,row_str,col_str] = get_image3_answers(fname,size_im,step_sizes)
+function [correct_str,incorrect_str,row_str,col_str,size_im,downsampling_factors,new_size] = ...
+    image3(fname,step_sizes,chance_none)
 %Function GET_IMAGE3_ANSWERS: Creates answers for QMB problem 'image3'
 %
 %   [CORRECT,WRONG,ROW_STR,COL_STR] = get_image3_answers(FNAME,DIM,STEP) 
@@ -21,6 +22,11 @@ function [correct_str,incorrect_str,row_str,col_str] = get_image3_answers(fname,
 %   im(1:2:150,1:3:120)?'
 
 
+%Load iamge to get the size
+full_name = ['Images\Full Size\' fname];
+im = imread(full_name);
+size_im = [size(im,1) size(im,2)];
+
 % Get name for image, e.g. 'clock' or 'flower'
 [~,base_name,file_ext] = fileparts(fname);
 
@@ -40,10 +46,9 @@ for ii = 1:num_step
     end
 end       
        
-%Pick one to be the question choice       
-question_choice = randsample(step_sizes,2,true);
-question_ind = find(question_choice(1)==choices(:,1) & ...
-                    question_choice(2)==choices(:,2));
+%Pick one to be the question choice   
+question_ind = randi(size(choices,1),1);
+question_choice = choices(question_ind,:);
 row_str = ['1:' num2str(question_choice(1)) ':end'];
 col_str = ['1:' num2str(question_choice(2)) ':end'];
 
@@ -53,27 +58,47 @@ answer_ind = randsample([1:question_ind-1  ...
                         question_ind+1:size(choices,1)]',4);
                     
 % 80% of the time, the correctly sampled image will be one of the choices
+
+alt_str1 = 'An image with a height that has been downsampled by a factor of';
+alt_str2 = 'and a width that has been downsampled by a factor of';
+
+%If a random value is > chance_none, then the correct choice is present
 incorrect_str = cell(4,1);
-if rand<0.8 
+if rand > chance_none
+    
+    %Right answer
+    alt_str = sprintf('%s %d %s %d',alt_str1,question_choice(1),alt_str2,question_choice(2));
     correct_str = ['<img src="/static/' base_name '_grid'...
         num2str(num_step) '_downsize' num2str(question_ind) file_ext ...
-        '" alt=""/><p>Size is ' num2str(pixel_sizes(question_ind,2)) ' x ' ...
-        num2str(pixel_sizes(question_ind,1)) ' pixels</p>'];
+        '" alt="' alt_str '"/><p>Size is ' num2str(pixel_sizes(question_ind,1)) ' x ' ...
+        num2str(pixel_sizes(question_ind,2)) ' pixels</p>'];
+    
+    %Assemble the wrong answers
     for ii = 1:3
+        answer_choice = choices(answer_ind(ii),:);
+        alt_str = sprintf('%s %d %s %d',alt_str1,answer_choice(1),alt_str2,answer_choice(2));
         incorrect_str{ii} = ['<img src="/static/' base_name '_grid'...
             num2str(num_step) '_downsize' num2str(answer_ind(ii)) file_ext ...
-            '" alt=""/><p>Size is ' num2str(pixel_sizes(answer_ind(ii),2)) ' x ' ...
-            num2str(pixel_sizes(answer_ind(ii),1)) ' pixels</p>'];
+            '" alt="' alt_str '"/><p>Size is ' num2str(pixel_sizes(answer_ind(ii),1)) ' x ' ...
+            num2str(pixel_sizes(answer_ind(ii),2)) ' pixels</p>'];
     end
     incorrect_str{4} = 'None of these';
 
+% Other times, the correct choie is not present so the answer is 'None of
+% these'
 else
     correct_str = 'None of these';
     for ii = 1:4
+        answer_choice = choices(answer_ind(ii),:);
+        alt_str = sprintf('%s %d %s %d',alt_str1,answer_choice(1),alt_str2,answer_choice(2));
         incorrect_str{ii} = ['<img src="/static/' base_name '_grid'...
             num2str(num_step) '_downsize' num2str(answer_ind(ii)) file_ext ...
-            '" alt=""/><p>Size is ' num2str(pixel_sizes(answer_ind(ii),2)) ' x ' ...
-            num2str(pixel_sizes(answer_ind(ii),1)) ' pixels</p>'];
+            '" alt="' alt_str '"/><p>Size is ' num2str(pixel_sizes(answer_ind(ii),1)) ' x ' ...
+            num2str(pixel_sizes(answer_ind(ii),2)) ' pixels</p>'];
     end
     
 end
+
+%Return new size and downsampling factors to help explain the answer
+downsampling_factors = question_choice;
+new_size = [pixel_sizes(question_ind,1) pixel_sizes(question_ind,2)];
