@@ -13,3 +13,6 @@ matlab_attempt/example_problems
 matlab_attempt/CGlookup.txt
 
 
+*.jpg
+matlab_attempt/generate_image_questions.m
+matlab_attempt/generate_array_questions.m
