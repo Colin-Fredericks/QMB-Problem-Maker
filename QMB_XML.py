@@ -155,7 +155,7 @@ def make_choice_problem_XML(
         item_tag = ET.SubElement(choicegroup_tag, 'choice')
         item_tag.set('correct', item['correctness'])
         item_tag.text = item['answer']
-        if 'hint' in item:
+        if 'hint' in item and item['hint'] is not None:
 			hint_tag = ET.SubElement(item_tag, 'choicehint')
 			hint_tag.set('selected','TRUE')
 			hint_tag.text = '<strong>' + item['answer'] + ':  </strong>' + item['hint']
