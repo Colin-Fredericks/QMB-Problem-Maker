@@ -98,26 +98,28 @@ for ii = problem_ind
             % Now evaluate. Dont save value if code is only meant to
             % execute, which is denoted by the CODE variable
             if strcmp(var_names{kk},'CODE')
-                eval(var_expr);
+                eval(var_expr); 
+                var_values{kk} = '';
             else
                 var_eval =  eval(var_expr);
-            end
-            
-            % If string, save as answer
-            if ischar(var_eval)
-                var_values{kk} = var_eval;
-            % If cell array of strings, try taking first value
-            elseif iscellstr(var_eval)
-                if length(var_eval)==1
-                    var_values(kk) = var_eval;
+                
+                % If string, save as answer
+                if ischar(var_eval)
+                    var_values{kk} = var_eval;
+                % If cell array of strings, try taking first value
+                elseif iscellstr(var_eval)
+                    if length(var_eval)==1
+                        var_values(kk) = var_eval;
+                    else
+                        error('Something went wrong with evaluating: %s',var_expr);
+                    end
+                % Else, try converting from num2str (should work for bools and
+                % numeric values)
                 else
-                    error('Something went wrong with evaluating: %s',var_expr);
-                end
-            % Else, try converting from num2str (should work for bools and
-            % numeric values)
-            else
-                var_values{kk} = num2str(var_eval);
-            end
+                    var_values{kk} = num2str(var_eval);
+                end               
+            end           
+            
         end
         
         % -----------------------------------------------------------------
