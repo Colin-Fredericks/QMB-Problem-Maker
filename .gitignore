@@ -18,3 +18,4 @@ matlab_attempt/generate_image_questions.m
 matlab_attempt/generate_array_questions.m
 *.zip
 matlab_attempt/convertXLSXtoXML.py.details.txt
+*.png
