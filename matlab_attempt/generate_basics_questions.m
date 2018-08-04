@@ -6,8 +6,8 @@ fname = 'C:\Users\brian\Google Drive\Quant Methods for Biology\Adaptive\Sections
 
 addpath('Problem functions')
 
-sheets = {'CG0.2'};
-problems = {{'arithmetic3'}};
+sheets = {'CG0.3'};
+problems = {{'suppress1','suppress2'}};
 
 num_dynamic = 10;
 for ii = 1:length(sheets)

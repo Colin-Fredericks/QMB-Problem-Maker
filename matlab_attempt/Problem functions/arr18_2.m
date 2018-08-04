@@ -15,12 +15,21 @@ ask_indices(3) = randi(array_size(3),1);
 %Row choice
 possible_ind = 1:array_size(1)-1;
 possible_ind = possible_ind(~ismember(possible_ind,ask_indices(3)));
-ask_indices(1) = randsample(possible_ind,1);
+if length(possible_ind) == 1
+    ask_indices(1) = possible_ind;
+else
+    ask_indices(1) = randsample(possible_ind,1);
+end
+    
 
 %Col choice
 possible_ind = 1:array_size(2);
 possible_ind = possible_ind(~ismember(possible_ind,ask_indices([1 3])));
-ask_indices(2) = randsample(possible_ind,1);
+if length(possible_ind) == 1
+    ask_indices(2) = possible_ind;
+else
+    ask_indices(2) = randsample(possible_ind,1);
+end
 
 
 %Values which are used to ask for the answer
