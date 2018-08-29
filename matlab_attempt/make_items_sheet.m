@@ -52,7 +52,7 @@ for ii = 1:length(sheets)
                 % Is dynamic?
                 row = strcmp(section(:,2),'dynamic');
                 static = '';
-                if strcmpi(section{row,3},'true')
+                if strcmpi(section{row,3},'false')
                     static = ', static';
                 end
                 

@@ -1,4 +1,4 @@
-function info = make_KCKC_sheet(tree_xml_file)
+function info = make_KCKC_sheet(tree_xml_file,section_name)
 % MAKE_KCKC_SHEET - makes the "KC-KC" sheet for KC_linkages.xlsx
 %
 %   C = make_items_sheet(FNAME) reads in the xml file FNAME that contains
@@ -6,6 +6,14 @@ function info = make_KCKC_sheet(tree_xml_file)
 %   that has the info for KC_linkages.xlsx. This info is also save to its
 %   own Excel file
 %
+
+% If section isn't an input, get the first word in the filename, e.g.
+% basics, arrays, loops, etc.
+if nargin<2
+   [~,name,~] = fileparts(tree_xml_file);
+   words_in_name = strsplit(name);
+   section_name = words_in_name{1};
+end
 
 % Read in xml file and find 'mxCell' objects that draw.io uses for vertices
 % and edges 
@@ -37,12 +45,17 @@ for k = 1:allItems.getLength
         % Parse vertex name into KC ID and KC name
         vertexName = attValues{ismember(attNames,'value')};        
         brStarts = strfind(vertexName,'<br>');
-        if length(brStarts)>1
-            vertexName = vertexName(1:brStarts(2)-1);
+        if ~isempty(brStarts)
+            if length(brStarts)>1
+                vertexName = vertexName(1:brStarts(2)-1);
+            end
+            KC_IDs{end+1} = vertexName(1:brStarts(1)-1);
+            KC_names{end+1} = vertexName(brStarts(1)+4:end);
+        else
+            KC_IDs{end+1} = '';
+            KC_names{end+1} = '';
         end
-        KC_IDs{end+1} = vertexName(1:brStarts(1)-1);
-        KC_names{end+1} = vertexName(brStarts(1)+4:end);
-        
+
     elseif ismember('edge',attNames)
         
         %Save source and target.
@@ -53,7 +66,7 @@ for k = 1:allItems.getLength
         % strokeWidths aren't in the style string, so just check for
         % presence
         style = attValues{ismember(attNames,'style')};
-        if contains(style,'strokeWidth')
+        if strfind(style,'strokeWidth')
             edgeWeights{end+1} = 'Strong';
         else
             edgeWeights{end+1} = 'Weak';
@@ -77,7 +90,7 @@ for iEdge = 1:length(edgeSources)
     targetID = KC_IDs{vertexIDs==edgeTargets(iEdge)};
     info(end+1,1:5) = {sourceID,'',targetID,'',edgeWeights{iEdge}};
 end
-output_fname = 'KC-KC_sheet';
+output_fname = [section_name '_KCKC_sheet'];
 fprintf('Writing to file: %s\n',output_fname)
 xlswrite(output_fname,info);  
 end

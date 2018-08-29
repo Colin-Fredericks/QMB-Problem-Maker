@@ -4,7 +4,7 @@ CG0.1	Randomness	27
 CG0.2	MATLAB Basics	28
 CG0.3	Reading a Line of Code	29
 CG0.4	Order of Operations	30
-CG0.5 	Order of Operations Challend -1
+CG0.5	Order of Operations Challenge -1
 CG0.6	Turning Words into Code	31
 CG1	Arrays	32
 CG1.1.1	Intro to Arrays	33
