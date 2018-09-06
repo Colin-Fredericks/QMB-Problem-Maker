@@ -210,7 +210,7 @@ def make_line_problem_XML(
 
     # Add additional answers if they exist.
     if len(answers) > 1:
-        for item in answers:
+        for item in answers[1:]:
             additional_answer_tag = ET.SubElement(type_tag, 'additional_answer')
             additional_answer_tag.set('answer', item['answer'])
 
