@@ -1,0 +1,13 @@
+Endings	FirstLetters
+at	bcefhmoprstv
+ay	bdhjlmnprswy
+in	bdfkptw
+ap	cglmnrstz
+et	bgjlmpsvwy
+ot	cdghjlnpr
+ow	bchlmnprstvw
+ag	bghlnrstw
+ar	bcefjoptw
+aw	cjlmprsy
+it	bfghklpsz
+ad	bcdfhlmprstw
