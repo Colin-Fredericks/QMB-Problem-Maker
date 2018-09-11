@@ -1,7 +1,7 @@
 
 *.pyc
 *.xml
-*.xlsx
+
 *.asv
 dynamic/test_questions.txt
 dynamic/new_questions.txt
