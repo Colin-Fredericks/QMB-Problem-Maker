@@ -7,14 +7,14 @@ T = readtable('..\Data\word_lookup.csv');
 %Instantiate textInserter object for current word
 font_name = 'Times New Roman';
 font_size = 72;
-font_color = 250+[0 0 0];
+font_color = 65532+[0 0 0];
 pic_dim = [200 420];
-background_color = [255];
+background_color = [65535];
 
 for ii = 1:size(T,1)    
 
     %Create image with background color
-    mainI = background_color + zeros(pic_dim(1),pic_dim(2), 'uint8');
+    mainI = background_color + zeros(pic_dim(1),pic_dim(2), 'uint16');
 
     position = [10 40];
     mainI = rgb2gray(insertText(mainI,position,T.word{ii},'Font',font_name, ...
