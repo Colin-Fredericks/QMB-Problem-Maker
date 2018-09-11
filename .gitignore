@@ -1,22 +1,14 @@
-
 *.pyc
-*.xml
-
 *.asv
+*.jpg
+*.zip
+*.png
+
+matlab_attempt/Filled-in Excel files*
+matlab_attemptXML problem files*
+
+dynamic/New problems/*.xml
+dynamic/Problems/*.xml
+problems/*.xml
 dynamic/test_questions.txt
 dynamic/new_questions.txt
-matlab_scripts/loop_problems.m
-matlab_scripts/conditional_problems.m
-matlab_attempt/code_example.txt
-matlab_attempt/meeting notes
-matlab_attempt/example_problems
-matlab_attempt/CGlookup.txt
-
-
-*.jpg
-matlab_attempt/generate_image_questions.m
-matlab_attempt/generate_array_questions.m
-*.zip
-matlab_attempt/convertXLSXtoXML.py.details.txt
-*.png
-*.xls
