@@ -219,7 +219,6 @@ director
 discover
 discuss
 discussion
-disease
 do
 doctor
 dog
@@ -278,7 +277,6 @@ eye
 face
 fact
 factor
-fail
 fall
 family
 far
