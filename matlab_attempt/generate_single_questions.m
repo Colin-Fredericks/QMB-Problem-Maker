@@ -1,18 +1,22 @@
-%Generate all array questions
+%Generate single question
 clear
 close all
 
 addpath('Problem functions','util')
+file = 'Problem descriptions\Loop questions';
 
-base = 
-fpath = 'C:\Users\brian\Google Drive\Quant Methods for Biology\Adaptive\Sections\2. Basics\';
-fname = [fpath 'Basics questions.xlsx'];
-[~,sheets] = xlsfinfo(fname);
-sheets = sheets(strncmp(sheets,'CG',2));
+sheet = 'CG3.1.2';
+num_dynamic = 4;
 
-num_dynamic = 30;
+problems = {'loop0.2'};
 
-for ii = 1:length(sheets)
-    parse_excel(fname,'sheet',sheets{ii},'num_dynamic',num_dynamic);
-    fprintf('Finished sheet %s (%d of %d)\n',sheets{ii},ii,length(sheets))
-end
+%Make the excel file
+parse_excel(file,'sheet',sheet,'num_dynamic',num_dynamic, ...
+    'problem_list',problems);
+
+% Use matlab to run the batch file that calls the python script to make the 
+% xml files. I can't believe I just wrote that sentence
+!make_xml
+
+
+
