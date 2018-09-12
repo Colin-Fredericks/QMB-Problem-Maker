@@ -2,7 +2,7 @@
 clear
 close all
 
-addpath('Problem functions','util')
+addpath('util')
 file = 'Problem descriptions\Loop questions';
 
 sheet = 'CG3.1.2';
