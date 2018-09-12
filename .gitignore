@@ -5,7 +5,7 @@
 *.png
 
 matlab_attempt/Filled-in Excel files*
-matlab_attemptXML problem files*
+matlab_attempt/XML problem files*
 
 dynamic/New problems/*.xml
 dynamic/Problems/*.xml
