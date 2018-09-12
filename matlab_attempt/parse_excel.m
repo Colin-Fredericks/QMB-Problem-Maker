@@ -66,15 +66,16 @@ num_problems = length(problem_ind);
 problem_starts(end+1) = size(excel_data,1)+1; %Add last row for last problem
 
 % Iterate through problems
-for ii = problem_ind
+output_data = {};
+for ii = problem_ind  
     for jj = 1:num_dynamic
         
         % -----------------------------------------------------------------
         % Extract the excel data for just this problem
         % -----------------------------------------------------------------
         rows = problem_starts(ii) : problem_starts(ii+1)-1;
-        section = excel_data(rows,:);    
-    
+        section = excel_data(rows,:);
+        problem_name = section{1,1};    
         
         % -----------------------------------------------------------------        
         % Evaluate variables
@@ -147,19 +148,32 @@ for ii = problem_ind
         end
             
         % -----------------------------------------------------------------
-        % Since we no longer need variables remove from section and write
-        % to an output file
+        % Since we no longer need variables remove from section and append 
+        % to the output cell array
         % -----------------------------------------------------------------
         non_var_rows = ~ismember(section(:,2),'variable');
         section = section(non_var_rows,:);
-        output_fname = [section{1,1} '.' num2str(jj-1)];
-        xlswrite([output_dir '\' output_fname '.xlsx'],section);
-        
+        section{1,1} = [section{1,1} '.' num2str(jj-1)];
+        output_data = [output_data; section];
+
+        % -----------------------------------------------------------------
         % Check to see if this is a dynamic problem. If not, break from the
         % loop and more on to next problem
+        % -----------------------------------------------------------------
         if ~strcmp(section(ismember(section(:,2),'dynamic'),3),'true')            
             break;            
         end
-    end
-    fprintf('Finished %d of %d problems\n',find(ii==problem_ind),num_problems)
+    end    
+    fprintf('Created %d instances for problem %s\n', ...
+        jj,problem_name)
 end
+
+% Write to file
+[~,base_name,~] = fileparts(input_fname);
+output_fname = [output_dir '\' base_name ' sheet ' num2str(sheet) '.xlsx'];
+if exist(output_fname)
+    fprintf('Deleting old excel file\n')
+    delete(output_fname);
+end
+fprintf('Writing excel file\n')
+xlswrite(output_fname,output_data);
