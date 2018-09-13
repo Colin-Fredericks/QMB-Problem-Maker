@@ -71,7 +71,7 @@ for file in files:
 
 		# Rows in excel file for this problem (1-based indexing)
 		minRow = problemIndices[iProb] + 1
-		maxRow = problemIndices[iProb+1] + 1
+		maxRow = problemIndices[iProb+1] 
 
 		#Default values for problem info
 		problem_title = ''
@@ -148,7 +148,7 @@ for file in files:
 				problem_kc_string = answer["knowledgeComponent"].replace(" ", "")
 				break
 
-	    # Genwerate random ID
+	    # Generate random ID
 		problem_id_string = 'QMB'+''.join(random.sample(all_characters,10))
 		while (problem_id_string in problem_ids):
 			problem_id_string = 'QMB'+''.join(random.sample(all_characters,10))
