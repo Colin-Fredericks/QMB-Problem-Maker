@@ -1,4 +1,4 @@
-function info = make_KCKC_sheet(tree_xml_file,section_name)
+function [KC_sheet,KCKC_sheet] = make_KCKC_sheet(tree_xml_file,section_name)
 % MAKE_KCKC_SHEET - makes the "KC-KC" sheet for KC_linkages.xlsx
 %
 %   C = make_items_sheet(FNAME) reads in the xml file FNAME that contains
@@ -76,6 +76,9 @@ for k = 1:allItems.getLength
 
 end
 
+% Make KC_sheet. Just the ids and names
+KC_sheet = [KC_IDs' KC_names'];
+
 % Iterate through edges, adding line to an output file for each connection.
 %
 % Format is:
@@ -83,16 +86,15 @@ end
 %
 % In our graph lines point from post-req to pre-re, so source is placed
 % first
-
-info = {};
+KCKC_sheet = {};
 for iEdge = 1:length(edgeSources)
-    sourceID = KC_IDs{vertexIDs==edgeSources(iEdge)};
-    targetID = KC_IDs{vertexIDs==edgeTargets(iEdge)};
-    info(end+1,1:5) = {sourceID,'',targetID,'',edgeWeights{iEdge}};
+    source_ID = KC_IDs{vertexIDs==edgeSources(iEdge)};
+    target_ID = KC_IDs{vertexIDs==edgeTargets(iEdge)};
+    source_name = KC_names{vertexIDs==edgeSources(iEdge)};
+    target_name = KC_names{vertexIDs==edgeTargets(iEdge)};
+    KCKC_sheet(end+1,1:5) = {source_ID,source_name,target_ID,target_name, ...
+        edgeWeights{iEdge}};
 end
-output_fname = [section_name '_KCKC_sheet'];
-fprintf('Writing to file: %s\n',output_fname)
-xlswrite(output_fname,info);  
 end
 
 

@@ -1,25 +1,24 @@
-function itemKC_sheet = make_itemKC_sheet(input_fname,section_name)
+function itemKC_sheet = make_itemKC_sheet(input_fname,item_sheet,KC_sheet)
 % MAKE_ITEMKC_SHEET - makes the "Items" sheet for KC_linkages.xlsx
 %
-%   C = make_items_sheet(FNAME) reads in the Excel file FNAME that contains 
-%   problem descriptions and variable expressions that will be used for
-%   dynamic problem generations. The output is the a cell array that can be
+%   C = make_itemKC_sheet(FNAME) reads in the Excel file FNAME that has 
+%   problem descriptions. The output is the a cell array that can be
 %   copied and pasted into the KC_linkages.xlsx file
+%
+%   C = make_itemKC_sheet(FNAME,ITEM_SHEET,KC_SHEET) uses the cell arrays
+%   ITEM_SHEET and KC_SHEET to fill in all the columns in C. If these are
+%   not passed as input, then columns 2, 3, and 5 are empty
 %
 
 
 %Get list of sheets
+[~,base_name,~] = fileparts(input_fname);
+section_name = strsplit(base_name);
 [~,sheets] = xlsfinfo(input_fname);
 
-% If section isn't an input, get the first word in the filename, e.g.
-% basics, arrays, loops, etc.
-if nargin<2
-   [~,name,~] = fileparts(input_fname);
-   words_in_name = strsplit(name);
-   section_name = words_in_name{1};
-end
-
 itemKC_sheet= {};
+fprintf('Parsing %s excel sheets to get item-KC relationships\n', ...
+    section_name{1})
 for ii = 1:length(sheets)
     
     %Only process Content Grouping sheets
@@ -64,7 +63,31 @@ for ii = 1:length(sheets)
                 
                 %Add a line for each KC
                 for kk = 1:length(KC_list)
-                    itemKC_sheet(end+1,1:4) = {item_ID,'','',KC_list{kk}};
+                    if nargin == 1
+                        itemKC_sheet(end+1,1:5) = {item_ID,'','',KC_list{kk},''};
+                    else
+                        %Find item in item sheet
+                        item_ind  = strcmp(item_ID,item_sheet(:,1));
+                        if any(item_ind)
+                            item_name = item_sheet{item_ind,4}; 
+                            item_category = item_sheet{item_ind,3};
+                        else
+                            item_name = '';
+                            item_category = '';
+                        end
+                        
+                        %Find KC in KC_sheet
+                        KC_ind = strcmp(KC_list{kk},KC_sheet(:,1));
+                        if any(KC_ind)
+                            KC_name = KC_sheet{KC_ind,2};
+                        else
+                            KC_name = '';
+                        end
+                        
+                        %Assign to sheet
+                        itemKC_sheet(end+1,1:5) = {item_ID,item_category, ...
+                            item_name,KC_list{kk},KC_name};
+                    end
                 end
         end
         fprintf('Finished sheet %s\n',sheets{ii})
@@ -72,6 +95,6 @@ for ii = 1:length(sheets)
 end
 
 
-output_fname = [section_name '_itemKC_sheet.xlsx'];
-fprintf('Writing to file: %s\n',output_fname)
-xlswrite(output_fname,itemKC_sheet);
+% output_fname = [section_name '_itemKC_sheet.xlsx'];
+% fprintf('Writing to file: %s\n',output_fname)
+% xlswrite(output_fname,itemKC_sheet);

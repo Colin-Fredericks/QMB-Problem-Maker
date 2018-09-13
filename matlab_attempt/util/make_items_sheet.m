@@ -19,6 +19,7 @@ if nargin<2
 end
 
 item_sheet = {};
+fprintf('Parsing %s excel sheets to get items\n',section_name)
 for ii = 1:length(sheets)
     
     %Only process Content Grouping sheets
@@ -70,6 +71,6 @@ for ii = 1:length(sheets)
     end
 end
 
-output_fname = [section_name '_items_sheet.xlsx'];
-fprintf('Writing to file: %s\n',output_fname)
-xlswrite(output_fname,item_sheet);
+% output_fname = [section_name '_items_sheet.xlsx'];
+% fprintf('Writing to file: %s\n',output_fname)
+% xlswrite(output_fname,item_sheet);
