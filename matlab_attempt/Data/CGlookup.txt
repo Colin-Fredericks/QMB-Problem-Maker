@@ -1,58 +1,66 @@
-cg_id	name	VPAL Module #
-CG0	Intro to MATLAB	26
-CG0.1	Randomness	27
-CG0.2	MATLAB Basics	28
-CG0.3	Reading a Line of Code	29
-CG0.4	Order of Operations	30
-CG0.5	Order of Operations Challenge -1
-CG0.6	Turning Words into Code	31
-CG1	Arrays	32
-CG1.1.1	Intro to Arrays	33
-CG1.1.2	Loading Images as Arrays	34
-CG1.1.3	Inspecting Arrays	35
-CG1.1.4	Other Ways to Display Images	36
-CG1.1.5	Entering Arrays	37
-CG1.1.6	Loading and Creating Arrays	38
-CG1.1.7	Knowledge Check	39
-CG1.2.1	Linear Indexing	40
-CG1.2.2	Array Indexing Challenge	41
-CG1.2.3	Storing Values in Arrays	42
-CG1.2.4	Multidimensional Arrays	43
-CG1.2.5	From One Array to Another	44
-CG1.2.6	Other Ways to Create and Change Arrays	45
-CG1.2.7	Array Slicing	46
-CG1.2.8	Knowledge Check	47
-CG1.3.1	Advanced Array Operations	48
-CG1.3.2	Element Operations	49
-CG1.3.3	Changing Dimensions	50
-CG1.3.4	Knowledge Check	51
-CG1.4.1	Review: Arrays	52
-CG1.4.2	Array Operations	53
-CG1.4.3	Review of Arrays	54
-CG1.4.4	Array Demo	55
-CG1.4.5	Knowledge Check	56
-CG3.1.1	Why Loops?	57
-CG3.1.2	Intro to For Loops	58
-CG3.1.3	Fun Loops Demo	59
-CG3.1.4	Loop Variables are static	60
-CG3.1.5	Creating arrays in loops	61
-CG3.1.6	Nested loops	62
-CG3.1.7	Fun nested loops demo	63
-CG3.1.8	Triply nested loops	64
-CG3.1.9	Knowledge Check	65
-CG3.2.1	Student exercise: Writing loops	66
-CG3.2.2	Student exercise review	67
-CG4.1.1	Conditional statements	68
-CG4.1.2	If else statements	69
-CG4.1.3	Compound logical statements	70
-CG2.1.1	Loading files	71
-CG2.1.2	Images	7
-CG2.1.3 Knowledge Check	73
-CG2.2.1	Student Exercise: Images as Data and the Colon Operator	74
-CG2.2.2	Student Exercise Reviewed: Images as Data and the Colon Operator	75
-CG2.2.3	Knolwedge Check	76
-CG2.3.1	Images: Improving Contrast	77
-CG2.3.2	Images and Logical Arrays	78
-CG2.3.3	Images and Logical Operations	79
-CG2.3.4	Knowledge Check	80
-CG2.4.1	Knowledge Check	81
+cg_id	name
+CG0	Intro to MATLAB
+CG0.1	Randomness
+CG0.2	MATLAB Basics
+CG0.3	Reading a Line of Code
+CG0.4	Order of Operations
+CG0.5	Order of Operations Challenge
+CG0.6	Turning Words into Code
+CG1	Arrays
+CG1.1.1	Intro to Arrays
+CG1.1.2	Loading Images as Arrays
+CG1.1.3	Inspecting Arrays
+CG1.1.4	Other Ways to Display Images
+CG1.1.5	Entering Arrays
+CG1.1.6	Loading and Creating Arrays
+CG1.1.7	Knowledge Check
+CG1.2.1	Linear Indexing
+CG1.2.2	Array Indexing Challenge
+CG1.2.3	Storing Values in Arrays
+CG1.2.4	Multidimensional Arrays
+CG1.2.5	From One Array to Another
+CG1.2.6	Other Ways to Create and Change Arrays
+CG1.2.7	Array Slicing
+CG1.2.8	Knowledge Check
+CG1.3.1	Advanced Array Operations
+CG1.3.2	Element Operations
+CG1.3.3	Changing Dimensions
+CG1.3.4	Knowledge Check
+CG1.4.1	Review: Arrays
+CG1.4.2	Array Operations
+CG1.4.3	Review of Arrays
+CG1.4.4	Array Demo
+CG1.4.5	Knowledge Check
+CG2.1.1	Loading files
+CG2.1.2	Images
+CG2.1.3	Knowledge Check
+CG2.2.1	Student Exercise: Images as Data and the Colon Operator
+CG2.2.2	Student Exercise Reviewed: Images as Data and the Colon Operator
+CG2.2.3	Knowledge Check
+CG2.3.1	Images: Improving Contrast
+CG2.3.2	Images and Logical Arrays
+CG2.3.3	Images and Logical Operations
+CG2.3.4	Knowledge Check
+CG2.4.1	Knowledge Check
+CG3.1.1	Why Loops?
+CG3.1.2	Intro to For Loops
+CG3.1.3	Fun loops Demo
+CG3.1.4	Loop Variables are Static
+CG3.1.5	Creating Arrays in Loops
+CG3.1.6	Nested Loops
+CG3.1.7	Fun Nested Loops Demo
+CG3.1.8	Triply Nested Loops
+CG3.1.9	Knowledge Check
+CG3.2.1	Student Exercise: Writing Loops
+CG3.2.2	Student Exercise Reviewed: Writing Loops
+CG3.2.3	Student Exercise Alt. Solution: Writing Loops
+CG3.2.4	Knowledge Check
+CG3.3.1	Loops and Column Arrays
+CG3.3.2	Loops and Conditionals
+CG3.3.3	Loops and Conditionals 2
+CG3.3.4	Knowledge Check
+CG3.4.1	Student Exercise 2
+CG3.4.2	Knowledge Check
+CG3.5.1	While Loops and Break Statements
+CG3.5.2	Logical Operators
+CG3.5.3	Knowledge Check
