@@ -44,13 +44,13 @@ for k = 1:allItems.getLength
         
         % Parse vertex name into KC ID and KC name
         vertexName = attValues{ismember(attNames,'value')};        
-        brStarts = strfind(vertexName,'<br>');
+        brStarts = regexp(vertexName,'<br.*?>');
         if ~isempty(brStarts)
             if length(brStarts)>1
                 vertexName = vertexName(1:brStarts(2)-1);
             end
-            KC_IDs{end+1} = vertexName(1:brStarts(1)-1);
-            KC_names{end+1} = vertexName(brStarts(1)+4:end);
+            KC_IDs{end+1} = deblank(vertexName(1:brStarts(1)-1));
+            KC_names{end+1} = deblank(vertexName(brStarts(1)+4:end));
         else
             KC_IDs{end+1} = '';
             KC_names{end+1} = '';
