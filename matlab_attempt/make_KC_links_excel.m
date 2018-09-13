@@ -3,7 +3,7 @@ clear
 close all
 
 addpath util
-units = {'Arrays'};
+units = {'Images'};
 output_fname = 'KC_links.xlsx';
 
 %Initlize sheets with headers
@@ -22,7 +22,7 @@ for unit = units
     % unit is a 1x1 cell, so need to extract the value
     unit_str = unit{1};
 
-    %Uncompress tree XML file by calling python script
+    % Uncompress tree XML file by calling python script
     windows_cmd = ['!@activate bunnies > nul && python drawio.py ' ...
         '"XML Trees\' unit_str '.xml"'];
     eval(windows_cmd)
@@ -31,25 +31,26 @@ for unit = units
     tree_file = ['XML Trees\' unit_str ' uncompressed.xml'];
     [unit_KC_sheet,unit_KCKC_sheet] = make_KCKC_sheet(tree_file);
     
-    %Append to sheets
+    % Append to sheets
     KC_sheet = [KC_sheet; unit_KC_sheet];
     KCKC_sheet = [KCKC_sheet; unit_KCKC_sheet];
     
-    %Make the Item sheet
+    % Make the Item sheet
     problem_file = ['Excel problems\' unit_str ' questions.xlsx'];
     unit_item_sheet = make_items_sheet(problem_file);
     
-    %Append to item sheet. Add some empty columns for the ones we haven't
-    %filled
+    % Append to item sheet. Add some empty columns for the ones we haven't
+    % filled
     [nItems,nCols] = size(unit_item_sheet);
     nHeaders = size(item_sheet,2);
     empty_cells = cell(nItems,nHeaders-nCols);
     item_sheet = [item_sheet; [unit_item_sheet empty_cells]];
     
-    %Make the Item KC sheet
+    % Make the Item KC sheet
     unit_itemKC_sheet = make_itemKC_sheet(problem_file,item_sheet,KC_sheet);
     
-    %Append to itemKC sheet. Add empty columns for ones that weren't filled
+    % Append to itemKC sheet. Add empty columns for ones that weren't 
+    % filled
     [nItems,nCols] = size(unit_itemKC_sheet);
     nHeaders = size(itemKC_sheet,2);
     empty_cells = cell(nItems,nHeaders-nCols);
