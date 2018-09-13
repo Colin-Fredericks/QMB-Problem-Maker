@@ -29,7 +29,7 @@ function parse_excel(input_fname,varargin)
 % Input variables
 num_dynamic = 1; %Number of dyanmic questions to make
 sheet = 1; %Sheet in excel file
-output_dir = 'Filled-in Excel files'; %Output directory for excel files
+output_dir = 'Processed excel problems'; %Output directory for excel files
 problem_list = {};
 
 
