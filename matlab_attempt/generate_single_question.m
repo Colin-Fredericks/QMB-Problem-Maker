@@ -3,12 +3,12 @@ clear
 close all
 
 addpath('util')
-file = 'Problem descriptions\Loop questions';
+file = 'Excel problems\Basics questions';
 
-sheet = 'CG3.1.2';
+sheet = 'CG0.6';
 num_dynamic = 4;
 
-problems = {'loop0.2'};
+problems = {'verbal1'};
 
 %Make the excel file
 parse_excel(file,'sheet',sheet,'num_dynamic',num_dynamic, ...
