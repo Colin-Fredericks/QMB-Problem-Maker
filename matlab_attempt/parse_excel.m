@@ -114,10 +114,10 @@ for ii = problem_ind
                     else
                         error('Something went wrong with evaluating: %s',var_expr);
                     end
-                % Else, try converting from num2str (should work for bools and
-                % numeric values)
-                else
-                    var_values{kk} = num2str(var_eval);
+                % Else, try converting from mat2str (should work for bools, 
+                % arrays, and scalars)
+                else                    
+                    var_values{kk} = mat2str(var_eval);
                 end               
             end           
             
