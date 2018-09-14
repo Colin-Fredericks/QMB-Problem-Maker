@@ -40,7 +40,7 @@ with open('Data\CGlookup.txt','r') as f:
 description_texts = {'MC':'Select the most correct answer',
 	'Checkbox':'Select all that apply',
 	'Numerical':'Enter your answer below. Type "e" if this code would produce an error',
-	'Text':'Enter your answer below. Type "Error" if this code would produce an error (Warning: case sesnsitive!)',
+	'Text':'Enter your answer below. Type "Error" if this code would produce an error (Warning: case sensitive!)',
 	'AnyText':'Enter your answer below'}
 
 #Get list of files to read
@@ -71,7 +71,7 @@ for file in files:
 
 		# Rows in excel file for this problem (1-based indexing)
 		minRow = problemIndices[iProb] + 1
-		maxRow = problemIndices[iProb+1] 
+		maxRow = problemIndices[iProb+1]
 
 		#Default values for problem info
 		problem_title = ''
