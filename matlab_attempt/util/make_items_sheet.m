@@ -1,12 +1,11 @@
-function itemKC_sheet = make_itemKC_sheet(input_fname,section_name)
-% MAKE_ITEMKC_SHEET - makes the "Items" sheet for KC_linkages.xlsx
+function item_sheet = make_items_sheet(input_fname,section_name)
+% MAKE_ITEMS_SHEET - makes the "Items" sheet for KC_linkages.xlsx
 %
 %   C = make_items_sheet(FNAME) reads in the Excel file FNAME that contains 
 %   problem descriptions and variable expressions that will be used for
 %   dynamic problem generations. The output is the a cell array that can be
 %   copied and pasted into the KC_linkages.xlsx file
 %
-
 
 %Get list of sheets
 [~,sheets] = xlsfinfo(input_fname);
@@ -19,7 +18,8 @@ if nargin<2
    section_name = words_in_name{1};
 end
 
-itemKC_sheet= {};
+item_sheet = {};
+fprintf('Parsing %s excel sheets to get items\n',section_name)
 for ii = 1:length(sheets)
     
     %Only process Content Grouping sheets
@@ -41,37 +41,36 @@ for ii = 1:length(sheets)
 
                 % Extract the excel data for just this problem               
                 rows = problem_starts(jj) : problem_starts(jj+1)-1;        
-                section = excel_data(rows,:); 
-                
-                % Item ID
-                item_ID = section{1,1};
+                section = excel_data(rows,:);    
 
-                %Get knowledge components
-                ans_rows= section(ismember(section(:,2),'answer'),:);
+                % Get item id
+                item_id = section{1,1};
                 
-                %The way I have written problems, either every answer will
-                %have the KC list, or just the true ones
-                true_ind = strcmpi(ans_rows(:,5),'true');
-                if any(true_ind)
-                    KC_list = ans_rows{find(true_ind,1),4};
-                else
-                    KC_list = ans_rows{1,4};
+                % Problem type
+                row = strcmp(section(:,2),'problemType');
+                problem_type = section{row,3};
+                
+                % Is dynamic?
+                row = strcmp(section(:,2),'dynamic');
+                static = '';
+                if strcmpi(section{row,3},'false')
+                    static = ', static';
                 end
                 
-                %Remove spaces just in case and split by commas
-                KC_list(isspace(KC_list)) = [];
-                KC_list = strsplit(KC_list,',');
+                % Content grouping 
+                content_group = sheets{ii};
                 
-                %Add a line for each KC
-                for kk = 1:length(KC_list)
-                    itemKC_sheet(end+1,1:4) = {item_ID,'','',KC_list{kk}};
-                end
+                % Assemble item name
+                item_name = [section_name ', ' item_id ', ' problem_type static]; 
+                
+                % Add line to sheet
+                item_sheet(end+1,1:4) = {item_id,content_group,'Question',item_name};
+        
         end
         fprintf('Finished sheet %s\n',sheets{ii})
     end
 end
 
-
-output_fname = [section_name '_itemKC_sheet.xlsx'];
-fprintf('Writing to file: %s\n',output_fname)
-xlswrite(output_fname,itemKC_sheet);
+% output_fname = [section_name '_items_sheet.xlsx'];
+% fprintf('Writing to file: %s\n',output_fname)
+% xlswrite(output_fname,item_sheet);
