@@ -155,6 +155,16 @@ for ii = problem_ind
         section = section(non_var_rows,:);
         section{1,1} = [section{1,1} '.' num2str(jj-1)];
         output_data = [output_data; section];
+        
+        % -----------------------------------------------------------------
+        % Use sheet to fill in content grouping if it isn't a row
+        % -----------------------------------------------------------------
+        CG_row = ismember(section(:,2),'contentGrouping');
+        if ~any(CG_row) && ischar(sheet)            
+            section(end+1,:) = {'','contentGrouping',sheet,'','','','',''};
+        end
+            
+                 
 
         % -----------------------------------------------------------------
         % Check to see if this is a dynamic problem. If not, break from the
