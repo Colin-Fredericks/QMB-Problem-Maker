@@ -30,7 +30,7 @@ function [answers,correctness,explanation,array_display,loop_display] = ...
 % Generate values for array display
 len = randi([3 8],1);
 array = randi(100,len,1);
-array_display = ['$$' mimic_array_output(array,'myArray') '\$$'];
+array_display = ['$$' mimic_array_output(array,'myArray') '/$$'];
 
 % Possible correct answers
 right{1} = sprintf([...
@@ -100,7 +100,7 @@ wrong_explain{3} = 'No. This code will index into $myArray/$ successfully, but i
 wrong_explain{4} = 'No. While this code does convert $myArray/$ to a single row with the transpose operator $''/$, it assigns the loop variable $i/$ with a colon operator. The statment inside the loop does not index back into $myArray/$. It will call $myFunction/$ on the integers 1, 2, 3 instead of the values in $myArray/$.';
 wrong_explain{5} = 'No. This code does convert $myArray/$ to a single row with the transpose operator $''/$, it then converts it back into a single column by transposing it again in the loop definition. This will cause the same error as the original code.';
 wrong_explain{6} = 'No. This code does convert $myArray/$ to a single row with the transpose operator $''/$, but inside the loop it will try to index back into $myArray/$ using the values of $myArray/$. This will cause an out-of-bounds error.';
-wrong_explain{7} = 'No. This code defines the loop variable $i/$ in the same way as the original code. Therefore, inside the loop $i/$ will be the entire array $myArray/$ instead of a single value. The array is then transposed inside the call to $myFunction/$, but this will not matter. The problem states that $myFunction expects a single value, not an array.';
+wrong_explain{7} = 'No. This code defines the loop variable $i/$ in the same way as the original code. Therefore, inside the loop $i/$ will be the entire array $myArray/$ instead of a single value. The array is then transposed inside the call to $myFunction/$, but this will not matter. The problem states that $myFunction/$ expects a single value, not an array.';
 
 % Pick 1-3 correct answers
 iRight = randsample(length(right),randi([1 3],1));
