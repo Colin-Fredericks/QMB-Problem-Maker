@@ -146,7 +146,25 @@ for ii = problem_ind
             section{mm} = strrep(section{mm},'$','<code class="lang-matlab">');
             
         end
+        
+        % -----------------------------------------------------------------
+        % Use sheet to fill in content grouping if it isn't a row
+        % -----------------------------------------------------------------
+        CG_row = ismember(section(:,2),'contentGrouping');
+        if ~any(CG_row) && ischar(sheet)            
+            section(end+1,:) = [{'','contentGrouping',sheet} ...
+                repmat({''},1,size(section,2)-3)];
+        end
             
+        % -----------------------------------------------------------------
+        % Add a difficulty row if its missing
+        % -----------------------------------------------------------------
+        diff_row = ismember(section(:,2),'difficulty');
+        if ~any(diff_row)           
+            section(end+1,:) = [{'','difficulty','1'} ...
+                repmat({''},1,size(section,2)-3)];
+        end  
+         
         % -----------------------------------------------------------------
         % Since we no longer need variables remove from section and append 
         % to the output cell array
@@ -155,16 +173,6 @@ for ii = problem_ind
         section = section(non_var_rows,:);
         section{1,1} = [section{1,1} '.' num2str(jj-1)];
         output_data = [output_data; section];
-        
-        % -----------------------------------------------------------------
-        % Use sheet to fill in content grouping if it isn't a row
-        % -----------------------------------------------------------------
-        CG_row = ismember(section(:,2),'contentGrouping');
-        if ~any(CG_row) && ischar(sheet)            
-            section(end+1,:) = {'','contentGrouping',sheet,'','','','',''};
-        end
-            
-                 
 
         % -----------------------------------------------------------------
         % Check to see if this is a dynamic problem. If not, break from the
@@ -173,6 +181,8 @@ for ii = problem_ind
         if ~strcmp(section(ismember(section(:,2),'dynamic'),3),'true')            
             break;            
         end
+        
+        
     end    
     fprintf('Created %d instances for problem %s\n', ...
         jj,problem_name)
