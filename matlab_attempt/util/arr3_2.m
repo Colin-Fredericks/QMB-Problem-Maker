@@ -1,4 +1,4 @@
-function [answers,is_correct] = arr3_2(array_name,array_size,num,chance_none)
+function [answers,is_correct,explanation] = arr3_2(array_name,array_size,num,chance_none)
 % function ARR3_2 - Answers for QMB problem arr3.2
 %
 %   [answers,is_correct] = arr3_2(array_name,array_size,num,chance_none)
@@ -34,7 +34,7 @@ if rand > chance_none
     choice_ind(1) = randsample(3,1);    
     
     %Now select 4 more answers
-    choice_ind(2:5) = randsample([1:choice_ind(1)-1 choice_ind(1)+1:10],4);
+    choice_ind(2:5) = randsample([1:choice_ind(1)-1 choice_ind(1)+1:13],4);
     
 else
     %Make sure 'None of these is in the answers'
@@ -42,6 +42,10 @@ else
     
     %Now select 4 wrong answers
     choice_ind(2:5) = randsample(4:12,4);
+    
+    %Since none of these is now a correct answer, change the value in
+    %correctness
+    correctness(end) = true;
 end 
 
 %Assemble for output
@@ -49,7 +53,14 @@ answers = choices(choice_ind);
 is_correct = cell(1,5);
 is_correct(correctness(choice_ind)) = {'TRUE'};
 is_correct(~correctness(choice_ind)) = {'FALSE'};
-    
+
+% Create xml list of correct answers
+explanation = [];
+for ii = find(strcmp(is_correct,'TRUE'))
+    explanation = [explanation '<li>' answers{ii} '</li>'];
+end
+
+
 end
 
 function str = mat2string(mat)
