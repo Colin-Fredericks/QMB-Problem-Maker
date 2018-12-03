@@ -28,9 +28,19 @@ end
 %Assemble output
 if ismatrix(array)
     
-    % For vectors and 2D matrices, we can get away with a single sprintf command
-    str_output = [name ' = ' char([10]) ...
-        sprintf(['\n' repmat(format,1,size(array,2))],array')];
+    % For strings, use to lood to add each row
+    if ischar(array)
+         str_output = [name ' = ' char(10)];
+         for ii = 1:size(array,1)
+            str_output = [str_output char([10 32 32 32 32]) '''' array(ii,:) ''''];
+         end
+         
+    % For numeric vectors and 2D matrices, we can get away with a single 
+    % sprintf command
+    else  
+        str_output = [name ' = ' char([10]) ...
+            sprintf(['\n' repmat(format,1,size(array,2))],array')];
+    end
 
 %For 3D matrices, we need to print multiple "sheets"
 elseif ndims(array) == 3
