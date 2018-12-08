@@ -64,3 +64,20 @@ CG3.4.2	Knowledge Check
 CG3.5.1	While Loops and Break Statements
 CG3.5.2	Logical Operators
 CG3.5.3	Knowledge Check
+CG4.1.1	Script Review
+CG4.1.2	Overview of Functions
+CG4.1.3	Building a Functions
+CG4.1.4	More Function Details
+CG4.1.5	Fun Functions Demo
+CG4.1.6	Knowledge Check
+CG5.1.1	Intro to Data Analysis
+CG5.1.2	Summarizing and Visualizing
+CG5.1.3	Summarizing and Visualizing 2
+CG5.1.4	Summaruzing and Visualizing 3
+CG5.1.5	Visualizing Options
+CG5.1.6	Benefits and Drawback of Summary Statistics
+CG5.1.7	The Effects of Sample Size
+CG5.1.8	Knowledge Check
+CG5.2.1	Student Exercise: Exploring The RandN Function
+CG5.2.2	Student Exercise Reviewed: Exploring the RandN Function
+CG5.2.3	Knowledge Check
