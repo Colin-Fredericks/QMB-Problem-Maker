@@ -107,6 +107,7 @@ for ii = problem_ind
                 % If string, save as answer
                 if ischar(var_eval)
                     var_values{kk} = var_eval;
+                    
                 % If cell array of strings, try taking first value
                 elseif iscellstr(var_eval)
                     if length(var_eval)==1
@@ -114,8 +115,17 @@ for ii = problem_ind
                     else
                         error('Something went wrong with evaluating: %s',var_expr);
                     end
-                % Else, try converting from mat2str (should work for bools, 
-                % arrays, and scalars)
+                    
+                % If normal cell array, try mat2str on first element
+                elseif iscell(var_eval)
+                    if length(var_eval)==1
+                        var_values{kk} = mat2str(var_eval{1});
+                    else
+                        error('Something went wrong with evaluating: %s',var_expr);
+                    end
+                    
+                % Else, try converting from mat2str (should work for bools,
+                % arrays, and scalars)                
                 else                    
                     var_values{kk} = mat2str(var_eval);
                 end               
