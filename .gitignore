@@ -13,3 +13,4 @@ dynamic/Problems/*.xml
 problems/*.xml
 dynamic/test_questions.txt
 dynamic/new_questions.txt
+*.mat
