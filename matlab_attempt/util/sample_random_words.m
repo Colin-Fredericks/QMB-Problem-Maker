@@ -6,7 +6,7 @@ function words = sample_random_words(num_words)
 %   of common words and 
 
 %Open list of words
-fid = fopen('most_common_words_1000.txt','r');
+fid = fopen('Data\most_common_words_1000.txt','r');
 C = textscan(fid,'%s');
 C = C{1};
 
