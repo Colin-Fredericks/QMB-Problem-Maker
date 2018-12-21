@@ -81,3 +81,14 @@ CG5.1.8	Knowledge Check
 CG5.2.1	Student Exercise: Exploring The RandN Function
 CG5.2.2	Student Exercise Reviewed: Exploring the RandN Function
 CG5.2.3	Knowledge Check
+CG6.1.1	Review of Arrays
+CG6.1.2	Strings as Character Arrays
+CG6.1.3	Cell Arrays
+CG6.1.4	Addressing Cell Arrays
+CG6.1.5	Storing and Retrieving Data from Cell Arrays
+CG6.1.6	Logical Arrays and Cell Arrays
+CG6.1.7	Fun Cell Arrays Demo
+CG6.1.8	Knowledge Check
+CG6.2.1	Structures
+CG6.2.2	Fun Structures Demo
+CG6.2.3	Knowledge Check
