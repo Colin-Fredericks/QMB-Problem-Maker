@@ -227,9 +227,12 @@ def make_line_problem_XML(
         tolerance_tag = ET.SubElement(type_tag, 'responseparam')
         tolerance_tag.set('type', 'tolerance')
         tolerance_tag.set('default', str(int(float(options['tolerance']) * 100)) + '%')
-    else:
+    else:        
         input_tag = ET.SubElement(type_tag, 'textline')
-        input_tag.set('size', '30')
+        if 'textline' in options:
+            input_tag.set('size', options['textline'])
+        else:
+            input_tag.set('size', '30')
 
 
 

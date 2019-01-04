@@ -105,6 +105,7 @@ for file in files:
 			if row[1].value == 'tolerance': options['tolerance'] = row[2].value
 			if row[1].value == 'isCaseSensitive': options['isCaseSensitive'] = row[2].value
 			if row[1].value == 'isRegexp': options['isRegexp'] = row[2].value
+			if row[1].value == 'textline': options['textline'] = str(row[2].value)
 
 			# Create answer dictionary. Add hint if exists
 			if row[1].value == 'answer':
