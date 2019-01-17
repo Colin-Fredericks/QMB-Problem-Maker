@@ -33,8 +33,9 @@ if not os.path.isdir(outputDir):
 CGIlookup = {}
 with open('Data\CGlookup.txt','r') as f:
     for line in f:
-        splitLine = line.split("\t")
-        CGIlookup[splitLine[0]] = splitLine[1]
+		splitLine = line.split("\t")
+		splitLine[1] = splitLine[1].rstrip()
+		CGIlookup[splitLine[0]] = splitLine[1]
 
 #Default description text (different for each type of problem)
 description_texts = {'MC':'Select the most correct answer',
