@@ -194,7 +194,13 @@ def make_line_problem_XML(
             if 'isCaseSensitive' in options and options['isCaseSensitive']:
                 type_tag.set('type', 'regexp cs')
             else:
-                type_tag.set('type', 'regexp ci') # case-insensitive by default.
+                type_tag.set('type', 'regexp ci') # case-insensitive by default
+            
+            # Add anchors if desired
+            if 'addAnchors' in options and options['addAnchors']:
+                for item in answers:
+                    item['answer'] = "^" + item['answer'] + "$"
+
         else:
             if 'isCaseSensitive' in options and options['isCaseSensitive']:
                 type_tag.set('type', 'cs')
