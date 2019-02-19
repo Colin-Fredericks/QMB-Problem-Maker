@@ -13,3 +13,6 @@ wave	https://pixabay.com/en/wave-water-surf-ocean-sea-spray-3473335/
 bouquet	https://pixabay.com/en/flowers-bouquet-blue-muscari-bloom-3453729/
 daisies	https://pixabay.com/en/daisies-flower-meadow-white-3439573/
 surface	https://pixabay.com/en/surface-pattern-texture-design-945444/
+other moon	https://pixabay.com/en/astronomy-full-moon-luna-moon-1869760/
+columns	https://pixabay.com/en/greece-palace-parthenon-iconic-1594689/
+frog	https://pixabay.com/en/frog-toad-amphibians-animal-3467033/
