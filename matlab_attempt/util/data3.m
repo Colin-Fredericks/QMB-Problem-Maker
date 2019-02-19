@@ -7,7 +7,7 @@ function [correct,incorrect,problem_values,explanation] = data3()
 
 % Pick name and length
 array_name = randsample('ABCDEFGHKLMNPQRTUVWXYZ',1);
-array_length = randi([5 7],1)
+array_length = randi([5 7],1);
 
 % Pick dimension order (row or column array)
 array_dim = [1 array_length];

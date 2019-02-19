@@ -22,7 +22,7 @@ alt_txt =  sprintf('A plot with four lines numbered 1 to 4. Each line has points
 choices = {'Line 1','Line 2','Line 3','Line 4'};
 if rand<chance_none
     %Get a new array. Make sure it is very different from the other lines
-    unused_values = find(~ismember(1:100,unique(array_values{img_id}(:))))
+    unused_values = find(~ismember(1:100,unique(array_values{img_id}(:))));
     new_array = randsample(unused_values,10);
     
     %Make display for question
