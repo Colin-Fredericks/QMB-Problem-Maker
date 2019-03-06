@@ -1,12 +1,10 @@
 fcg_id	name
-CG0	Intro to MATLAB
 CG0.1	Randomness
 CG0.2	MATLAB Basics
 CG0.3	Reading a Line of Code
 CG0.4	Order of Operations
 CG0.5	Order of Operations Challenge
 CG0.6	Turning Words into Code
-CG1	Arrays
 CG1.1.1	Intro to Arrays
 CG1.1.2	Loading Images as Arrays
 CG1.1.3	Inspecting Arrays
